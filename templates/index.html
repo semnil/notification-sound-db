@@ -68,14 +68,36 @@
   <div class="table-wrap">
     <table class="measurement-table">
       <thead><tr>
-        <th>{{ text.table_sound }}</th><th>{{ text.table_source }}</th><th>{{ text.table_event }}</th>
-        <th class="number">{{ text.table_duration }}</th><th class="number">{{ text.table_lufs_i }}</th>
-        <th class="number">{{ text.table_lufs_m }}</th><th class="number">{{ text.table_true_peak }}</th>
-        <th class="number">{{ text.table_rms }}</th><th><span class="sr-only">{{ text.details }}</span></th>
+        {% for key, label, kind, numeric in [
+          ('sound', text.table_sound, 'text', false),
+          ('source', text.table_source, 'text', false),
+          ('event', text.table_event, 'text', false),
+          ('duration', text.table_duration, 'number', true),
+          ('integrated', text.table_lufs_i, 'number', true),
+          ('momentary', text.table_lufs_m, 'number', true),
+          ('true-peak', text.table_true_peak, 'number', true),
+          ('rms', text.table_rms, 'number', true)
+        ] %}
+        <th{% if numeric %} class="number"{% endif %} aria-sort="none">
+          <button class="sort-button" type="button" data-sort-key="{{ key }}" data-sort-type="{{ kind }}"
+                  data-sort-label="{{ label }}" aria-label="{{ text.sort_by }} {{ label }}" title="{{ text.sort_hint }}">
+            <span>{{ label }}</span><span class="sort-indicator" aria-hidden="true">↕</span>
+          </button>
+        </th>
+        {% endfor %}
+        <th><span class="sr-only">{{ text.details }}</span></th>
       </tr></thead>
       <tbody id="measurement-rows">
       {% for row in rows %}
-        <tr data-source="{{ row.source_id }}" data-event="{{ row.event_type }}" data-search="{{ (row.source_name_en ~ ' ' ~ row.source_name_ja ~ ' ' ~ row.sound_name ~ ' ' ~ row.event_type ~ ' ' ~ row.relative_path)|lower }}">
+        <tr data-source="{{ row.source_id }}" data-event="{{ row.event_type }}" data-search="{{ (row.source_name_en ~ ' ' ~ row.source_name_ja ~ ' ' ~ row.sound_name ~ ' ' ~ row.event_type ~ ' ' ~ row.relative_path)|lower }}"
+            data-sort-sound="{{ row.sound_name }} {{ row.sha256 }}"
+            data-sort-source="{{ row['source_name_' ~ lang] }} {{ row.application_version }}"
+            data-sort-event="{{ event_names[row.event_type][lang] }}"
+            data-sort-duration="{{ row.duration_seconds if row.duration_seconds is not none else '' }}"
+            data-sort-integrated="{{ row.integrated_lufs if row.integrated_lufs is not none else '' }}"
+            data-sort-momentary="{{ row.maximum_momentary_lufs if row.maximum_momentary_lufs is not none else '' }}"
+            data-sort-true-peak="{{ row.true_peak_dbtp if row.true_peak_dbtp is not none else '' }}"
+            data-sort-rms="{{ row.rms_dbfs if row.rms_dbfs is not none else '' }}">
           <th scope="row"><strong>{{ row.sound_name }}</strong><code>{{ row.sha256[:8] }}</code></th>
           <td>{{ row['source_name_' ~ lang] }}<small>v{{ row.application_version }}</small></td>
           <td><span class="event-tag event-{{ row.event_type }}">{{ event_names[row.event_type][lang] }}</span></td>

@@ -52,6 +52,8 @@ input:focus, select:focus { outline: 3px solid rgba(37,99,235,.22); border-color
 .measurement-table { width: 100%; border-collapse: collapse; white-space: nowrap; }
 .measurement-table th,.measurement-table td { padding: 11px 12px; border-bottom: 1px solid #edf0f4; text-align: left; font-size: .8rem; vertical-align: middle; }
 .measurement-table thead th { position: sticky; top: 0; z-index: 1; color: var(--muted); background: #f8fafc; font-size: .7rem; text-transform: uppercase; letter-spacing: .035em; }
+.sort-button { display: inline-flex; width: 100%; align-items: center; gap: 5px; padding: 2px 0; color: inherit; background: transparent; border: 0; font: inherit; font-weight: 650; letter-spacing: inherit; text-align: inherit; text-transform: inherit; white-space: nowrap; cursor: pointer; }
+.measurement-table thead th.number .sort-button { justify-content: flex-end; }.sort-button:hover { color: var(--blue); }.sort-indicator { display: inline-block; min-width: 1em; color: #94a3b8; font-size: .9rem; line-height: 1; text-align: center; }.measurement-table thead th[aria-sort="ascending"] .sort-indicator,.measurement-table thead th[aria-sort="descending"] .sort-indicator { color: var(--blue); }
 .measurement-table tbody th { font-weight: 500; }.measurement-table tbody tr:hover { background: #f8fbff; }.measurement-table tbody tr:last-child>* { border-bottom: 0; }
 .measurement-table strong { display: block; max-width: 210px; overflow: hidden; text-overflow: ellipsis; }.measurement-table code,.measurement-table small { display: block; color: var(--muted); font-size: .68rem; }
 .measurement-table .number { text-align: right; font-variant-numeric: tabular-nums; }

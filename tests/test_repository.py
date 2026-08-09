@@ -32,8 +32,14 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert len(list((destination / "sounds").glob("*.html"))) > 0
     assert len(list((destination / "ja/sounds").glob("*.html"))) > 0
     assert (destination / ".nojekyll").exists()
-    assert "Mac App Store" in (destination / "index.html").read_text(encoding="utf-8")
+    english = (destination / "index.html").read_text(encoding="utf-8")
+    japanese = (destination / "ja/index.html").read_text(encoding="utf-8")
+    assert "Mac App Store" in english
     assert "Mac App Store" in (destination / "ja/index.html").read_text(encoding="utf-8")
+    assert english.count('class="sort-button"') == 8
+    assert japanese.count('class="sort-button"') == 8
+    assert 'data-sort-integrated="' in english
+    assert 'data-sort-true-peak="' in english
 
 
 def test_analysis_profile_matches_implementation() -> None:

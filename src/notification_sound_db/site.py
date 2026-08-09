@@ -47,6 +47,8 @@ TEXT = {
         "table_lufs_m": "Max momentary",
         "table_true_peak": "True peak",
         "table_rms": "RMS",
+        "sort_by": "Sort by",
+        "sort_hint": "Select to toggle ascending or descending order.",
         "details": "Details",
         "methodology": "Methodology",
         "download_csv": "Download CSV",
@@ -56,7 +58,9 @@ TEXT = {
             "Actual level relationships depend on OS, app, player, and output-device settings."
         ),
         "no_results": "No measurements match the current filters.",
-        "js_hint": "Search and filters require JavaScript. All rows remain readable below.",
+        "js_hint": (
+            "Search, filters, and sorting require JavaScript. All rows remain readable below."
+        ),
         "back": "Back to all measurements",
         "identity": "Identity and provenance",
         "metrics": "Level measurements",
@@ -107,6 +111,8 @@ TEXT = {
         "table_lufs_m": "最大Momentary",
         "table_true_peak": "True Peak",
         "table_rms": "RMS",
+        "sort_by": "並べ替え:",
+        "sort_hint": "選択するたびに昇順と降順を切り替えます。",
         "details": "詳細",
         "methodology": "測定方法",
         "download_csv": "CSVをダウンロード",
@@ -116,7 +122,10 @@ TEXT = {
             "相対的な再生レベルはOS、アプリ、プレイヤー、出力機器の設定で変化します。"
         ),
         "no_results": "現在の条件に一致する測定値はありません。",
-        "js_hint": "検索と絞り込みにはJavaScriptが必要です。全データは下の表から読めます。",
+        "js_hint": (
+            "検索、絞り込み、並べ替えにはJavaScriptが必要です。"
+            "全データは下の表から読めます。"
+        ),
         "back": "測定一覧へ戻る",
         "identity": "識別情報と来歴",
         "metrics": "音量測定値",

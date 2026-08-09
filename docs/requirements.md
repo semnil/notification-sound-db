@@ -128,7 +128,8 @@ without copying their visual design:
 - <https://ai-compare.semnil.com/ja/>
 - <https://koe-zukan.semnil.com/>
 
-Provide a centered, information-dense layout; prominent search and filters; progressive navigation
-from list to detail; visible counts and snapshot time; distinct values, units, provenance, and
-caveats; English/Japanese switching; responsive and keyboard-accessible operation; useful no-JS
-links; canonical/alternate/OG metadata; and JSON/CSV downloads. Do not store or play audio.
+Provide a centered, information-dense layout; prominent search and filters; ascending/descending
+sorting on every data column; progressive navigation from list to detail; visible counts and
+snapshot time; distinct values, units, provenance, and caveats; English/Japanese switching;
+responsive and keyboard-accessible operation; useful no-JS links; canonical/alternate/OG
+metadata; and JSON/CSV downloads. Do not store or play audio.

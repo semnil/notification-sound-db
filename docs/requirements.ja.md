@@ -88,6 +88,6 @@ Sample Peak、全区間／有音区間 RMS、Crest Factor、長さ、無音区�
 
 機能と全体の雰囲気は <https://ai-compare.semnil.com/ja/> と
 <https://koe-zukan.semnil.com/> を参考にし、意匠は複製しない。中央寄せで情報密度の高い構成、
-目立つ検索・絞り込み、一覧から詳細への導線、件数と日時、値・単位・来歴・注意事項の明確な区別、
-英日切り替え、モバイル・キーボード・no-JS 対応、canonical／alternate／OG メタデータ、JSON／CSV
-取得を提供する。音源は保存・再生しない。
+目立つ検索・絞り込み、全データ列の昇順・降順ソート、一覧から詳細への導線、件数と日時、
+値・単位・来歴・注意事項の明確な区別、英日切り替え、モバイル・キーボード・no-JS 対応、
+canonical／alternate／OG メタデータ、JSON／CSV取得を提供する。音源は保存・再生しない。
