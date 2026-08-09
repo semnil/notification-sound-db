@@ -3,11 +3,15 @@
   const source = document.querySelector('#source-filter');
   const event = document.querySelector('#event-filter');
   const body = document.querySelector('#measurement-rows');
+  const tableWrap = document.querySelector('#measurement-table-wrap');
+  const scrollControls = document.querySelector('#table-scroll-controls');
+  const scrollLeftButton = document.querySelector('#table-scroll-left');
+  const scrollRightButton = document.querySelector('#table-scroll-right');
   const rows = [...document.querySelectorAll('#measurement-rows tr')];
   const sortButtons = [...document.querySelectorAll('.sort-button')];
   const count = document.querySelector('#result-count');
   const empty = document.querySelector('#no-results');
-  if (!search || !source || !event || !body || !count || !empty) return;
+  if (!search || !source || !event || !body || !tableWrap || !count || !empty) return;
 
   const normalize = (value) => value.toLocaleLowerCase().normalize('NFKC');
   const collator = new Intl.Collator(document.documentElement.lang || undefined, {
@@ -59,6 +63,22 @@
     for (const row of rows) body.append(row);
   };
 
+  const updateScrollControls = () => {
+    if (!scrollControls || !scrollLeftButton || !scrollRightButton) return;
+    const maximum = Math.max(0, tableWrap.scrollWidth - tableWrap.clientWidth);
+    scrollControls.hidden = maximum < 2;
+    scrollLeftButton.disabled = tableWrap.scrollLeft < 2;
+    scrollRightButton.disabled = tableWrap.scrollLeft > maximum - 2;
+  };
+
+  const scrollTable = (direction) => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    tableWrap.scrollBy({
+      behavior: reducedMotion ? 'auto' : 'smooth',
+      left: direction * Math.max(280, tableWrap.clientWidth * 0.7),
+    });
+  };
+
   const update = () => {
     const query = normalize(search.value.trim());
     let visible = 0;
@@ -85,6 +105,14 @@
   search.addEventListener('input', update);
   source.addEventListener('change', update);
   event.addEventListener('change', update);
+  if (scrollLeftButton && scrollRightButton) {
+    scrollLeftButton.addEventListener('click', () => scrollTable(-1));
+    scrollRightButton.addEventListener('click', () => scrollTable(1));
+    tableWrap.addEventListener('scroll', updateScrollControls, { passive: true });
+  }
+  window.addEventListener('resize', updateScrollControls);
+  window.addEventListener('load', updateScrollControls);
+  if ('ResizeObserver' in window) new ResizeObserver(updateScrollControls).observe(tableWrap);
   for (const button of sortButtons) {
     button.addEventListener('click', () => {
       const nextKey = button.dataset.sortKey;
@@ -96,4 +124,5 @@
   }
   applySort();
   update();
+  updateScrollControls();
 })();

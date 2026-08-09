@@ -78,7 +78,16 @@
       <a href="../data/catalog.json">JSONを見る</a>
     </div>
   </div>
-  <div class="table-wrap">
+  <div id="table-scroll-controls" class="table-scroll-controls" hidden>
+    <span>左右の列を表示</span>
+    <div>
+      <button id="table-scroll-left" type="button" aria-label="表を左へスクロール"
+              aria-controls="measurement-table-wrap">←</button>
+      <button id="table-scroll-right" type="button" aria-label="表を右へスクロール"
+              aria-controls="measurement-table-wrap">→</button>
+    </div>
+  </div>
+  <div id="measurement-table-wrap" class="table-wrap" tabindex="0" aria-label="スクロール可能な測定表">
     <table class="measurement-table">
       <thead><tr>
         <th aria-sort="none">

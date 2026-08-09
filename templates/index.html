@@ -65,7 +65,16 @@
       <a href="{{ paths.root_prefix }}data/catalog.json">{{ text.download_json }}</a>
     </div>
   </div>
-  <div class="table-wrap">
+  <div id="table-scroll-controls" class="table-scroll-controls" hidden>
+    <span>{{ text.table_scroll_hint }}</span>
+    <div>
+      <button id="table-scroll-left" type="button" aria-label="{{ text.table_scroll_left }}"
+              aria-controls="measurement-table-wrap">←</button>
+      <button id="table-scroll-right" type="button" aria-label="{{ text.table_scroll_right }}"
+              aria-controls="measurement-table-wrap">→</button>
+    </div>
+  </div>
+  <div id="measurement-table-wrap" class="table-wrap" tabindex="0" aria-label="{{ text.table_scroll_region }}">
     <table class="measurement-table">
       <thead><tr>
         {% for key, label, kind, numeric in [

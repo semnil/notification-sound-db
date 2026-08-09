@@ -78,7 +78,16 @@
       <a href="data/catalog.json">Browse JSON</a>
     </div>
   </div>
-  <div class="table-wrap">
+  <div id="table-scroll-controls" class="table-scroll-controls" hidden>
+    <span>More columns</span>
+    <div>
+      <button id="table-scroll-left" type="button" aria-label="Scroll table left"
+              aria-controls="measurement-table-wrap">←</button>
+      <button id="table-scroll-right" type="button" aria-label="Scroll table right"
+              aria-controls="measurement-table-wrap">→</button>
+    </div>
+  </div>
+  <div id="measurement-table-wrap" class="table-wrap" tabindex="0" aria-label="Scrollable measurement table">
     <table class="measurement-table">
       <thead><tr>
         <th aria-sort="none">

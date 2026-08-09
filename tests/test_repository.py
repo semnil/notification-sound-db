@@ -45,6 +45,8 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert '<th class="details-heading">詳細</th>' in japanese
     assert 'data-label="RMS"' in english
     assert 'data-label="RMS"' in japanese
+    assert 'id="table-scroll-controls"' in english
+    assert 'id="measurement-table-wrap" class="table-wrap" tabindex="0"' in english
     assert 'src="assets/language.js"' in english
     assert 'src="../assets/language.js"' in japanese
     assert 'hreflang="ja"' in english

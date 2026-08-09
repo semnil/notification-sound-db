@@ -134,6 +134,10 @@ snapshot time; distinct values, units, provenance, and caveats; English/Japanese
 responsive and keyboard-accessible operation; useful no-JS links; canonical/alternate/OG
 metadata; and JSON/CSV downloads. Do not store or play audio.
 
+On desktop, constrain long result tables to a viewport-height scroll region. When columns overflow
+horizontally, expose persistent, keyboard-accessible left/right controls in addition to the native
+scrollbar. Use the labeled card layout only on narrow mobile screens.
+
 On a first visit, choose English or Japanese from the browser's ordered language preferences,
 which normally reflect the OS locale. Persist an explicit language-switch selection in browser
 local storage and prefer it over automatic detection on later visits. Preserve the current page,
