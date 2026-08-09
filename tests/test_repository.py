@@ -41,6 +41,10 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert japanese.count('class="sort-button"') == 8
     assert 'data-sort-integrated="' in english
     assert 'data-sort-true-peak="' in english
+    assert '<th class="details-heading">Details</th>' in english
+    assert '<th class="details-heading">詳細</th>' in japanese
+    assert 'data-label="RMS"' in english
+    assert 'data-label="RMS"' in japanese
     assert 'src="assets/language.js"' in english
     assert 'src="../assets/language.js"' in japanese
     assert 'hreflang="ja"' in english

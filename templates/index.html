@@ -85,7 +85,7 @@
           </button>
         </th>
         {% endfor %}
-        <th><span class="sr-only">{{ text.details }}</span></th>
+        <th class="details-heading">{{ text.details }}</th>
       </tr></thead>
       <tbody id="measurement-rows">
       {% for row in rows %}
@@ -98,15 +98,15 @@
             data-sort-momentary="{{ row.maximum_momentary_lufs if row.maximum_momentary_lufs is not none else '' }}"
             data-sort-true-peak="{{ row.true_peak_dbtp if row.true_peak_dbtp is not none else '' }}"
             data-sort-rms="{{ row.rms_dbfs if row.rms_dbfs is not none else '' }}">
-          <th scope="row"><strong>{{ row.sound_name }}</strong><code>{{ row.sha256[:8] }}</code></th>
-          <td>{{ row['source_name_' ~ lang] }}<small>v{{ row.application_version }}</small></td>
-          <td><span class="event-tag event-{{ row.event_type }}">{{ event_names[row.event_type][lang] }}</span></td>
-          <td class="number">{{ row.duration_seconds|metric('s', 2) }}</td>
-          <td class="number">{{ row.integrated_lufs|metric('LUFS') }}</td>
-          <td class="number">{{ row.maximum_momentary_lufs|metric('LUFS') }}</td>
-          <td class="number">{{ row.true_peak_dbtp|metric('dBTP') }}</td>
-          <td class="number">{{ row.rms_dbfs|metric('dBFS') }}</td>
-          <td><a class="detail-link" href="{{ paths.asset_prefix }}{{ row.sha256 }}.html" aria-label="{{ text.details }}: {{ row.sound_name }}">→</a></td>
+          <th scope="row" data-label="{{ text.table_sound }}"><strong>{{ row.sound_name }}</strong><code>{{ row.sha256[:8] }}</code></th>
+          <td data-label="{{ text.table_source }}">{{ row['source_name_' ~ lang] }}<small>v{{ row.application_version }}</small></td>
+          <td data-label="{{ text.table_event }}"><span class="event-tag event-{{ row.event_type }}">{{ event_names[row.event_type][lang] }}</span></td>
+          <td class="number" data-label="{{ text.table_duration }}">{{ row.duration_seconds|metric('s', 2) }}</td>
+          <td class="number" data-label="{{ text.table_lufs_i }}">{{ row.integrated_lufs|metric('LUFS') }}</td>
+          <td class="number" data-label="{{ text.table_lufs_m }}">{{ row.maximum_momentary_lufs|metric('LUFS') }}</td>
+          <td class="number" data-label="{{ text.table_true_peak }}">{{ row.true_peak_dbtp|metric('dBTP') }}</td>
+          <td class="number" data-label="{{ text.table_rms }}">{{ row.rms_dbfs|metric('dBFS') }}</td>
+          <td data-label="{{ text.details }}"><a class="detail-link" href="{{ paths.asset_prefix }}{{ row.sha256 }}.html" aria-label="{{ text.details }}: {{ row.sound_name }}">→</a></td>
         </tr>
       {% endfor %}
       </tbody>
