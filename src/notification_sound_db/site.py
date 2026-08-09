@@ -14,6 +14,7 @@ from notification_sound_db.jsonio import read_json, write_json
 from notification_sound_db.validation import validate_repository
 
 LANGUAGES = ("en", "ja")
+DEFAULT_SITE_URL = "https://notification-sound-db.semnil.com"
 
 TEXT = {
     "en": {
@@ -197,12 +198,12 @@ def _format_number(value, unit: str, digits: int = 1) -> str:
     return f"{value:.{digits}f} {unit}".strip()
 
 
-def _site_url(path: str) -> str | None:
-    base = os.environ.get("SITE_URL", "").rstrip("/")
-    return f"{base}/{path.lstrip('/')}" if base else None
+def _site_url(path: str) -> str:
+    base = os.environ.get("SITE_URL", DEFAULT_SITE_URL).rstrip("/")
+    return f"{base}/{path.lstrip('/')}"
 
 
-def _alternate_urls(english_path: str, japanese_path: str) -> dict[str, str | None]:
+def _alternate_urls(english_path: str, japanese_path: str) -> dict[str, str]:
     return {"en": _site_url(english_path), "ja": _site_url(japanese_path)}
 
 
@@ -347,12 +348,13 @@ def build_site(repository: Path, output: Path | None = None) -> Path:
         target = destination / generated
         if target.exists():
             shutil.rmtree(target)
-    for generated in ("index.html", "methodology.html"):
+    for generated in ("favicon.svg", "index.html", "methodology.html", "robots.txt", "sitemap.xml"):
         (destination / generated).unlink(missing_ok=True)
 
     write_csv(repository)
     shutil.copytree(repository / "data", destination / "data")
     shutil.copytree(repository / "web/static", destination / "assets")
+    shutil.copy2(repository / "web/static/favicon.svg", destination / "favicon.svg")
     (destination / ".nojekyll").write_text("", encoding="utf-8")
 
     sources = {
@@ -418,6 +420,27 @@ def build_site(repository: Path, output: Path | None = None) -> Path:
     index_template = environment.get_template("index.html")
     detail_template = environment.get_template("detail.html")
     methodology_template = environment.get_template("methodology.html")
+    sitemap_template = environment.get_template("sitemap.xml")
+
+    sitemap_pairs = [
+        {"en": _site_url(""), "ja": _site_url("ja/")},
+        {
+            "en": _site_url("methodology.html"),
+            "ja": _site_url("ja/methodology.html"),
+        },
+        *[
+            {
+                "en": _site_url(f"sounds/{digest}.html"),
+                "ja": _site_url(f"ja/sounds/{digest}.html"),
+            }
+            for digest in assets
+        ],
+    ]
+    _render(destination / "sitemap.xml", sitemap_template, pairs=sitemap_pairs)
+    (destination / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\n\nSitemap: {_site_url('sitemap.xml')}\n",
+        encoding="utf-8",
+    )
 
     for language in LANGUAGES:
         language_dir = destination / ("ja" if language == "ja" else "")

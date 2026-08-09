@@ -15,7 +15,7 @@
   <meta property="og:description" content="{{ text.subtitle }}">
   <meta property="og:locale" content="{{ 'ja_JP' if lang == 'ja' else 'en_US' }}">
   {% if canonical %}<meta property="og:url" content="{{ canonical }}">{% endif %}
-  <link rel="icon" href="{{ paths.root_prefix }}assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{ paths.root_prefix }}favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="stylesheet" href="{{ paths.root_prefix }}assets/styles.css">
   <script src="{{ paths.root_prefix }}assets/language.js"></script>
   {% block head %}{% endblock %}

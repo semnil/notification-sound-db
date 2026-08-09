@@ -135,6 +135,10 @@ snapshot time; distinct values, units, provenance, and caveats; English/Japanese
 responsive and keyboard-accessible operation; useful no-JS links; canonical/alternate/OG
 metadata; and JSON/CSV downloads. Do not store or play audio.
 
+Generate a root XML sitemap containing every English and Japanese canonical page with reciprocal
+`hreflang` and `x-default` alternates. Reference it from `robots.txt`. Publish the square SVG
+favicon at the stable root URL `/favicon.svg` and link every page to it.
+
 Each detail page includes a responsive level-over-time SVG generated from the canonical RMS
 envelope. Use a fixed 0 to −80 dBFS display range, identify the active-segment threshold, and state
 that values below the visual floor are retained in JSON. Do not imply that the plot is LUFS or a

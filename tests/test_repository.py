@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from xml.etree import ElementTree
 
 from notification_sound_db.audio import (
     ACTIVE_ABSOLUTE_THRESHOLD_DBFS,
@@ -35,6 +36,15 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert len(list((destination / "ja/sounds").glob("*.html"))) > 0
     assert (destination / ".nojekyll").exists()
     assert (destination / "assets/language.js").exists()
+    assert (destination / "favicon.svg").exists()
+    assert (destination / "favicon.svg").read_bytes() == (
+        ROOT / "web/static/favicon.svg"
+    ).read_bytes()
+    assert (destination / "robots.txt").read_text(encoding="utf-8") == (
+        "User-agent: *\n"
+        "Allow: /\n\n"
+        "Sitemap: https://notification-sound-db.semnil.com/sitemap.xml\n"
+    )
     english = (destination / "index.html").read_text(encoding="utf-8")
     japanese = (destination / "ja/index.html").read_text(encoding="utf-8")
     assert 'data-source="line"' in english
@@ -53,6 +63,8 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert 'src="../assets/language.js"' in japanese
     assert 'hreflang="ja"' in english
     assert 'hreflang="en"' in japanese
+    assert 'href="favicon.svg" type="image/svg+xml" sizes="any"' in english
+    assert 'href="../favicon.svg" type="image/svg+xml" sizes="any"' in japanese
     verification = (
         '<meta name="google-site-verification" '
         'content="O6oFrJyEg-Om0e19Q1QZpGG3DeKfy0ggL_tQWnAaWgI" />'
@@ -64,6 +76,25 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert 'class="level-chart"' in detail
     assert 'class="chart-level-line"' in detail
     assert "Short-window RMS level over time" in detail
+
+    sitemap = ElementTree.parse(destination / "sitemap.xml")
+    sitemap_namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    sitemap_urls = sitemap.findall("s:url", sitemap_namespace)
+    asset_count = len(list((ROOT / "data/assets").glob("*.json")))
+    assert len(sitemap_urls) == 2 * (asset_count + 2)
+    locations = {
+        node.find("s:loc", sitemap_namespace).text
+        for node in sitemap_urls
+    }
+    assert "https://notification-sound-db.semnil.com/" in locations
+    assert "https://notification-sound-db.semnil.com/ja/" in locations
+    for node in sitemap_urls:
+        alternates = node.findall("{http://www.w3.org/1999/xhtml}link")
+        assert {alternate.attrib["hreflang"] for alternate in alternates} == {
+            "en",
+            "ja",
+            "x-default",
+        }
 
 
 def test_methodology_language_switch_keeps_current_page(tmp_path: Path) -> None:

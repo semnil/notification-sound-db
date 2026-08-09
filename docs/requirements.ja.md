@@ -93,6 +93,10 @@ Sample Peak、全区間／有音区間 RMS、Crest Factor、長さ、無音区�
 値・単位・来歴・注意事項の明確な区別、英日切り替え、モバイル・キーボード・no-JS 対応、
 canonical／alternate／OG メタデータ、JSON／CSV取得を提供する。音源は保存・再生しない。
 
+英日すべてのcanonicalページを収録し、相互の `hreflang` と `x-default` を持つXMLサイトマップを
+ルートに生成して `robots.txt` から参照する。正方形SVG faviconは安定したルートURL
+`/favicon.svg` で公開し、全ページから参照する。
+
 各詳細ページでは正本の RMS 包絡線からレスポンシブな時間推移 SVG を生成する。表示範囲は
 0〜−80 dBFSに固定し、有音判定閾値を示し、表示下限未満の値もJSONには保持されると明記する。
 LUFSの時系列や波形であるかのように表現しない。
