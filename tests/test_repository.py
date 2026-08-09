@@ -53,6 +53,12 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert 'src="../assets/language.js"' in japanese
     assert 'hreflang="ja"' in english
     assert 'hreflang="en"' in japanese
+    verification = (
+        '<meta name="google-site-verification" '
+        'content="O6oFrJyEg-Om0e19Q1QZpGG3DeKfy0ggL_tQWnAaWgI" />'
+    )
+    assert verification in english
+    assert verification in japanese
     detail_path = next((destination / "sounds").glob("*.html"))
     detail = detail_path.read_text(encoding="utf-8")
     assert 'class="level-chart"' in detail
