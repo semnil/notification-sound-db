@@ -2,6 +2,8 @@
 
 [English](README.md)
 
+**公開レポート:** https://notification-sound-db.semnil.com/
+
 `notification-sound-db` は、macOS と主要コミュニケーションアプリに同梱されたイベント音の
 音量・周波数特性を、再現可能な方法で測定して公開するテキスト中心のデータベースです。
 LUFS、dBTP、RMS、Crest Factor、時間特性、周波数特性を記録し、元の音声ファイルは再配布しません。

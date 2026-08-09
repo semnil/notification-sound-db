@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://semnil.github.io/notification-sound-db/schemas/source.schema.json",
+  "$id": "https://notification-sound-db.semnil.com/data/schemas/source.schema.json",
   "title": "Notification sound source snapshot",
   "type": "object",
   "required": [

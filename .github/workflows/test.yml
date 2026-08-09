@@ -31,7 +31,7 @@ jobs:
         run: notification-sound-db validate
       - name: Check generated files
         env:
-          SITE_URL: https://semnil.github.io/notification-sound-db
+          SITE_URL: https://notification-sound-db.semnil.com
         run: |
           notification-sound-db export
           notification-sound-db build-site

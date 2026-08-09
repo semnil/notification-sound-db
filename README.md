@@ -2,6 +2,8 @@
 
 [日本語](README.ja.md)
 
+**Live report:** https://notification-sound-db.semnil.com/
+
 `notification-sound-db` is a text-first database of reproducible level and spectral
 measurements for event sounds bundled with macOS and major communication apps. It publishes
 descriptive data—including LUFS, dBTP, RMS, crest factor, timing, and frequency features—without
