@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/asset.schema.json",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "analyzed_at": "2026-08-09T04:57:54Z",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
+  "analyzed_at": "2026-08-09T06:27:23Z",
   "audio": {
     "channel_count": 1,
     "channel_layout": null,
@@ -35,6 +35,21 @@
       }
     ],
     "rms_dbfs": -20.177,
+    "rms_envelope": {
+      "frame_duration_seconds": 0.01,
+      "maximum_point_count": 400,
+      "method": "non-overlapping channel-combined RMS frames",
+      "points": [
+        {
+          "rms_dbfs": -17.685,
+          "time_seconds": 0.005
+        },
+        {
+          "rms_dbfs": -30.682,
+          "time_seconds": 0.014252
+        }
+      ]
+    },
     "sample_crest_factor_db": 13.115,
     "sample_peak_dbfs": -7.061,
     "true_peak_crest_factor_db": 13.177
@@ -55,7 +70,7 @@
     "tail_padding_seconds": 3.1,
     "true_peak_dbtp": -7.0
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sha256": "19e121add8e93421c4a6b0bc5f7e43c22f6f9701736f867b7749170338bfb779",
   "spectrum": {
     "broad_band_energy_dbfs": {

@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/asset.schema.json",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "analyzed_at": "2026-08-09T04:58:37Z",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
+  "analyzed_at": "2026-08-09T06:27:26Z",
   "audio": {
     "channel_count": 2,
     "channel_layout": null,
@@ -40,6 +40,69 @@
       }
     ],
     "rms_dbfs": -27.493,
+    "rms_envelope": {
+      "frame_duration_seconds": 0.01,
+      "maximum_point_count": 400,
+      "method": "non-overlapping channel-combined RMS frames",
+      "points": [
+        {
+          "rms_dbfs": -21.568,
+          "time_seconds": 0.005
+        },
+        {
+          "rms_dbfs": -33.92,
+          "time_seconds": 0.015
+        },
+        {
+          "rms_dbfs": -118.048,
+          "time_seconds": 0.025
+        },
+        {
+          "rms_dbfs": -117.953,
+          "time_seconds": 0.035
+        },
+        {
+          "rms_dbfs": -118.05,
+          "time_seconds": 0.045
+        },
+        {
+          "rms_dbfs": -117.858,
+          "time_seconds": 0.055
+        },
+        {
+          "rms_dbfs": -117.883,
+          "time_seconds": 0.065
+        },
+        {
+          "rms_dbfs": -118.048,
+          "time_seconds": 0.075
+        },
+        {
+          "rms_dbfs": -117.811,
+          "time_seconds": 0.085
+        },
+        {
+          "rms_dbfs": -117.085,
+          "time_seconds": 0.095
+        },
+        {
+          "rms_dbfs": -23.978,
+          "time_seconds": 0.105
+        },
+        {
+          "rms_dbfs": -19.466,
+          "time_seconds": 0.115
+        },
+        {
+          "rms_dbfs": -32.782,
+          "time_seconds": 0.125
+        },
+        {
+          "rms_dbfs": -118.033,
+          "time_seconds": 0.130159
+        }
+      ]
+    },
     "sample_crest_factor_db": 21.472,
     "sample_peak_dbfs": -6.021,
     "true_peak_crest_factor_db": 21.593
@@ -60,7 +123,7 @@
     "tail_padding_seconds": 3.1,
     "true_peak_dbtp": -5.9
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sha256": "cfef21a324955bf989d1ed0e46a45ed76e50365aef04eb84d037de6c88e3c55a",
   "spectrum": {
     "broad_band_energy_dbfs": {

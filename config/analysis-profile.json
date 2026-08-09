@@ -1,6 +1,6 @@
 {
-  "profile_id": "notification-sound-db-bs1770-v1",
-  "schema_version": "1.0.0",
+  "profile_id": "notification-sound-db-bs1770-v2",
+  "schema_version": "1.1.0",
   "decode": {
     "audio_stream": "first",
     "gain_change": false,
@@ -21,7 +21,14 @@
     "reference": "digital full scale",
     "active_frame_milliseconds": 10.0,
     "active_absolute_threshold_dbfs": -60.0,
-    "active_relative_threshold_db": -40.0
+    "active_relative_threshold_db": -40.0,
+    "envelope": {
+      "method": "non-overlapping channel-combined RMS frames",
+      "minimum_frame_milliseconds": 10.0,
+      "maximum_point_count": 400,
+      "time_position": "center of each frame",
+      "silence_representation": null
+    }
   },
   "spectrum": {
     "channel_mix": "arithmetic mean",

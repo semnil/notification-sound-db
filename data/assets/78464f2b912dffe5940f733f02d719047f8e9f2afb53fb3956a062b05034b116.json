@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/asset.schema.json",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "analyzed_at": "2026-08-09T04:58:37Z",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
+  "analyzed_at": "2026-08-09T06:27:27Z",
   "audio": {
     "channel_count": 2,
     "channel_layout": null,
@@ -40,6 +40,157 @@
       }
     ],
     "rms_dbfs": -23.117,
+    "rms_envelope": {
+      "frame_duration_seconds": 0.01,
+      "maximum_point_count": 400,
+      "method": "non-overlapping channel-combined RMS frames",
+      "points": [
+        {
+          "rms_dbfs": -10.849,
+          "time_seconds": 0.005
+        },
+        {
+          "rms_dbfs": -14.156,
+          "time_seconds": 0.015
+        },
+        {
+          "rms_dbfs": -17.017,
+          "time_seconds": 0.025
+        },
+        {
+          "rms_dbfs": -20.028,
+          "time_seconds": 0.035
+        },
+        {
+          "rms_dbfs": -22.998,
+          "time_seconds": 0.045
+        },
+        {
+          "rms_dbfs": -25.509,
+          "time_seconds": 0.055
+        },
+        {
+          "rms_dbfs": -28.144,
+          "time_seconds": 0.065
+        },
+        {
+          "rms_dbfs": -28.771,
+          "time_seconds": 0.075
+        },
+        {
+          "rms_dbfs": -27.569,
+          "time_seconds": 0.085
+        },
+        {
+          "rms_dbfs": -30.739,
+          "time_seconds": 0.095
+        },
+        {
+          "rms_dbfs": -31.603,
+          "time_seconds": 0.105
+        },
+        {
+          "rms_dbfs": -31.125,
+          "time_seconds": 0.115
+        },
+        {
+          "rms_dbfs": -26.352,
+          "time_seconds": 0.125
+        },
+        {
+          "rms_dbfs": -28.282,
+          "time_seconds": 0.135
+        },
+        {
+          "rms_dbfs": -29.266,
+          "time_seconds": 0.145
+        },
+        {
+          "rms_dbfs": -30.514,
+          "time_seconds": 0.155
+        },
+        {
+          "rms_dbfs": -39.787,
+          "time_seconds": 0.165
+        },
+        {
+          "rms_dbfs": -36.062,
+          "time_seconds": 0.175
+        },
+        {
+          "rms_dbfs": -35.198,
+          "time_seconds": 0.185
+        },
+        {
+          "rms_dbfs": -35.28,
+          "time_seconds": 0.195
+        },
+        {
+          "rms_dbfs": -35.125,
+          "time_seconds": 0.205
+        },
+        {
+          "rms_dbfs": -36.791,
+          "time_seconds": 0.215
+        },
+        {
+          "rms_dbfs": -44.255,
+          "time_seconds": 0.225
+        },
+        {
+          "rms_dbfs": -41.944,
+          "time_seconds": 0.235
+        },
+        {
+          "rms_dbfs": -43.401,
+          "time_seconds": 0.245
+        },
+        {
+          "rms_dbfs": -42.694,
+          "time_seconds": 0.255
+        },
+        {
+          "rms_dbfs": -38.184,
+          "time_seconds": 0.265
+        },
+        {
+          "rms_dbfs": -40.726,
+          "time_seconds": 0.275
+        },
+        {
+          "rms_dbfs": -45.737,
+          "time_seconds": 0.285
+        },
+        {
+          "rms_dbfs": -43.924,
+          "time_seconds": 0.295
+        },
+        {
+          "rms_dbfs": -47.337,
+          "time_seconds": 0.305
+        },
+        {
+          "rms_dbfs": -48.903,
+          "time_seconds": 0.315
+        },
+        {
+          "rms_dbfs": -54.578,
+          "time_seconds": 0.325
+        },
+        {
+          "rms_dbfs": -52.605,
+          "time_seconds": 0.335
+        },
+        {
+          "rms_dbfs": -57.181,
+          "time_seconds": 0.345
+        },
+        {
+          "rms_dbfs": -56.489,
+          "time_seconds": 0.352392
+        }
+      ]
+    },
     "sample_crest_factor_db": 17.879,
     "sample_peak_dbfs": -5.238,
     "true_peak_crest_factor_db": 17.917
@@ -60,7 +211,7 @@
     "tail_padding_seconds": 3.1,
     "true_peak_dbtp": -5.2
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sha256": "78464f2b912dffe5940f733f02d719047f8e9f2afb53fb3956a062b05034b116",
   "spectrum": {
     "broad_band_energy_dbfs": {

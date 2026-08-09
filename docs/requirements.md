@@ -89,6 +89,7 @@ Classification is source-occurrence metadata, not a measured property. Uncertain
 - Loudness range (LU)
 - True peak (dBTP) and sample peak (dBFS)
 - Full-file and active-segment RMS (dBFS)
+- A non-overlapping short-window RMS envelope (dBFS, at most 400 points)
 - Crest Factor
 - Duration, active duration, and leading/trailing silence
 - Per-channel levels and channel layout
@@ -133,6 +134,11 @@ sorting on every data column; progressive navigation from list to detail; visibl
 snapshot time; distinct values, units, provenance, and caveats; English/Japanese switching;
 responsive and keyboard-accessible operation; useful no-JS links; canonical/alternate/OG
 metadata; and JSON/CSV downloads. Do not store or play audio.
+
+Each detail page includes a responsive level-over-time SVG generated from the canonical RMS
+envelope. Use a fixed 0 to −80 dBFS display range, identify the active-segment threshold, and state
+that values below the visual floor are retained in JSON. Do not imply that the plot is LUFS or a
+waveform.
 
 On desktop, constrain long result tables to a viewport-height scroll region. When columns overflow
 horizontally, expose persistent, keyboard-accessible left/right controls in addition to the native

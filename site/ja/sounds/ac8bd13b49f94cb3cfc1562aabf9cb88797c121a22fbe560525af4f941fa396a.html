@@ -54,6 +54,41 @@
       <tr><th>True-peak crest factor</th><td>14.3 dB</td></tr>
       <tr><th>Active duration</th><td>0.559 s</td></tr>
     </tbody></table></div>
+    <div class="level-chart-card">
+      <div class="level-chart-heading">
+        <div><h3>音量レベルの推移</h3><p>RMS · 9.977 ms · 64 点</p></div>
+<span><i></i>有音判定閾値 -58.9 dBFS</span>      </div>
+      <div class="level-chart-frame">
+        <svg class="level-chart" viewBox="0 0 900 280" role="img" aria-labelledby="level-chart-title level-chart-desc">
+          <title id="level-chart-title">短時間 RMS レベルの時間推移</title>
+          <desc id="level-chart-desc">各点は重複しないフレームについて全チャンネルを合成した RMS です。−80 dBFS 未満は表示上のみグラフ下端に固定し、正本JSONには測定値を保持します。デジタル無音は null のままです。</desc>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="18.0" y2="18.0"></line>
+          <text class="chart-y-label" x="52.0" y="18.0">0</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="73.0" y2="73.0"></line>
+          <text class="chart-y-label" x="52.0" y="73.0">-20</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="128.0" y2="128.0"></line>
+          <text class="chart-y-label" x="52.0" y="128.0">-40</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="183.0" y2="183.0"></line>
+          <text class="chart-y-label" x="52.0" y="183.0">-60</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="238.0" y2="238.0"></line>
+          <text class="chart-y-label" x="52.0" y="238.0">-80</text>
+          <line class="chart-tick" x1="62.0" x2="62.0" y1="238.0" y2="243.0"></line>
+          <text class="chart-x-label" x="62.0" y="258.0">0.000</text>
+          <line class="chart-tick" x1="267.0" x2="267.0" y1="238.0" y2="243.0"></line>
+          <text class="chart-x-label" x="267.0" y="258.0">0.158</text>
+          <line class="chart-tick" x1="472.0" x2="472.0" y1="238.0" y2="243.0"></line>
+          <text class="chart-x-label" x="472.0" y="258.0">0.315</text>
+          <line class="chart-tick" x1="677.0" x2="677.0" y1="238.0" y2="243.0"></line>
+          <text class="chart-x-label" x="677.0" y="258.0">0.473</text>
+          <line class="chart-tick" x1="882.0" x2="882.0" y1="238.0" y2="243.0"></line>
+          <text class="chart-x-label" x="882.0" y="258.0">0.630</text>
+          <line class="chart-threshold" x1="62.0" x2="882.0" y1="180.09875" y2="180.09875"></line>
+<path class="chart-level-line" d="M 68.49 140.18 L 81.47 121.12 L 94.45 115.32 L 107.44 110.90 L 120.42 107.78 L 133.40 105.67 L 146.38 103.46 L 159.37 96.54 L 172.35 85.70 L 185.33 79.41 L 198.31 75.89 L 211.29 78.54 L 224.28 81.13 L 237.26 77.48 L 250.24 82.59 L 263.22 112.75 L 276.21 119.56 L 289.19 122.36 L 302.17 123.31 L 315.15 123.44 L 328.13 123.08 L 341.12 91.24 L 354.10 71.82 L 367.08 76.48 L 380.06 76.47 L 393.05 70.10 L 406.03 71.28 L 419.01 77.58 L 431.99 89.49 L 444.97 105.34 L 457.96 103.90 L 470.94 110.21 L 483.92 107.72 L 496.90 103.81 L 509.88 108.00 L 522.87 124.89 L 535.85 150.36 L 548.83 153.78 L 561.81 154.18 L 574.79 153.86 L 587.78 152.47 L 600.76 149.42 L 613.74 121.76 L 626.72 108.09 L 639.71 110.67 L 652.69 106.91 L 665.67 104.94 L 678.65 111.28 L 691.63 116.12 L 704.62 134.50 L 717.60 146.36 L 730.58 150.57 L 743.56 147.99 L 756.55 146.71 L 769.53 154.90 L 782.51 168.98 L 795.49 183.09 L 808.47 206.06 L 821.46 210.22 L 834.44 211.61 L 847.42 212.03 L 860.40 212.13 L 873.38 211.21 L 880.94 209.13"></path>          <text class="chart-y-axis-title" transform="translate(14 128.0) rotate(-90)">RMS (dBFS)</text>
+          <text class="chart-x-axis-title" x="472.0" y="276.0">時間（秒）</text>
+        </svg>
+      </div>
+      <p class="level-chart-note">各点は重複しないフレームについて全チャンネルを合成した RMS です。−80 dBFS 未満は表示上のみグラフ下端に固定し、正本JSONには測定値を保持します。デジタル無音は null のままです。</p>
+    </div>
   </section>
 
   <section aria-labelledby="spectrum-heading">
@@ -102,7 +137,7 @@
         <code>AnimationShake.aiff</code>
         <dl class="provenance-list">
           <div><dt>取得方法</dt><dd><code>local_installation</code></dd></div>
-          <div><dt>取得元確認日時</dt><dd>2026-08-09T05:11:22Z</dd></div>
+          <div><dt>取得元確認日時</dt><dd>2026-08-09T06:27:27Z</dd></div>
         </dl>
         <a href="https://support.apple.com/guide/voiceover/welcome/mac" rel="external">公式配布元 ↗</a>
       </div>
@@ -113,12 +148,12 @@
     <h2 id="technical-heading">技術メタデータ</h2>
     <div class="definition-table"><table><tbody>
       <tr><th>SHA-256</th><td><code class="wrap">ac8bd13b49f94cb3cfc1562aabf9cb88797c121a22fbe560525af4f941fa396a</code></td></tr>
-      <tr><th>測定日時</th><td>2026-08-09T04:57:52Z</td></tr>
+      <tr><th>測定日時</th><td>2026-08-09T06:27:21Z</td></tr>
       <tr><th>Codec</th><td>PCM signed 16-bit big-endian</td></tr>
       <tr><th>Sample format</th><td>s16 · 16 bit</td></tr>
       <tr><th>Sample rate</th><td>22050 Hz</td></tr>
       <tr><th>Channels</th><td>1</td></tr>
-      <tr><th>Analysis profile</th><td><code>notification-sound-db-bs1770-v1</code></td></tr>
+      <tr><th>Analysis profile</th><td><code>notification-sound-db-bs1770-v2</code></td></tr>
       <tr><th>FFmpeg</th><td>ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers</td></tr>
     </tbody></table></div>
     <p><a href="../../data/assets/ac8bd13b49f94cb3cfc1562aabf9cb88797c121a22fbe560525af4f941fa396a.json">正本JSONを見る →</a></p>

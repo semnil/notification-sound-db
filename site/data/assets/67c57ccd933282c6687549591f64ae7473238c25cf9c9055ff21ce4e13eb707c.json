@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/asset.schema.json",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "analyzed_at": "2026-08-09T04:57:56Z",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
+  "analyzed_at": "2026-08-09T06:27:25Z",
   "audio": {
     "channel_count": 2,
     "channel_layout": null,
@@ -40,6 +40,213 @@
       }
     ],
     "rms_dbfs": -16.18,
+    "rms_envelope": {
+      "frame_duration_seconds": 0.01,
+      "maximum_point_count": 400,
+      "method": "non-overlapping channel-combined RMS frames",
+      "points": [
+        {
+          "rms_dbfs": -11.06,
+          "time_seconds": 0.005
+        },
+        {
+          "rms_dbfs": -12.611,
+          "time_seconds": 0.015
+        },
+        {
+          "rms_dbfs": -14.75,
+          "time_seconds": 0.025
+        },
+        {
+          "rms_dbfs": -17.21,
+          "time_seconds": 0.035
+        },
+        {
+          "rms_dbfs": -20.161,
+          "time_seconds": 0.045
+        },
+        {
+          "rms_dbfs": -23.977,
+          "time_seconds": 0.055
+        },
+        {
+          "rms_dbfs": -12.519,
+          "time_seconds": 0.065
+        },
+        {
+          "rms_dbfs": -11.97,
+          "time_seconds": 0.075
+        },
+        {
+          "rms_dbfs": -14.023,
+          "time_seconds": 0.085
+        },
+        {
+          "rms_dbfs": -16.38,
+          "time_seconds": 0.095
+        },
+        {
+          "rms_dbfs": -19.135,
+          "time_seconds": 0.105
+        },
+        {
+          "rms_dbfs": -22.575,
+          "time_seconds": 0.115
+        },
+        {
+          "rms_dbfs": -12.183,
+          "time_seconds": 0.125
+        },
+        {
+          "rms_dbfs": -8.331,
+          "time_seconds": 0.135
+        },
+        {
+          "rms_dbfs": -10.607,
+          "time_seconds": 0.145
+        },
+        {
+          "rms_dbfs": -12.69,
+          "time_seconds": 0.155
+        },
+        {
+          "rms_dbfs": -15.413,
+          "time_seconds": 0.165
+        },
+        {
+          "rms_dbfs": -18.779,
+          "time_seconds": 0.175
+        },
+        {
+          "rms_dbfs": -15.684,
+          "time_seconds": 0.185
+        },
+        {
+          "rms_dbfs": -8.263,
+          "time_seconds": 0.195
+        },
+        {
+          "rms_dbfs": -9.971,
+          "time_seconds": 0.205
+        },
+        {
+          "rms_dbfs": -12.183,
+          "time_seconds": 0.215
+        },
+        {
+          "rms_dbfs": -14.819,
+          "time_seconds": 0.225
+        },
+        {
+          "rms_dbfs": -18.114,
+          "time_seconds": 0.235
+        },
+        {
+          "rms_dbfs": -22.003,
+          "time_seconds": 0.245
+        },
+        {
+          "rms_dbfs": -28.78,
+          "time_seconds": 0.255
+        },
+        {
+          "rms_dbfs": -45.789,
+          "time_seconds": 0.265
+        },
+        {
+          "rms_dbfs": -99.56,
+          "time_seconds": 0.275
+        },
+        {
+          "rms_dbfs": -102.599,
+          "time_seconds": 0.285
+        },
+        {
+          "rms_dbfs": -105.747,
+          "time_seconds": 0.295
+        },
+        {
+          "rms_dbfs": -109.012,
+          "time_seconds": 0.305
+        },
+        {
+          "rms_dbfs": -112.724,
+          "time_seconds": 0.315
+        },
+        {
+          "rms_dbfs": -116.169,
+          "time_seconds": 0.325
+        },
+        {
+          "rms_dbfs": -119.698,
+          "time_seconds": 0.335
+        },
+        {
+          "rms_dbfs": -125.899,
+          "time_seconds": 0.345
+        },
+        {
+          "rms_dbfs": -126.829,
+          "time_seconds": 0.355
+        },
+        {
+          "rms_dbfs": -135.562,
+          "time_seconds": 0.365
+        },
+        {
+          "rms_dbfs": -138.275,
+          "time_seconds": 0.375
+        },
+        {
+          "rms_dbfs": -138.284,
+          "time_seconds": 0.385
+        },
+        {
+          "rms_dbfs": -137.934,
+          "time_seconds": 0.395
+        },
+        {
+          "rms_dbfs": -137.91,
+          "time_seconds": 0.405
+        },
+        {
+          "rms_dbfs": -138.465,
+          "time_seconds": 0.415
+        },
+        {
+          "rms_dbfs": -138.007,
+          "time_seconds": 0.425
+        },
+        {
+          "rms_dbfs": -138.406,
+          "time_seconds": 0.435
+        },
+        {
+          "rms_dbfs": -137.705,
+          "time_seconds": 0.445
+        },
+        {
+          "rms_dbfs": -138.926,
+          "time_seconds": 0.455
+        },
+        {
+          "rms_dbfs": -138.327,
+          "time_seconds": 0.465
+        },
+        {
+          "rms_dbfs": -137.618,
+          "time_seconds": 0.475
+        },
+        {
+          "rms_dbfs": -138.336,
+          "time_seconds": 0.485
+        },
+        {
+          "rms_dbfs": -139.366,
+          "time_seconds": 0.490365
+        }
+      ]
+    },
     "sample_crest_factor_db": 14.98,
     "sample_peak_dbfs": -1.2,
     "true_peak_crest_factor_db": 14.98
@@ -59,7 +266,7 @@
     "tail_padding_seconds": 3.1,
     "true_peak_dbtp": -1.2
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sha256": "67c57ccd933282c6687549591f64ae7473238c25cf9c9055ff21ce4e13eb707c",
   "spectrum": {
     "broad_band_energy_dbfs": {

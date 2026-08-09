@@ -7,7 +7,7 @@
     "method": "local_installation",
     "official_url": "https://support.apple.com/accessibility"
   },
-  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
   "application": {
     "build": "25G76",
     "bundle_id": null,
@@ -24,14 +24,14 @@
     "en": "macOS accessibility media event sounds",
     "ja": "macOSアクセシビリティメディアイベント音"
   },
-  "observed_at": "2026-08-09T05:11:22Z",
+  "observed_at": "2026-08-09T06:27:27Z",
   "platform": {
     "architecture": "arm64",
     "build": "25G76",
     "id": "macos",
     "version": "26.6.1"
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sounds": [
     {
       "asset_sha256": "7b15aa9504dbcdd204c04908643d8e8fdcebd20f8a0399523f8952aac59ce8a5",

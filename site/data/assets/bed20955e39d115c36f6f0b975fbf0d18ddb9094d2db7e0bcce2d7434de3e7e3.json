@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/asset.schema.json",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "analyzed_at": "2026-08-09T04:53:22Z",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
+  "analyzed_at": "2026-08-09T06:27:28Z",
   "audio": {
     "channel_count": 2,
     "channel_layout": null,
@@ -40,6 +40,85 @@
       }
     ],
     "rms_dbfs": -26.692,
+    "rms_envelope": {
+      "frame_duration_seconds": 0.01,
+      "maximum_point_count": 400,
+      "method": "non-overlapping channel-combined RMS frames",
+      "points": [
+        {
+          "rms_dbfs": -44.98,
+          "time_seconds": 0.005
+        },
+        {
+          "rms_dbfs": -41.824,
+          "time_seconds": 0.015
+        },
+        {
+          "rms_dbfs": -44.746,
+          "time_seconds": 0.025
+        },
+        {
+          "rms_dbfs": -49.765,
+          "time_seconds": 0.035
+        },
+        {
+          "rms_dbfs": -55.753,
+          "time_seconds": 0.045
+        },
+        {
+          "rms_dbfs": -32.747,
+          "time_seconds": 0.055
+        },
+        {
+          "rms_dbfs": -24.449,
+          "time_seconds": 0.065
+        },
+        {
+          "rms_dbfs": -29.651,
+          "time_seconds": 0.075
+        },
+        {
+          "rms_dbfs": -36.212,
+          "time_seconds": 0.085
+        },
+        {
+          "rms_dbfs": -43.275,
+          "time_seconds": 0.095
+        },
+        {
+          "rms_dbfs": -50.885,
+          "time_seconds": 0.105
+        },
+        {
+          "rms_dbfs": -18.312,
+          "time_seconds": 0.115
+        },
+        {
+          "rms_dbfs": -19.234,
+          "time_seconds": 0.125
+        },
+        {
+          "rms_dbfs": -23.228,
+          "time_seconds": 0.135
+        },
+        {
+          "rms_dbfs": -32.734,
+          "time_seconds": 0.145
+        },
+        {
+          "rms_dbfs": -44.306,
+          "time_seconds": 0.155
+        },
+        {
+          "rms_dbfs": -54.11,
+          "time_seconds": 0.165
+        },
+        {
+          "rms_dbfs": -71.949,
+          "time_seconds": 0.172902
+        }
+      ]
+    },
     "sample_crest_factor_db": 15.927,
     "sample_peak_dbfs": -10.766,
     "true_peak_crest_factor_db": 15.992
@@ -60,7 +139,7 @@
     "tail_padding_seconds": 3.1,
     "true_peak_dbtp": -10.7
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sha256": "bed20955e39d115c36f6f0b975fbf0d18ddb9094d2db7e0bcce2d7434de3e7e3",
   "spectrum": {
     "broad_band_energy_dbfs": {

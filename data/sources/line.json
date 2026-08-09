@@ -7,7 +7,7 @@
     "method": "local_installation",
     "official_url": "https://line.me/update"
   },
-  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
   "application": {
     "build": "3937",
     "bundle_id": "jp.naver.line.mac",
@@ -24,14 +24,14 @@
     "en": "LINE",
     "ja": "LINE"
   },
-  "observed_at": "2026-08-09T05:56:25Z",
+  "observed_at": "2026-08-09T06:27:32Z",
   "platform": {
     "architecture": "arm64",
     "build": "25G76",
     "id": "macos",
     "version": "26.6.1"
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sounds": [
     {
       "asset_sha256": "1ab8efa4c9bdb71b099aec3d58ebbedd08da667c85bcce57bdf997e37a3b1dba",

@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/asset.schema.json",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "analyzed_at": "2026-08-09T04:58:36Z",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
+  "analyzed_at": "2026-08-09T06:27:26Z",
   "audio": {
     "channel_count": 2,
     "channel_layout": null,
@@ -40,6 +40,69 @@
       }
     ],
     "rms_dbfs": -32.4,
+    "rms_envelope": {
+      "frame_duration_seconds": 0.01,
+      "maximum_point_count": 400,
+      "method": "non-overlapping channel-combined RMS frames",
+      "points": [
+        {
+          "rms_dbfs": -36.426,
+          "time_seconds": 0.005
+        },
+        {
+          "rms_dbfs": -25.275,
+          "time_seconds": 0.015
+        },
+        {
+          "rms_dbfs": -28.034,
+          "time_seconds": 0.025
+        },
+        {
+          "rms_dbfs": -29.527,
+          "time_seconds": 0.035
+        },
+        {
+          "rms_dbfs": -30.974,
+          "time_seconds": 0.045
+        },
+        {
+          "rms_dbfs": -32.48,
+          "time_seconds": 0.055
+        },
+        {
+          "rms_dbfs": -33.847,
+          "time_seconds": 0.065
+        },
+        {
+          "rms_dbfs": -44.66,
+          "time_seconds": 0.075
+        },
+        {
+          "rms_dbfs": -71.922,
+          "time_seconds": 0.085
+        },
+        {
+          "rms_dbfs": -77.234,
+          "time_seconds": 0.095
+        },
+        {
+          "rms_dbfs": -75.813,
+          "time_seconds": 0.105
+        },
+        {
+          "rms_dbfs": -76.298,
+          "time_seconds": 0.115
+        },
+        {
+          "rms_dbfs": -77.017,
+          "time_seconds": 0.125
+        },
+        {
+          "rms_dbfs": -82.624,
+          "time_seconds": 0.131859
+        }
+      ]
+    },
     "sample_crest_factor_db": 16.479,
     "sample_peak_dbfs": -15.921,
     "true_peak_crest_factor_db": 16.5
@@ -60,7 +123,7 @@
     "tail_padding_seconds": 3.1,
     "true_peak_dbtp": -15.9
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sha256": "a0fcbdeb6bfdcb8f8b5e3a7c0aa87287189d85d0729a9cb1486f25e3a170338b",
   "spectrum": {
     "broad_band_energy_dbfs": {

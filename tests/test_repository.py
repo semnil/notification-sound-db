@@ -7,6 +7,8 @@ from notification_sound_db.audio import (
     ACTIVE_ABSOLUTE_THRESHOLD_DBFS,
     ACTIVE_FRAME_MS,
     ACTIVE_RELATIVE_THRESHOLD_DB,
+    ENVELOPE_MAX_POINTS,
+    ENVELOPE_MIN_FRAME_MS,
 )
 from notification_sound_db.loudness import (
     MOMENTARY_WINDOW_SECONDS,
@@ -51,6 +53,11 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert 'src="../assets/language.js"' in japanese
     assert 'hreflang="ja"' in english
     assert 'hreflang="en"' in japanese
+    detail_path = next((destination / "sounds").glob("*.html"))
+    detail = detail_path.read_text(encoding="utf-8")
+    assert 'class="level-chart"' in detail
+    assert 'class="chart-level-line"' in detail
+    assert "Short-window RMS level over time" in detail
 
 
 def test_methodology_language_switch_keeps_current_page(tmp_path: Path) -> None:
@@ -66,6 +73,8 @@ def test_analysis_profile_matches_implementation() -> None:
     assert profile["rms"]["active_frame_milliseconds"] == ACTIVE_FRAME_MS
     assert profile["rms"]["active_absolute_threshold_dbfs"] == ACTIVE_ABSOLUTE_THRESHOLD_DBFS
     assert profile["rms"]["active_relative_threshold_db"] == ACTIVE_RELATIVE_THRESHOLD_DB
+    assert profile["rms"]["envelope"]["minimum_frame_milliseconds"] == ENVELOPE_MIN_FRAME_MS
+    assert profile["rms"]["envelope"]["maximum_point_count"] == ENVELOPE_MAX_POINTS
     assert profile["loudness"]["momentary_window_seconds"] == MOMENTARY_WINDOW_SECONDS
     assert profile["loudness"]["short_term_window_seconds"] == SHORT_TERM_WINDOW_SECONDS
     assert profile["loudness"]["tail_padding_seconds"] == TAIL_PADDING_SECONDS

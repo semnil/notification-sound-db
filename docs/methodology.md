@@ -60,6 +60,19 @@ The active segment extends from the start of the first frame at or above the thr
 of the last such frame. Active RMS, start/end, duration, and leading/trailing silence are stored.
 This detector is a project-defined descriptive operation, not a loudness-gating standard.
 
+## RMS level envelope
+
+The level-over-time plot uses non-overlapping frames and combines every sample and channel with the
+same RMS equation as the full-file value. Frames are at least 10 ms. For a longer source, the frame
+size grows to keep the series at or below 400 points. Each point is placed at the center of its
+frame; the final frame uses only the remaining source samples and is not padded with silence.
+
+Canonical JSON stores each point's time in seconds and RMS in dBFS. Digital silence remains `null`.
+The site plots a fixed range from 0 to −80 dBFS to make detail pages visually comparable. Values
+below −80 dBFS are pinned to the lower edge only while drawing the chart and are not truncated in
+the data. This is an RMS envelope, not a waveform, LUFS time series, or reconstruction of the
+original audio.
+
 ## Spectral characteristics
 
 Channels are reduced by arithmetic mean for descriptive spectral analysis. A Welch power spectral

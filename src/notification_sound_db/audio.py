@@ -14,6 +14,8 @@ DB_FLOOR = -200.0
 ACTIVE_FRAME_MS = 10.0
 ACTIVE_ABSOLUTE_THRESHOLD_DBFS = -60.0
 ACTIVE_RELATIVE_THRESHOLD_DB = -40.0
+ENVELOPE_MIN_FRAME_MS = 10.0
+ENVELOPE_MAX_POINTS = 400
 
 
 @dataclass(frozen=True)
@@ -127,6 +129,33 @@ def _active_bounds(samples: np.ndarray, sample_rate: int) -> tuple[int, int, flo
     return start, end, threshold_db
 
 
+def _rms_envelope(samples: np.ndarray, sample_rate: int) -> dict:
+    """Return a compact, non-overlapping short-window RMS envelope.
+
+    The frame is at least 10 ms and grows only when required to keep the
+    canonical record at or below ENVELOPE_MAX_POINTS. The last frame is not
+    zero-padded, so its value describes only source samples.
+    """
+    minimum_frame_size = max(1, round(sample_rate * ENVELOPE_MIN_FRAME_MS / 1000.0))
+    frame_size = max(minimum_frame_size, math.ceil(samples.shape[0] / ENVELOPE_MAX_POINTS))
+    points = []
+    for start in range(0, samples.shape[0], frame_size):
+        end = min(start + frame_size, samples.shape[0])
+        value = linear_to_db(_rms(samples[start:end]))
+        points.append(
+            {
+                "time_seconds": round((start + end) / (2.0 * sample_rate), 6),
+                "rms_dbfs": _round_nullable(value),
+            }
+        )
+    return {
+        "method": "non-overlapping channel-combined RMS frames",
+        "frame_duration_seconds": round(frame_size / sample_rate, 9),
+        "maximum_point_count": ENVELOPE_MAX_POINTS,
+        "points": points,
+    }
+
+
 def compute_time_metrics(audio: DecodedAudio) -> dict:
     samples = audio.samples
     channel_rms = [_rms(samples[:, index]) for index in range(audio.channels)]
@@ -177,6 +206,7 @@ def compute_time_metrics(audio: DecodedAudio) -> dict:
             for index in range(audio.channels)
         ],
         "active_segment": active,
+        "rms_envelope": _rms_envelope(samples, audio.sample_rate),
     }
 
 

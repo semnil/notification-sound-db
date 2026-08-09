@@ -28,6 +28,35 @@
       <tr><th>True-peak crest factor</th><td>{{ asset.levels.true_peak_crest_factor_db|metric('dB') }}</td></tr>
       <tr><th>Active duration</th><td>{{ asset.levels.active_segment.duration_seconds|metric('s', 3) }}</td></tr>
     </tbody></table></div>
+    <div class="level-chart-card">
+      <div class="level-chart-heading">
+        <div><h3>{{ text.level_over_time }}</h3><p>RMS · {{ level_chart.frame_milliseconds|round(3) }} ms · {{ level_chart.point_count }} {{ text.chart_points }}</p></div>
+        {% if level_chart.threshold_dbfs is not none %}<span><i></i>{{ text.active_threshold }} {{ level_chart.threshold_dbfs|metric('dBFS') }}</span>{% endif %}
+      </div>
+      <div class="level-chart-frame">
+        <svg class="level-chart" viewBox="{{ level_chart.view_box }}" role="img" aria-labelledby="level-chart-title level-chart-desc">
+          <title id="level-chart-title">{{ text.level_chart_title }}</title>
+          <desc id="level-chart-desc">{{ text.level_chart_description }}</desc>
+          {% for tick in level_chart.y_ticks %}
+          <line class="chart-grid" x1="{{ level_chart.left }}" x2="{{ level_chart.right }}" y1="{{ tick.y }}" y2="{{ tick.y }}"></line>
+          <text class="chart-y-label" x="{{ level_chart.left - 10 }}" y="{{ tick.y }}">{{ tick.label }}</text>
+          {% endfor %}
+          {% for tick in level_chart.x_ticks %}
+          <line class="chart-tick" x1="{{ tick.x }}" x2="{{ tick.x }}" y1="{{ level_chart.bottom }}" y2="{{ level_chart.bottom + 5 }}"></line>
+          <text class="chart-x-label" x="{{ tick.x }}" y="{{ level_chart.bottom + 20 }}">{{ tick.label }}</text>
+          {% endfor %}
+          {% if level_chart.threshold_y is not none %}
+          <line class="chart-threshold" x1="{{ level_chart.left }}" x2="{{ level_chart.right }}" y1="{{ level_chart.threshold_y }}" y2="{{ level_chart.threshold_y }}"></line>
+          {% endif %}
+          {% for segment in level_chart.segments %}<path class="chart-level-line" d="{{ segment }}"></path>{% endfor %}
+          {% for dot in level_chart.dots %}<circle class="chart-level-dot" cx="{{ dot.x }}" cy="{{ dot.y }}" r="3"></circle>{% endfor %}
+          <text class="chart-y-axis-title" transform="translate(14 {{ (level_chart.top + level_chart.bottom) / 2 }}) rotate(-90)">RMS (dBFS)</text>
+          <text class="chart-x-axis-title" x="{{ (level_chart.left + level_chart.right) / 2 }}" y="{{ level_chart.bottom + 38 }}">{{ text.time_axis }}</text>
+        </svg>
+        {% if not level_chart.has_values %}<p class="level-chart-empty">{{ text.level_chart_empty }}</p>{% endif %}
+      </div>
+      <p class="level-chart-note">{{ text.level_chart_description }}</p>
+    </div>
   </section>
 
   <section aria-labelledby="spectrum-heading">

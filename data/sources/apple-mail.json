@@ -7,7 +7,7 @@
     "method": "local_installation",
     "official_url": "https://support.apple.com/guide/mail/welcome/mac"
   },
-  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
   "application": {
     "build": "3864.700.51.1.1",
     "bundle_id": "com.apple.mail",
@@ -24,14 +24,14 @@
     "en": "Mail",
     "ja": "メール"
   },
-  "observed_at": "2026-08-09T05:11:22Z",
+  "observed_at": "2026-08-09T06:27:28Z",
   "platform": {
     "architecture": "arm64",
     "build": "25G76",
     "id": "macos",
     "version": "26.6.1"
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sounds": [
     {
       "asset_sha256": "2e11b4c0b2112fec4e1a817922783cca4470b69273011f83a50bc44ababe71e3",

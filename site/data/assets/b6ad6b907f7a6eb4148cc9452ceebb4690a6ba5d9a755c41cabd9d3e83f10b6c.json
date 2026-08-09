@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/asset.schema.json",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "analyzed_at": "2026-08-09T04:57:53Z",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
+  "analyzed_at": "2026-08-09T06:27:22Z",
   "audio": {
     "channel_count": 2,
     "channel_layout": null,
@@ -40,6 +40,33 @@
       }
     ],
     "rms_dbfs": -32.576,
+    "rms_envelope": {
+      "frame_duration_seconds": 0.01,
+      "maximum_point_count": 400,
+      "method": "non-overlapping channel-combined RMS frames",
+      "points": [
+        {
+          "rms_dbfs": -27.268,
+          "time_seconds": 0.005
+        },
+        {
+          "rms_dbfs": -34.169,
+          "time_seconds": 0.015
+        },
+        {
+          "rms_dbfs": -49.977,
+          "time_seconds": 0.025
+        },
+        {
+          "rms_dbfs": -66.286,
+          "time_seconds": 0.035
+        },
+        {
+          "rms_dbfs": -116.822,
+          "time_seconds": 0.040533
+        }
+      ]
+    },
     "sample_crest_factor_db": 17.519,
     "sample_peak_dbfs": -15.057,
     "true_peak_crest_factor_db": 17.776
@@ -60,7 +87,7 @@
     "tail_padding_seconds": 3.1,
     "true_peak_dbtp": -14.8
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sha256": "b6ad6b907f7a6eb4148cc9452ceebb4690a6ba5d9a755c41cabd9d3e83f10b6c",
   "spectrum": {
     "broad_band_energy_dbfs": {

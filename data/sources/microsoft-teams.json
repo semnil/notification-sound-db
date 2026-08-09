@@ -7,7 +7,7 @@
     "method": "official_distribution",
     "official_url": "https://www.microsoft.com/microsoft-teams/download-app"
   },
-  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
   "application": {
     "build": "26198.202.4929.7171",
     "bundle_id": "com.microsoft.teams2",
@@ -24,14 +24,14 @@
     "en": "Microsoft Teams",
     "ja": "Microsoft Teams"
   },
-  "observed_at": "2026-08-09T05:08:29Z",
+  "observed_at": "2026-08-09T06:29:46Z",
   "platform": {
     "architecture": "arm64",
     "build": "25G76",
     "id": "macos",
     "version": "26.6.1"
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sounds": [
     {
       "asset_sha256": "9950da5651418985d2cd4391945277894ea1768c49e523d76cc137bbba44954b",

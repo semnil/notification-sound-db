@@ -7,7 +7,7 @@
     "method": "local_installation",
     "official_url": "https://support.apple.com/macos"
   },
-  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
   "application": {
     "build": "25G76",
     "bundle_id": null,
@@ -24,14 +24,14 @@
     "en": "macOS system sounds",
     "ja": "macOSシステムサウンド"
   },
-  "observed_at": "2026-08-09T05:11:22Z",
+  "observed_at": "2026-08-09T06:27:14Z",
   "platform": {
     "architecture": "arm64",
     "build": "25G76",
     "id": "macos",
     "version": "26.6.1"
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sounds": [
     {
       "asset_sha256": "c41b33729b4d7f895073578adb7192bc41571ccec855c6b12d8127a464b05445",

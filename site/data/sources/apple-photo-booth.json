@@ -7,7 +7,7 @@
     "method": "local_installation",
     "official_url": "https://support.apple.com/guide/photo-booth/welcome/mac"
   },
-  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
   "application": {
     "build": "1177",
     "bundle_id": "com.apple.PhotoBooth",
@@ -24,14 +24,14 @@
     "en": "Photo Booth",
     "ja": "Photo Booth"
   },
-  "observed_at": "2026-08-09T05:11:22Z",
+  "observed_at": "2026-08-09T06:27:28Z",
   "platform": {
     "architecture": "arm64",
     "build": "25G76",
     "id": "macos",
     "version": "26.6.1"
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sounds": [
     {
       "asset_sha256": "1ced2ef47ae6dc93f65d39f23941f1ec5d0543dad48fa7368bd884776e8bff3c",

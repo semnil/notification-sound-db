@@ -1,7 +1,7 @@
 {
   "$schema": "../schemas/asset.schema.json",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "analyzed_at": "2026-08-09T04:57:53Z",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
+  "analyzed_at": "2026-08-09T06:27:22Z",
   "audio": {
     "channel_count": 2,
     "channel_layout": null,
@@ -40,6 +40,65 @@
       }
     ],
     "rms_dbfs": -27.343,
+    "rms_envelope": {
+      "frame_duration_seconds": 0.01,
+      "maximum_point_count": 400,
+      "method": "non-overlapping channel-combined RMS frames",
+      "points": [
+        {
+          "rms_dbfs": -85.065,
+          "time_seconds": 0.005
+        },
+        {
+          "rms_dbfs": -47.464,
+          "time_seconds": 0.015
+        },
+        {
+          "rms_dbfs": -36.258,
+          "time_seconds": 0.025
+        },
+        {
+          "rms_dbfs": -29.565,
+          "time_seconds": 0.035
+        },
+        {
+          "rms_dbfs": -26.503,
+          "time_seconds": 0.045
+        },
+        {
+          "rms_dbfs": -23.635,
+          "time_seconds": 0.055
+        },
+        {
+          "rms_dbfs": -21.028,
+          "time_seconds": 0.065
+        },
+        {
+          "rms_dbfs": -21.678,
+          "time_seconds": 0.075
+        },
+        {
+          "rms_dbfs": -42.667,
+          "time_seconds": 0.085
+        },
+        {
+          "rms_dbfs": -57.481,
+          "time_seconds": 0.095
+        },
+        {
+          "rms_dbfs": -70.211,
+          "time_seconds": 0.105
+        },
+        {
+          "rms_dbfs": -87.837,
+          "time_seconds": 0.115
+        },
+        {
+          "rms_dbfs": -117.365,
+          "time_seconds": 0.121485
+        }
+      ]
+    },
     "sample_crest_factor_db": 16.833,
     "sample_peak_dbfs": -10.51,
     "true_peak_crest_factor_db": 16.843
@@ -60,7 +119,7 @@
     "tail_padding_seconds": 3.1,
     "true_peak_dbtp": -10.5
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sha256": "ec899298467311434f320e8965f1f5022eb580822139a109f84eb1f68e4d39ec",
   "spectrum": {
     "broad_band_energy_dbfs": {

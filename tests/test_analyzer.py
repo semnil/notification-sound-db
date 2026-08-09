@@ -18,5 +18,7 @@ def test_analyzer_measures_known_sine(sine_wave) -> None:
     assert result["audio"]["channel_count"] == 1
     assert result["levels"]["sample_peak_dbfs"] == pytest.approx(-6.0, abs=0.02)
     assert result["levels"]["rms_dbfs"] == pytest.approx(-9.01, abs=0.03)
+    assert 1 <= len(result["levels"]["rms_envelope"]["points"]) <= 400
+    assert result["levels"]["rms_envelope"]["points"][0]["time_seconds"] > 0
     assert result["loudness"]["integrated_lufs"] is not None
     assert result["loudness"]["true_peak_dbtp"] == pytest.approx(-6.0, abs=0.2)

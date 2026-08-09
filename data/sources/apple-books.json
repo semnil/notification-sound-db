@@ -7,7 +7,7 @@
     "method": "local_installation",
     "official_url": "https://support.apple.com/guide/books/welcome/mac"
   },
-  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
   "application": {
     "build": "6570",
     "bundle_id": "com.apple.iBooksX",
@@ -24,14 +24,14 @@
     "en": "Books",
     "ja": "ブック"
   },
-  "observed_at": "2026-08-09T05:11:22Z",
+  "observed_at": "2026-08-09T06:27:28Z",
   "platform": {
     "architecture": "arm64",
     "build": "25G76",
     "id": "macos",
     "version": "26.6.1"
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sounds": [
     {
       "asset_sha256": "5d7a7e8a867e96952300ab764d86854689a17d1f09740a593e6cd91fecc47356",

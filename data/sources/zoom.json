@@ -7,7 +7,7 @@
     "method": "official_distribution",
     "official_url": "https://zoom.us/download"
   },
-  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analysis_profile": "notification-sound-db-bs1770-v2",
   "application": {
     "build": "7.1.5.84650",
     "bundle_id": "us.zoom.xos",
@@ -24,14 +24,14 @@
     "en": "Zoom Workplace",
     "ja": "Zoom Workplace"
   },
-  "observed_at": "2026-08-09T05:08:30Z",
+  "observed_at": "2026-08-09T06:29:47Z",
   "platform": {
     "architecture": "arm64",
     "build": "25G76",
     "id": "macos",
     "version": "26.6.1"
   },
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "sounds": [
     {
       "asset_sha256": "525c988dbd53f27e86eccac47d36a64f101bddd70bfbe041d41dff43d6c852a3",

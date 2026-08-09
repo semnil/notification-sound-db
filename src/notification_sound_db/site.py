@@ -68,6 +68,17 @@ TEXT = {
         "back": "Back to all measurements",
         "identity": "Identity and provenance",
         "metrics": "Level measurements",
+        "level_over_time": "Level over time",
+        "level_chart_title": "Short-window RMS level over time",
+        "level_chart_description": (
+            "Each point is the channel-combined RMS of a non-overlapping frame. "
+            "Values below −80 dBFS are pinned to the chart floor for display; the canonical "
+            "JSON retains measured values, and digital silence remains null."
+        ),
+        "level_chart_empty": "No finite RMS values are available for this source.",
+        "chart_points": "points",
+        "active_threshold": "Active threshold",
+        "time_axis": "Time (seconds)",
         "spectrum": "Frequency characteristics",
         "occurrences": "Current source occurrences",
         "technical": "Technical metadata",
@@ -137,6 +148,17 @@ TEXT = {
         "back": "測定一覧へ戻る",
         "identity": "識別情報と来歴",
         "metrics": "音量測定値",
+        "level_over_time": "音量レベルの推移",
+        "level_chart_title": "短時間 RMS レベルの時間推移",
+        "level_chart_description": (
+            "各点は重複しないフレームについて全チャンネルを合成した RMS です。"
+            "−80 dBFS 未満は表示上のみグラフ下端に固定し、正本JSONには測定値を保持します。"
+            "デジタル無音は null のままです。"
+        ),
+        "level_chart_empty": "有限の RMS 値がないため、推移線を表示できません。",
+        "chart_points": "点",
+        "active_threshold": "有音判定閾値",
+        "time_axis": "時間（秒）",
         "spectrum": "周波数特性",
         "occurrences": "現行取得元での参照",
         "technical": "技術メタデータ",
@@ -182,6 +204,86 @@ def _site_url(path: str) -> str | None:
 
 def _alternate_urls(english_path: str, japanese_path: str) -> dict[str, str | None]:
     return {"en": _site_url(english_path), "ja": _site_url(japanese_path)}
+
+
+def _level_chart(asset: dict) -> dict:
+    """Map a canonical RMS envelope to responsive SVG coordinates."""
+    width = 900.0
+    height = 280.0
+    left = 62.0
+    right = 18.0
+    top = 18.0
+    bottom = 42.0
+    plot_width = width - left - right
+    plot_height = height - top - bottom
+    chart_floor = -80.0
+    duration = asset["audio"]["duration_seconds"]
+    envelope = asset["levels"]["rms_envelope"]
+
+    def x_position(seconds: float) -> float:
+        return left + min(max(seconds / duration, 0.0), 1.0) * plot_width
+
+    def y_position(dbfs: float) -> float:
+        displayed = min(0.0, max(chart_floor, dbfs))
+        return top + (0.0 - displayed) / (0.0 - chart_floor) * plot_height
+
+    segments: list[str] = []
+    dots: list[dict[str, float]] = []
+    current: list[tuple[float, float]] = []
+
+    def finish_segment() -> None:
+        if len(current) == 1:
+            dots.append({"x": current[0][0], "y": current[0][1]})
+        elif current:
+            segments.append(
+                " ".join(
+                    f"{'M' if index == 0 else 'L'} {x:.2f} {y:.2f}"
+                    for index, (x, y) in enumerate(current)
+                )
+            )
+        current.clear()
+
+    for point in envelope["points"]:
+        value = point["rms_dbfs"]
+        if value is None:
+            finish_segment()
+            continue
+        current.append((x_position(point["time_seconds"]), y_position(value)))
+    finish_segment()
+
+    threshold = asset["levels"]["active_segment"]["threshold_dbfs"]
+    threshold_y = y_position(threshold) if threshold is not None else None
+    if duration < 1:
+        tick_digits = 3
+    elif duration < 10:
+        tick_digits = 2
+    else:
+        tick_digits = 1
+    return {
+        "view_box": f"0 0 {width:.0f} {height:.0f}",
+        "left": left,
+        "right": width - right,
+        "top": top,
+        "bottom": height - bottom,
+        "segments": segments,
+        "dots": dots,
+        "has_values": bool(segments or dots),
+        "threshold_y": threshold_y,
+        "threshold_dbfs": threshold,
+        "frame_milliseconds": envelope["frame_duration_seconds"] * 1000.0,
+        "point_count": len(envelope["points"]),
+        "y_ticks": [
+            {"label": f"{value}", "y": y_position(float(value))}
+            for value in (0, -20, -40, -60, -80)
+        ],
+        "x_ticks": [
+            {
+                "label": f"{duration * fraction:.{tick_digits}f}",
+                "x": x_position(duration * fraction),
+            }
+            for fraction in (0.0, 0.25, 0.5, 0.75, 1.0)
+        ],
+    }
 
 
 def _environment(repository: Path) -> Environment:
@@ -364,6 +466,7 @@ def build_site(repository: Path, output: Path | None = None) -> Path:
                 text=TEXT[language],
                 event_names=EVENT_NAMES,
                 asset=asset,
+                level_chart=_level_chart(asset),
                 occurrences=occurrences[digest],
                 paths=detail_paths,
                 canonical=_site_url(canonical_path),
