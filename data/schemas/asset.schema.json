@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semnil.github.io/notification-sound-db/schemas/asset.schema.json",
+  "title": "Notification sound measurement asset",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sha256",
+    "analysis_profile",
+    "analyzed_at",
+    "file",
+    "audio",
+    "loudness",
+    "levels",
+    "spectrum",
+    "toolchain"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "analysis_profile": {"type": "string", "minLength": 1},
+    "analyzed_at": {"type": "string", "format": "date-time"},
+    "file": {
+      "type": "object",
+      "required": [
+        "byte_size",
+        "extension",
+        "container_format",
+        "codec_name",
+        "codec_long_name",
+        "sample_format",
+        "bits_per_sample"
+      ],
+      "properties": {
+        "byte_size": {"type": "integer", "minimum": 1},
+        "extension": {"type": "string", "pattern": "^\\.[a-z0-9]+$"},
+        "container_format": {"$ref": "#/$defs/nullableString"},
+        "codec_name": {"$ref": "#/$defs/nullableString"},
+        "codec_long_name": {"$ref": "#/$defs/nullableString"},
+        "sample_format": {"$ref": "#/$defs/nullableString"},
+        "bits_per_sample": {"type": ["integer", "null"], "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "audio": {
+      "type": "object",
+      "required": ["duration_seconds", "sample_rate_hz", "channel_count", "channel_layout"],
+      "properties": {
+        "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "sample_rate_hz": {"type": "integer", "minimum": 1},
+        "channel_count": {"type": "integer", "minimum": 1},
+        "channel_layout": {"$ref": "#/$defs/nullableString"}
+      },
+      "additionalProperties": false
+    },
+    "loudness": {
+      "type": "object",
+      "required": [
+        "standard",
+        "integrated_lufs",
+        "maximum_momentary_lufs",
+        "maximum_short_term_lufs",
+        "loudness_range_lu",
+        "true_peak_dbtp",
+        "momentary_window_seconds",
+        "short_term_window_seconds",
+        "tail_padding_seconds",
+        "notes"
+      ],
+      "properties": {
+        "standard": {"type": "string"},
+        "integrated_lufs": {"$ref": "#/$defs/nullableNumber"},
+        "maximum_momentary_lufs": {"$ref": "#/$defs/nullableNumber"},
+        "maximum_short_term_lufs": {"$ref": "#/$defs/nullableNumber"},
+        "loudness_range_lu": {"$ref": "#/$defs/nullableNumber"},
+        "true_peak_dbtp": {"$ref": "#/$defs/nullableNumber"},
+        "momentary_window_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "short_term_window_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "tail_padding_seconds": {"type": "number", "minimum": 0},
+        "notes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "levels": {
+      "type": "object",
+      "required": [
+        "rms_dbfs",
+        "sample_peak_dbfs",
+        "sample_crest_factor_db",
+        "true_peak_crest_factor_db",
+        "channels",
+        "active_segment"
+      ],
+      "properties": {
+        "rms_dbfs": {"$ref": "#/$defs/nullableNumber"},
+        "sample_peak_dbfs": {"$ref": "#/$defs/nullableNumber"},
+        "sample_crest_factor_db": {"$ref": "#/$defs/nullableNumber"},
+        "true_peak_crest_factor_db": {"$ref": "#/$defs/nullableNumber"},
+        "channels": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["index", "rms_dbfs", "sample_peak_dbfs"],
+            "properties": {
+              "index": {"type": "integer", "minimum": 0},
+              "rms_dbfs": {"$ref": "#/$defs/nullableNumber"},
+              "sample_peak_dbfs": {"$ref": "#/$defs/nullableNumber"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "active_segment": {
+          "type": "object",
+          "required": [
+            "threshold_dbfs",
+            "start_seconds",
+            "end_seconds",
+            "duration_seconds",
+            "leading_silence_seconds",
+            "trailing_silence_seconds",
+            "rms_dbfs"
+          ],
+          "properties": {
+            "threshold_dbfs": {"$ref": "#/$defs/nullableNumber"},
+            "start_seconds": {"$ref": "#/$defs/nullableNumber"},
+            "end_seconds": {"$ref": "#/$defs/nullableNumber"},
+            "duration_seconds": {"type": "number", "minimum": 0},
+            "leading_silence_seconds": {"type": "number", "minimum": 0},
+            "trailing_silence_seconds": {"type": "number", "minimum": 0},
+            "rms_dbfs": {"$ref": "#/$defs/nullableNumber"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "spectrum": {
+      "type": "object",
+      "required": [
+        "method",
+        "spectral_centroid_hz",
+        "peak_frequency_hz",
+        "speech_band_200_8000_hz_energy_percent",
+        "broad_band_energy_dbfs",
+        "third_octave_band_energy_dbfs"
+      ],
+      "properties": {
+        "method": {"type": "string"},
+        "spectral_centroid_hz": {"$ref": "#/$defs/nullableNumber"},
+        "peak_frequency_hz": {"$ref": "#/$defs/nullableNumber"},
+        "speech_band_200_8000_hz_energy_percent": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 100.001
+        },
+        "broad_band_energy_dbfs": {
+          "type": "object",
+          "required": [
+            "sub_20_80_hz",
+            "low_80_200_hz",
+            "low_mid_200_500_hz",
+            "mid_500_2000_hz",
+            "presence_2000_5000_hz",
+            "high_5000_10000_hz"
+          ],
+          "additionalProperties": {"$ref": "#/$defs/nullableNumber"}
+        },
+        "third_octave_band_energy_dbfs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["center_hz", "energy_dbfs"],
+            "properties": {
+              "center_hz": {"type": "number", "exclusiveMinimum": 0},
+              "energy_dbfs": {"$ref": "#/$defs/nullableNumber"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "toolchain": {
+      "type": "object",
+      "required": ["notification_sound_db", "ffmpeg", "ffprobe"],
+      "properties": {
+        "notification_sound_db": {"type": "string"},
+        "ffmpeg": {"type": "string"},
+        "ffprobe": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "nullableNumber": {"type": ["number", "null"]},
+    "nullableString": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

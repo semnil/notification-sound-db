@@ -1,0 +1,195 @@
+{
+  "$schema": "../data/schemas/source-config.schema.json",
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "id": "macos-system",
+      "vendor": "Apple",
+      "names": {"en": "macOS system sounds", "ja": "macOSシステムサウンド"},
+      "kind": "operating_system",
+      "default_path": "/System/Library/Sounds",
+      "official_url": "https://support.apple.com/macos",
+      "default_event_type": "system_alert"
+    },
+    {
+      "id": "macos-alert-tones",
+      "vendor": "Apple",
+      "names": {"en": "macOS alert tones", "ja": "macOS通知音"},
+      "kind": "operating_system",
+      "default_path": "/System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones",
+      "official_url": "https://support.apple.com/guide/mac-help/change-alert-sounds-mchlp2207/mac",
+      "default_event_type": "system_alert"
+    },
+    {
+      "id": "macos-coreaudio-events",
+      "vendor": "Apple",
+      "names": {"en": "macOS CoreAudio event sounds", "ja": "macOS CoreAudioイベント音"},
+      "kind": "operating_system",
+      "default_path": "/System/Library/Components/CoreAudio.component/Contents/SharedSupport/SystemSounds",
+      "official_url": "https://support.apple.com/macos",
+      "default_event_type": "ui_feedback"
+    },
+    {
+      "id": "macos-telephony-events",
+      "vendor": "Apple",
+      "names": {"en": "macOS telephony event sounds", "ja": "macOS通話イベント音"},
+      "kind": "operating_system",
+      "default_path": "/System/Library/PrivateFrameworks/TelephonyUtilities.framework/Versions/A/Resources",
+      "official_url": "https://support.apple.com/guide/facetime/welcome/mac",
+      "default_event_type": "call_state"
+    },
+    {
+      "id": "macos-screen-reader-events",
+      "vendor": "Apple",
+      "names": {"en": "macOS VoiceOver event sounds", "ja": "macOS VoiceOverイベント音"},
+      "kind": "operating_system",
+      "default_path": "/System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Resources/Sounds",
+      "official_url": "https://support.apple.com/guide/voiceover/welcome/mac",
+      "default_event_type": "ui_feedback"
+    },
+    {
+      "id": "macos-accessibility-media-events",
+      "vendor": "Apple",
+      "names": {"en": "macOS accessibility media event sounds", "ja": "macOSアクセシビリティメディアイベント音"},
+      "kind": "operating_system",
+      "default_path": "/System/Library/PrivateFrameworks/AXMediaUtilities.framework/Versions/A/Resources/sounds",
+      "official_url": "https://support.apple.com/accessibility",
+      "default_event_type": "ui_feedback"
+    },
+    {
+      "id": "macos-hearing-mode-event",
+      "vendor": "Apple",
+      "names": {"en": "macOS hearing mode notification", "ja": "macOSヒアリングモード通知音"},
+      "kind": "operating_system",
+      "default_path": "/System/Library/PrivateFrameworks/HearingModeService_Private.framework/Versions/A/Resources",
+      "official_url": "https://support.apple.com/accessibility/hearing",
+      "default_event_type": "system_alert"
+    },
+    {
+      "id": "macos-user-notifications",
+      "vendor": "Apple",
+      "names": {"en": "macOS user notification bundles", "ja": "macOSユーザー通知バンドル"},
+      "kind": "operating_system",
+      "default_path": "/System/Library/UserNotifications",
+      "official_url": "https://support.apple.com/guide/mac-help/change-notifications-settings-mh40583/mac",
+      "default_event_type": "message"
+    },
+    {
+      "id": "apple-mail",
+      "vendor": "Apple",
+      "names": {"en": "Mail", "ja": "メール"},
+      "kind": "application",
+      "default_path": "/System/Applications/Mail.app",
+      "official_url": "https://support.apple.com/guide/mail/welcome/mac",
+      "default_event_type": "unknown"
+    },
+    {
+      "id": "apple-music",
+      "vendor": "Apple",
+      "names": {"en": "Music", "ja": "ミュージック"},
+      "kind": "application",
+      "default_path": "/System/Applications/Music.app",
+      "official_url": "https://support.apple.com/guide/music/welcome/mac",
+      "default_event_type": "completion"
+    },
+    {
+      "id": "apple-photo-booth",
+      "vendor": "Apple",
+      "names": {"en": "Photo Booth", "ja": "Photo Booth"},
+      "kind": "application",
+      "default_path": "/System/Applications/Photo Booth.app",
+      "official_url": "https://support.apple.com/guide/photo-booth/welcome/mac",
+      "default_event_type": "ui_feedback"
+    },
+    {
+      "id": "apple-books",
+      "vendor": "Apple",
+      "names": {"en": "Books", "ja": "ブック"},
+      "kind": "application",
+      "default_path": "/System/Applications/Books.app",
+      "official_url": "https://support.apple.com/guide/books/welcome/mac",
+      "default_event_type": "ui_feedback"
+    },
+    {
+      "id": "apple-tv",
+      "vendor": "Apple",
+      "names": {"en": "TV", "ja": "TV"},
+      "kind": "application",
+      "default_path": "/System/Applications/TV.app",
+      "official_url": "https://support.apple.com/guide/tvapp-mac/welcome/mac",
+      "default_event_type": "completion"
+    },
+    {
+      "id": "apple-grapher",
+      "vendor": "Apple",
+      "names": {"en": "Grapher", "ja": "Grapher"},
+      "kind": "application",
+      "default_path": "/System/Applications/Utilities/Grapher.app",
+      "official_url": "https://support.apple.com/guide/grapher/welcome/mac",
+      "default_event_type": "ui_feedback"
+    },
+    {
+      "id": "apple-audio-midi-setup",
+      "vendor": "Apple",
+      "names": {"en": "Audio MIDI Setup", "ja": "Audio MIDI設定"},
+      "kind": "application",
+      "default_path": "/System/Applications/Utilities/Audio MIDI Setup.app",
+      "official_url": "https://support.apple.com/guide/audio-midi-setup/welcome/mac",
+      "default_event_type": "ui_feedback"
+    },
+    {
+      "id": "apple-screen-sharing",
+      "vendor": "Apple",
+      "names": {"en": "Screen Sharing", "ja": "画面共有"},
+      "kind": "application",
+      "default_path": "/System/Applications/Utilities/Screen Sharing.app",
+      "official_url": "https://support.apple.com/guide/mac-help/share-the-screen-of-another-mac-mh14066/mac",
+      "default_event_type": "completion"
+    },
+    {
+      "id": "slack",
+      "vendor": "Slack Technologies",
+      "names": {"en": "Slack", "ja": "Slack"},
+      "kind": "application",
+      "default_path": "/Applications/Slack.app",
+      "official_url": "https://slack.com/downloads/mac",
+      "default_event_type": "message"
+    },
+    {
+      "id": "discord",
+      "vendor": "Discord",
+      "names": {"en": "Discord", "ja": "Discord"},
+      "kind": "application",
+      "default_path": "/Applications/Discord.app",
+      "official_url": "https://discord.com/download",
+      "default_event_type": "message"
+    },
+    {
+      "id": "microsoft-teams",
+      "vendor": "Microsoft",
+      "names": {"en": "Microsoft Teams", "ja": "Microsoft Teams"},
+      "kind": "application",
+      "default_path": "/Applications/Microsoft Teams.app",
+      "official_url": "https://www.microsoft.com/microsoft-teams/download-app",
+      "default_event_type": "unknown"
+    },
+    {
+      "id": "zoom",
+      "vendor": "Zoom Communications",
+      "names": {"en": "Zoom Workplace", "ja": "Zoom Workplace"},
+      "kind": "application",
+      "default_path": "/Applications/zoom.us.app",
+      "official_url": "https://zoom.us/download",
+      "default_event_type": "unknown"
+    },
+    {
+      "id": "line",
+      "vendor": "LY Corporation",
+      "names": {"en": "LINE", "ja": "LINE"},
+      "kind": "application",
+      "default_path": "/Applications/LINE.app",
+      "official_url": "https://line.me/update",
+      "default_event_type": "unknown"
+    }
+  ]
+}

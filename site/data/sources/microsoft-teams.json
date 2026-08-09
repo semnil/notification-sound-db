@@ -1,0 +1,135 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": "dd5fab62b2003993a49ac86ecdc653500e970e29efd8c8b100f17d0adb30987e",
+    "distribution_url": "https://statics.teams.cdn.office.net/production-osx/enterprise/webview2/lkg/MicrosoftTeams.pkg",
+    "metadata_url": null,
+    "method": "official_distribution",
+    "official_url": "https://www.microsoft.com/microsoft-teams/download-app"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "26198.202.4929.7171",
+    "bundle_id": "com.microsoft.teams2",
+    "version": "26198.202.4929.7171"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "application",
+  "measurement_failures": [],
+  "names": {
+    "en": "Microsoft Teams",
+    "ja": "Microsoft Teams"
+  },
+  "observed_at": "2026-08-09T05:08:29Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "9950da5651418985d2cd4391945277894ea1768c49e523d76cc137bbba44954b",
+      "event_type": "message",
+      "name": "00_teams_basic_notification_r4_default",
+      "relative_path": "Contents/Resources/00_teams_basic_notification_r4_default.wav"
+    },
+    {
+      "asset_sha256": "a564b005114ab8d1b635686382ce58b58a79446bd0b9c437b3db2666f63a5e37",
+      "event_type": "message",
+      "name": "a2_teams_basic_notification_r4_vibe",
+      "relative_path": "Contents/Resources/a2_teams_basic_notification_r4_vibe.wav"
+    },
+    {
+      "asset_sha256": "e219eb5cd26e53b0a9db1fce2404eec52b8df1244ffc390020c3b671cadfaf00",
+      "event_type": "message",
+      "name": "a3_teams_basic_notification_r4_nudge",
+      "relative_path": "Contents/Resources/a3_teams_basic_notification_r4_nudge.wav"
+    },
+    {
+      "asset_sha256": "f819dd7c42ba17885996cdebcf6cd4bf675a9cddd8610b1d0d442bdcd3a46fd4",
+      "event_type": "message",
+      "name": "a4_teams_basic_notification_r4_tap",
+      "relative_path": "Contents/Resources/a4_teams_basic_notification_r4_tap.wav"
+    },
+    {
+      "asset_sha256": "743fbcdb9b675ed77fe4eb660d252b4835c927025b0c4ae84d5b743964233a62",
+      "event_type": "message",
+      "name": "a5_teams_basic_notification_r4_flick",
+      "relative_path": "Contents/Resources/a5_teams_basic_notification_r4_flick.wav"
+    },
+    {
+      "asset_sha256": "8002a3f5306469cdabf32f33e63147618c17838c85b967c66175d6a0b30bca56",
+      "event_type": "message",
+      "name": "a6_teams_basic_notification_r4_pluck",
+      "relative_path": "Contents/Resources/a6_teams_basic_notification_r4_pluck.wav"
+    },
+    {
+      "asset_sha256": "ca6ccf34a3f2deca0e2fc8b4fcb0a1253c16f1f287022701af6862b512ea0022",
+      "event_type": "message",
+      "name": "a7_teams_basic_notification_r4_summon",
+      "relative_path": "Contents/Resources/a7_teams_basic_notification_r4_summon.wav"
+    },
+    {
+      "asset_sha256": "12b8351e81080ab3fa97fd8bbef5902c9c9ef564bf1257b0f032545cb78ef001",
+      "event_type": "message",
+      "name": "a8_teams_basic_notification_r4_ping",
+      "relative_path": "Contents/Resources/a8_teams_basic_notification_r4_ping.wav"
+    },
+    {
+      "asset_sha256": "7d79e87fa2f9d64e63195b1c71e185a10740ab6f7ae513714df67bce26b015c7",
+      "event_type": "message",
+      "name": "b2_teams_urgent_notification_r4_prioritize",
+      "relative_path": "Contents/Resources/b2_teams_urgent_notification_r4_prioritize.wav"
+    },
+    {
+      "asset_sha256": "07a76488ef36a7777db94f4881f3633854eb6ec6993d0b235debcd5565f08676",
+      "event_type": "message",
+      "name": "b3_teams_urgent_notification_r4_escalate",
+      "relative_path": "Contents/Resources/b3_teams_urgent_notification_r4_escalate.wav"
+    },
+    {
+      "asset_sha256": "c5c76a0926a6eaea33ad14a48ce94c3d3d41781481a0fb1ae190949500dc36bc",
+      "event_type": "message",
+      "name": "b4_teams_urgent_notification_r4_alarm",
+      "relative_path": "Contents/Resources/b4_teams_urgent_notification_r4_alarm.wav"
+    },
+    {
+      "asset_sha256": "f3b7606c75d76399a9652b3d36eee3caac4b56f864288c9b65a696942e3f57ea",
+      "event_type": "message",
+      "name": "primary-notification-level10",
+      "relative_path": "Contents/Resources/primary-notification-level10.wav"
+    },
+    {
+      "asset_sha256": "fe8a9185007a146290ea33f505ced047674628f2680946db24c6511d57d673a7",
+      "event_type": "message",
+      "name": "primary-notification-level20",
+      "relative_path": "Contents/Resources/primary-notification-level20.wav"
+    },
+    {
+      "asset_sha256": "6c41c1b9c3b1f2cbb58c05b45ce55ddd39dc47b928e19fa3fc1b2cf251f70c67",
+      "event_type": "message",
+      "name": "primary-notification-level30",
+      "relative_path": "Contents/Resources/primary-notification-level30.wav"
+    },
+    {
+      "asset_sha256": "ed202c0396fa7a0451bf3d8419e852d4ade2ac91c23995549294023a243afd49",
+      "event_type": "message",
+      "name": "primary-notification-level40",
+      "relative_path": "Contents/Resources/primary-notification-level40.wav"
+    },
+    {
+      "asset_sha256": "a50f5280f96a51eaa8753723c1589f51ec5fe451b29c1d1e172afa075ab1d788",
+      "event_type": "message",
+      "name": "primary-notification-level50",
+      "relative_path": "Contents/Resources/primary-notification-level50.wav"
+    }
+  ],
+  "source_id": "microsoft-teams",
+  "vendor": "Microsoft"
+}

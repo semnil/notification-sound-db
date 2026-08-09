@@ -1,0 +1,599 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/guide/voiceover/welcome/mac"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "25G76",
+    "bundle_id": null,
+    "version": "26.6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "operating_system",
+  "measurement_failures": [
+    {
+      "error_type": "MediaToolError",
+      "name": "SecureCharacter",
+      "reason": "ffprobe failed: <source-file>: Invalid data found when processing input\n",
+      "relative_path": "SecureCharacter.caf",
+      "sha256": "965c59af47d86281f1b8134c684c19de9624e2425711dba28497b957b568f571"
+    }
+  ],
+  "names": {
+    "en": "macOS VoiceOver event sounds",
+    "ja": "macOS VoiceOverイベント音"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "80ffa2077896599ddfd305a1dd5ff7e3c1ac3f82f4b943629d9ad7997dbd4acd",
+      "event_type": "ui_feedback",
+      "name": "ActionsAvailable",
+      "relative_path": "ActionsAvailable.aiff"
+    },
+    {
+      "asset_sha256": "a16d826ba22974a2fae9f8fd076bd2d753d91b29f078f1beb814b4fb084ba5bf",
+      "event_type": "ui_feedback",
+      "name": "Alert",
+      "relative_path": "Alert.aiff"
+    },
+    {
+      "asset_sha256": "f29a11c57ca86af56af01f47f8cb85648a7090be008889ff1481674fbae57486",
+      "event_type": "ui_feedback",
+      "name": "AlertRepeat",
+      "relative_path": "AlertRepeat.aiff"
+    },
+    {
+      "asset_sha256": "dc78372414e54ed70c7c32cb3904c4bb8c4a91b2b877b2d9781ca0dbb1e60a33",
+      "event_type": "ui_feedback",
+      "name": "AnimationFlyToDownloads",
+      "relative_path": "AnimationFlyToDownloads.aiff"
+    },
+    {
+      "asset_sha256": "ac8bd13b49f94cb3cfc1562aabf9cb88797c121a22fbe560525af4f941fa396a",
+      "event_type": "ui_feedback",
+      "name": "AnimationShake",
+      "relative_path": "AnimationShake.aiff"
+    },
+    {
+      "asset_sha256": "7a55719f1712f93436c3ff254a195408350e16ca98bb3ca05a1cad49bf8ab7fe",
+      "event_type": "ui_feedback",
+      "name": "Announcement",
+      "relative_path": "Announcement.aiff"
+    },
+    {
+      "asset_sha256": "b8154f15464967e625a2051d30292859508140fba1fd58d8bdcbefa7d165400c",
+      "event_type": "ui_feedback",
+      "name": "AttachmentBegin",
+      "relative_path": "AttachmentBegin.aiff"
+    },
+    {
+      "asset_sha256": "469cf6040ef6f2a6ec029fc45bc19b30e2ff03c7a4cc5209ee2ddba2cba091d1",
+      "event_type": "ui_feedback",
+      "name": "AttachmentEnd",
+      "relative_path": "AttachmentEnd.aiff"
+    },
+    {
+      "asset_sha256": "c9a8d1263b762f65b72367a5fe05479083f506809125cc4410f8485759910165",
+      "event_type": "ui_feedback",
+      "name": "Back",
+      "relative_path": "Back.aiff"
+    },
+    {
+      "asset_sha256": "5ca14f2d671eeb06985afc3b0a383b061596f10f861764f855ecc8c0862a8004",
+      "event_type": "ui_feedback",
+      "name": "BackThrough",
+      "relative_path": "BackThrough.aiff"
+    },
+    {
+      "asset_sha256": "cf2f9ed1bbf0085b20d6a5a736cd959e1f15498d9cc99f8135b63a3ee1d24c08",
+      "event_type": "ui_feedback",
+      "name": "BrailleChordClockTick",
+      "relative_path": "BrailleChordClockTick.aiff"
+    },
+    {
+      "asset_sha256": "b335894765e74ad6b3efefb87c3faaf4eaa47f9e9b32c3a6c7a0406bab0de932",
+      "event_type": "error",
+      "name": "BrailleChordFailed",
+      "relative_path": "BrailleChordFailed.aiff"
+    },
+    {
+      "asset_sha256": "742a4fa9439c97e0da15b1aff377e8512e5bd4daa7a09e37a1e69a4d51a54b84",
+      "event_type": "ui_feedback",
+      "name": "BrailleChordMemorize",
+      "relative_path": "BrailleChordMemorize.aiff"
+    },
+    {
+      "asset_sha256": "05f0cb29bfdee2f4305cb687edfc1010296a40fef05c72af06eb6552a014a042",
+      "event_type": "ui_feedback",
+      "name": "BrailleDisplayConnected",
+      "relative_path": "BrailleDisplayConnected.aiff"
+    },
+    {
+      "asset_sha256": "4dd505b0b36b8a5b8037d862d3be6ca92417b5578cf8c7c45d57a4dec144cc56",
+      "event_type": "ui_feedback",
+      "name": "BrailleDisplayDisconnected",
+      "relative_path": "BrailleDisplayDisconnected.aiff"
+    },
+    {
+      "asset_sha256": "1ad6e4855ba40219c74729bfa9390fe7043d68ca62bb5eceda39da7aa5a326fd",
+      "event_type": "ui_feedback",
+      "name": "BubbleAppear",
+      "relative_path": "BubbleAppear.aiff"
+    },
+    {
+      "asset_sha256": "694839873e74e2afa2d1f51fde24a8fc53ca6beb9a1a33510f8aab8408593e44",
+      "event_type": "ui_feedback",
+      "name": "BubbleDisappear",
+      "relative_path": "BubbleDisappear.aiff"
+    },
+    {
+      "asset_sha256": "d42c8c59fb90d366737c8f5ac9e0ff46070cdfd4b1ba4000fa8a2e98518ce778",
+      "event_type": "call_state",
+      "name": "CallOut",
+      "relative_path": "CallOut.aiff"
+    },
+    {
+      "asset_sha256": "1b2598300488d85258cf8e00e1f8207a1be4f44fd241806f9ef84886bf43b506",
+      "event_type": "ui_feedback",
+      "name": "Capitals",
+      "relative_path": "Capitals.aiff"
+    },
+    {
+      "asset_sha256": "941b58be11b64121f69910e81b16b712a75e34d03d1571fe1c4e3e96acdcfb31",
+      "event_type": "ui_feedback",
+      "name": "ClickFast",
+      "relative_path": "ClickFast.aiff"
+    },
+    {
+      "asset_sha256": "7bc52b0bc9f4f9f26e3426aece25e9fd099c5563d691dacce398059db0010341",
+      "event_type": "ui_feedback",
+      "name": "Collaboration",
+      "relative_path": "Collaboration.wav"
+    },
+    {
+      "asset_sha256": "df39020c0823ea0de611eaa4d41e6e0b9d154076f5b6a2d4d60ae92c809947dc",
+      "event_type": "ui_feedback",
+      "name": "DragShort",
+      "relative_path": "DragShort.aiff"
+    },
+    {
+      "asset_sha256": "f4b54557018a9a285c08b2101d4af710caaceccca2ccdb9b0d2606bb1c086c49",
+      "event_type": "ui_feedback",
+      "name": "DrawerClosing",
+      "relative_path": "DrawerClosing.aiff"
+    },
+    {
+      "asset_sha256": "ec899298467311434f320e8965f1f5022eb580822139a109f84eb1f68e4d39ec",
+      "event_type": "ui_feedback",
+      "name": "DrawerOpening",
+      "relative_path": "DrawerOpening.aiff"
+    },
+    {
+      "asset_sha256": "b6ad6b907f7a6eb4148cc9452ceebb4690a6ba5d9a755c41cabd9d3e83f10b6c",
+      "event_type": "ui_feedback",
+      "name": "DrawOn",
+      "relative_path": "DrawOn.aiff"
+    },
+    {
+      "asset_sha256": "7c44a038d86117219c6f28c2cf7529c1b5f88e21664a9c950b1147d7a3cae582",
+      "event_type": "ui_feedback",
+      "name": "DrillIn",
+      "relative_path": "DrillIn.aiff"
+    },
+    {
+      "asset_sha256": "6615aa162e148d5e2403a1a299cc46a45553f5613ba7b0efa1f15d8b0bd488dd",
+      "event_type": "ui_feedback",
+      "name": "DrillOut",
+      "relative_path": "DrillOut.aiff"
+    },
+    {
+      "asset_sha256": "4e087ab6b0c98b1c6954ab3c14294435d03410546073e8f40cb8b16125dc7fa9",
+      "event_type": "ui_feedback",
+      "name": "ElementBorder",
+      "relative_path": "ElementBorder.aiff"
+    },
+    {
+      "asset_sha256": "be7f046a8c02ecc32bd767c7e489ce1b02b32a80670a48a5abc5cfe07d444d00",
+      "event_type": "ui_feedback",
+      "name": "ElementBorderHit",
+      "relative_path": "ElementBorderHit.aiff"
+    },
+    {
+      "asset_sha256": "a8c5b99b806c3374fb5e1869ec5ecb8e3dcb28a722dced29d6ae0809206a3b5a",
+      "event_type": "ui_feedback",
+      "name": "Ellipsis",
+      "relative_path": "Ellipsis.aiff"
+    },
+    {
+      "asset_sha256": "506b68e8a2c964f5a8d10f65e28570c1632dcf4c019e63de4198fbd879df2cfa",
+      "event_type": "ui_feedback",
+      "name": "EmptySpace",
+      "relative_path": "EmptySpace.aiff"
+    },
+    {
+      "asset_sha256": "fe27ac25781f735b517847adb9f13b0b9266dd9beb48652ea05f649ad2febee0",
+      "event_type": "ui_feedback",
+      "name": "EnteringMultiSelect",
+      "relative_path": "EnteringMultiSelect.aiff"
+    },
+    {
+      "asset_sha256": "fc7f473ff84d1192ebfe12e9919a59fe06439d2db07d30551c77422161b22275",
+      "event_type": "ui_feedback",
+      "name": "EnterInvisibleArea",
+      "relative_path": "EnterInvisibleArea.aiff"
+    },
+    {
+      "asset_sha256": "e93af35e4b329587614c4a94cae49acf8278f7fec266880724def270877561d0",
+      "event_type": "ui_feedback",
+      "name": "EnterVisibleArea",
+      "relative_path": "EnterVisibleArea.aiff"
+    },
+    {
+      "asset_sha256": "65d29d42bdd9cc523e240d8a0a72cc292c6e1190933246279226322f85256fc2",
+      "event_type": "error",
+      "name": "Error",
+      "relative_path": "Error.aiff"
+    },
+    {
+      "asset_sha256": "22f47414993bb293f9d7d77a7cf5158f333d364cc864b9571448e35871d33b12",
+      "event_type": "ui_feedback",
+      "name": "ExitingMultiSelect",
+      "relative_path": "ExitingMultiSelect.aiff"
+    },
+    {
+      "asset_sha256": "5b762c3816ad45281f35160c09440e913abf9a53ea84b5268c9a40931f52fd2d",
+      "event_type": "ui_feedback",
+      "name": "Focus",
+      "relative_path": "Focus.aiff"
+    },
+    {
+      "asset_sha256": "19e121add8e93421c4a6b0bc5f7e43c22f6f9701736f867b7749170338bfb779",
+      "event_type": "ui_feedback",
+      "name": "Focus2",
+      "relative_path": "Focus2.aiff"
+    },
+    {
+      "asset_sha256": "3b90395c6ca16ee1cd5f513adccb95e191ebb02b878c5b40f07a9dffeafac671",
+      "event_type": "ui_feedback",
+      "name": "Forward",
+      "relative_path": "Forward.aiff"
+    },
+    {
+      "asset_sha256": "dee0c8ebfda043738ee7712114e1d54e1a0761dfbc85da66522ba80adba85c42",
+      "event_type": "ui_feedback",
+      "name": "ForwardThrough",
+      "relative_path": "ForwardThrough.aiff"
+    },
+    {
+      "asset_sha256": "867d9579dcfa23747f3e9ee24b781bd5fba4324a030d458b957932388d856e67",
+      "event_type": "ui_feedback",
+      "name": "GuideProgress",
+      "relative_path": "GuideProgress.aiff"
+    },
+    {
+      "asset_sha256": "01f0caea66c1ceaee869c22591091127634e9343532ca944b2afb0854f2c8814",
+      "event_type": "completion",
+      "name": "GuideSuccess",
+      "relative_path": "GuideSuccess.aiff"
+    },
+    {
+      "asset_sha256": "1d128837024ff899b0f28371c9cb85fdd09bccfd053d4365cd3f8e3fe762b2ae",
+      "event_type": "ui_feedback",
+      "name": "Hit",
+      "relative_path": "Hit.aiff"
+    },
+    {
+      "asset_sha256": "ac9efa1a4bf1950b70d8ab054f7dee96217d9df14e2b2fc8ba3452fd006fe719",
+      "event_type": "ui_feedback",
+      "name": "Indentation",
+      "relative_path": "Indentation.caf"
+    },
+    {
+      "asset_sha256": "1819b1f1637dad754ca48b89932d6dd22a81b8c4ab624b0c41a16a78ff395a85",
+      "event_type": "ui_feedback",
+      "name": "IntelligenceAvailable",
+      "relative_path": "IntelligenceAvailable.wav"
+    },
+    {
+      "asset_sha256": "1f77bd4536dadcb329a0100fa5843aac00d4f9bf108b6ffae626bbba18b9f367",
+      "event_type": "ui_feedback",
+      "name": "IntelligencePost",
+      "relative_path": "IntelligencePost.wav"
+    },
+    {
+      "asset_sha256": "6a34e0d02f596a0321cc9cc5730ecd56c579fdac9e7ca9b75f1c64bd18420818",
+      "event_type": "ui_feedback",
+      "name": "IntelligencePre",
+      "relative_path": "IntelligencePre.wav"
+    },
+    {
+      "asset_sha256": "6a34e0d02f596a0321cc9cc5730ecd56c579fdac9e7ca9b75f1c64bd18420818",
+      "event_type": "ui_feedback",
+      "name": "IntelligenceProgress",
+      "relative_path": "IntelligenceProgress.wav"
+    },
+    {
+      "asset_sha256": "c2f9d07e56dc53d78b3d133a95dd6f85a6b3fa52bef18a8a2f0caa2f88369970",
+      "event_type": "ui_feedback",
+      "name": "Interactable",
+      "relative_path": "Interactable.aiff"
+    },
+    {
+      "asset_sha256": "5b41e753561fbdab47cd7c3f62a138c0f95f78981714d76dde28397ff102ecbb",
+      "event_type": "ui_feedback",
+      "name": "KBVONotSynched",
+      "relative_path": "KBVONotSynched.aiff"
+    },
+    {
+      "asset_sha256": "2ef786a7ad8a859c32ef50e2edce8cf43b8dbf741c1220531514062e40132387",
+      "event_type": "ui_feedback",
+      "name": "KBVOSynched",
+      "relative_path": "KBVOSynched.aiff"
+    },
+    {
+      "asset_sha256": "f1945e9460fb728b5c56355918142c24fbcfa35000eea03d56202d1b49c70208",
+      "event_type": "ui_feedback",
+      "name": "LayoutChanged",
+      "relative_path": "LayoutChanged.aiff"
+    },
+    {
+      "asset_sha256": "70dcf5f66203caf305795444a094ed8dae0dfaf37eb06b4587eec2e60eb2b9c0",
+      "event_type": "ui_feedback",
+      "name": "LinkBegin",
+      "relative_path": "LinkBegin.aiff"
+    },
+    {
+      "asset_sha256": "753160f2d862b74df25ae9937f918aab77e4b5c70e280cd5daeff07376dece82",
+      "event_type": "ui_feedback",
+      "name": "LinkEnd",
+      "relative_path": "LinkEnd.aiff"
+    },
+    {
+      "asset_sha256": "0c8000c291ee57ed4ada04fa6139b0669f6d8d1c6102c860f15bdb8f1c2730fa",
+      "event_type": "ui_feedback",
+      "name": "MenuDown",
+      "relative_path": "MenuDown.aiff"
+    },
+    {
+      "asset_sha256": "f51ad94fe6fbe01be7f81655782c2c7433e0a32ea5fd378319b78c0ed7d990fb",
+      "event_type": "ui_feedback",
+      "name": "Misspelled",
+      "relative_path": "Misspelled.aiff"
+    },
+    {
+      "asset_sha256": "5de1f22d150afdf03cfd15c0ead4be3b8d7a79fa6a95036fb0246c6a696753d0",
+      "event_type": "ui_feedback",
+      "name": "MoreContentAvailable",
+      "relative_path": "MoreContentAvailable.aiff"
+    },
+    {
+      "asset_sha256": "a04bba06724bfe537c8c7bdd804522a86cb7261ec4feb001812153ab4204272d",
+      "event_type": "ui_feedback",
+      "name": "MouseDown",
+      "relative_path": "MouseDown.aiff"
+    },
+    {
+      "asset_sha256": "bffc567690a9e3f7b69a44b8d91b6601d2ca2af052c244670b958fea768340ea",
+      "event_type": "ui_feedback",
+      "name": "MouseDrag",
+      "relative_path": "MouseDrag.aiff"
+    },
+    {
+      "asset_sha256": "9169ed80791e9902cdb6c7fef271c9a98f3f18ec8e0912aa196e3812d84a838d",
+      "event_type": "ui_feedback",
+      "name": "MouseUp",
+      "relative_path": "MouseUp.aiff"
+    },
+    {
+      "asset_sha256": "1c7b9a160a7732f534bd3d880463eff8a45654e484bd19cd09273d5e33ee434f",
+      "event_type": "ui_feedback",
+      "name": "NotFound",
+      "relative_path": "NotFound.aiff"
+    },
+    {
+      "asset_sha256": "92b8142fd28333665400a8dd2009645a724a14b3f0e487c475428c16cf643b1b",
+      "event_type": "ui_feedback",
+      "name": "NothingTracking",
+      "relative_path": "NothingTracking.aiff"
+    },
+    {
+      "asset_sha256": "b2ec85222ea8a32306db02030ee5b3611097d240dc0b9aab5e86a7c202d54177",
+      "event_type": "ui_feedback",
+      "name": "PopupAppeared",
+      "relative_path": "PopupAppeared.aiff"
+    },
+    {
+      "asset_sha256": "c44dcac64bb1f7fbe87e498dd24de35f076be52b5825917332da03b2a9e0658c",
+      "event_type": "ui_feedback",
+      "name": "QuickNavArrowKeyOff",
+      "relative_path": "QuickNavArrowKeyOff.wav"
+    },
+    {
+      "asset_sha256": "e88ca7101f5e2a6b27783ea5af0271705b850e715dbf734688f9de8dd31298f4",
+      "event_type": "ui_feedback",
+      "name": "QuickNavArrowKeyOn",
+      "relative_path": "QuickNavArrowKeyOn.wav"
+    },
+    {
+      "asset_sha256": "67c57ccd933282c6687549591f64ae7473238c25cf9c9055ff21ce4e13eb707c",
+      "event_type": "ui_feedback",
+      "name": "QuickNavOff",
+      "relative_path": "QuickNavOff.wav"
+    },
+    {
+      "asset_sha256": "42717ac28424fd1047c22df5c1249caf571f0af9764dd58ef1a515b621c82abb",
+      "event_type": "ui_feedback",
+      "name": "QuickNavOn",
+      "relative_path": "QuickNavOn.wav"
+    },
+    {
+      "asset_sha256": "050c818b24f4be06cfe2e4112ac9fddb3c851a3f6b7c192095feb71aef1a8a2a",
+      "event_type": "ui_feedback",
+      "name": "QuickNavSingleKeyOff",
+      "relative_path": "QuickNavSingleKeyOff.wav"
+    },
+    {
+      "asset_sha256": "dd04bd9229e637dfcfee3c6b9cab8905e644b3c9a78b0c9d6eff8848e737264c",
+      "event_type": "ui_feedback",
+      "name": "QuickNavSingleKeyOn",
+      "relative_path": "QuickNavSingleKeyOn.wav"
+    },
+    {
+      "asset_sha256": "6d7b738fd2f7facfaf087be837d82cc4224a59f6053187c08a6bf80d0e73d02a",
+      "event_type": "ui_feedback",
+      "name": "Ring",
+      "relative_path": "Ring.aiff"
+    },
+    {
+      "asset_sha256": "2634875b6b13ef8e9fc64bb100edc37538bcdebdb327d26173a4375d96194c83",
+      "event_type": "call_state",
+      "name": "RotorLeft",
+      "relative_path": "RotorLeft.aiff"
+    },
+    {
+      "asset_sha256": "6de0c664e09371e14befce0eea95c2d0b429daf03cf9f4f41199a657bb151e13",
+      "event_type": "ui_feedback",
+      "name": "RotorRight",
+      "relative_path": "RotorRight.aiff"
+    },
+    {
+      "asset_sha256": "2f9b5bb3660def527146df62ba684d390272249ce8ec962b1620c9de90bd34b1",
+      "event_type": "ui_feedback",
+      "name": "SearchRangeWithinSameElement",
+      "relative_path": "SearchRangeWithinSameElement.aiff"
+    },
+    {
+      "asset_sha256": "c0fb2f572075fd4bd331814be20eaf94d992b8d75bc3c7bc71c54371a58c5b71",
+      "event_type": "ui_feedback",
+      "name": "SecureCharacter",
+      "relative_path": "SecureCharacter.aiff"
+    },
+    {
+      "asset_sha256": "69d7b2d5b4d92046c6688e4b3a59e58e06a731dfe5416791afd87b1acadd2d01",
+      "event_type": "ui_feedback",
+      "name": "Select",
+      "relative_path": "Select.aiff"
+    },
+    {
+      "asset_sha256": "f84c1db8c392764da5a0411dc97f4493c45779462d6a0cf4aa1f12dddbbb6908",
+      "event_type": "ui_feedback",
+      "name": "SingleClick",
+      "relative_path": "SingleClick.aiff"
+    },
+    {
+      "asset_sha256": "134b56cb90383b6ece0bed38fe3b5533e28e6f70da69728797299cc2eba4809e",
+      "event_type": "incoming_call",
+      "name": "SpringBack",
+      "relative_path": "SpringBack.aiff"
+    },
+    {
+      "asset_sha256": "ebd7a3a33975c770228fe6d468c74094c2729fd853be448fd05d250c4cabd984",
+      "event_type": "ui_feedback",
+      "name": "SpringForward",
+      "relative_path": "SpringForward.aiff"
+    },
+    {
+      "asset_sha256": "a2a40bac68a9f22cef6b7f46e69e2f577e11b56e74b8cec708dc482eefeb7d78",
+      "event_type": "ui_feedback",
+      "name": "StyleChangeDouble",
+      "relative_path": "StyleChangeDouble.aiff"
+    },
+    {
+      "asset_sha256": "a0fcbdeb6bfdcb8f8b5e3a7c0aa87287189d85d0729a9cb1486f25e3a170338b",
+      "event_type": "ui_feedback",
+      "name": "StyleChangeMultiple",
+      "relative_path": "StyleChangeMultiple.aiff"
+    },
+    {
+      "asset_sha256": "c32c986c666eda6371d896b5d7202dbd07232d8ddbcbaf27b4363bd95ff1401c",
+      "event_type": "ui_feedback",
+      "name": "StyleChangeSingle",
+      "relative_path": "StyleChangeSingle.aiff"
+    },
+    {
+      "asset_sha256": "7423834c90666f026a7340df8bc5b00f8be861d995552da0ced35d2934e611bf",
+      "event_type": "ui_feedback",
+      "name": "TrackingOff",
+      "relative_path": "TrackingOff.aiff"
+    },
+    {
+      "asset_sha256": "56958ff70fb559567b2f02599bcf33056caf687ad0aea333434707b8f267dbb6",
+      "event_type": "ui_feedback",
+      "name": "TrackingOn",
+      "relative_path": "TrackingOn.aiff"
+    },
+    {
+      "asset_sha256": "cfef21a324955bf989d1ed0e46a45ed76e50365aef04eb84d037de6c88e3c55a",
+      "event_type": "ui_feedback",
+      "name": "TrackingSystemElement",
+      "relative_path": "TrackingSystemElement.aiff"
+    },
+    {
+      "asset_sha256": "3931db0205cf5b21e5075534d6d4b3ae924ddae16788d06901ad79ba3ffd0076",
+      "event_type": "ui_feedback",
+      "name": "WebAreaLoaded",
+      "relative_path": "WebAreaLoaded.aiff"
+    },
+    {
+      "asset_sha256": "1e11e06b89d0eb9cbc4b7a0e1349f531d1c3c828b879577b0445693205b95e0e",
+      "event_type": "ui_feedback",
+      "name": "WebPageLoaded",
+      "relative_path": "WebPageLoaded.aiff"
+    },
+    {
+      "asset_sha256": "f81507e0e64f471a8d1dbf9d5072c237d081e00c69673f7a01af901f16b12eec",
+      "event_type": "ui_feedback",
+      "name": "WindowActivated",
+      "relative_path": "WindowActivated.aiff"
+    },
+    {
+      "asset_sha256": "9ab8458f1f15388f33113199c51e6de33241bd1e4012217b7dee8f722a52996a",
+      "event_type": "ui_feedback",
+      "name": "WrapBack",
+      "relative_path": "WrapBack.aiff"
+    },
+    {
+      "asset_sha256": "2ac5d91cd35bbb57ad079bfa1ef4fa6300145dc58114050e93354c33744459e9",
+      "event_type": "ui_feedback",
+      "name": "WrapBackHard",
+      "relative_path": "WrapBackHard.aiff"
+    },
+    {
+      "asset_sha256": "78464f2b912dffe5940f733f02d719047f8e9f2afb53fb3956a062b05034b116",
+      "event_type": "ui_feedback",
+      "name": "WrapBoundary",
+      "relative_path": "WrapBoundary.aiff"
+    },
+    {
+      "asset_sha256": "912a94e3c9c02c70dcea913bd41f0262242abac5ad494bf8ae7cda9f1890a773",
+      "event_type": "ui_feedback",
+      "name": "WrapForward",
+      "relative_path": "WrapForward.aiff"
+    },
+    {
+      "asset_sha256": "678ffdaca3d6d0be07bbe639120374458f6e47867d534f909a77698195df2542",
+      "event_type": "ui_feedback",
+      "name": "WrapForwardHard",
+      "relative_path": "WrapForwardHard.aiff"
+    }
+  ],
+  "source_id": "macos-screen-reader-events",
+  "vendor": "Apple"
+}

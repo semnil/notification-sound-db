@@ -1,0 +1,35 @@
+{
+  "profile_id": "notification-sound-db-bs1770-v1",
+  "schema_version": "1.0.0",
+  "decode": {
+    "audio_stream": "first",
+    "gain_change": false,
+    "normalization": false,
+    "resampling": false,
+    "analysis_sample_format": "pcm_f64le"
+  },
+  "loudness": {
+    "standard": "ITU-R BS.1770-5 / EBU Mode",
+    "implementation": "FFmpeg ebur128",
+    "momentary_window_seconds": 0.4,
+    "short_term_window_seconds": 3.0,
+    "tail_padding_seconds": 3.1,
+    "true_peak_oversampling": "FFmpeg ebur128 peak=true"
+  },
+  "rms": {
+    "combination": "root mean square across every decoded sample and channel",
+    "reference": "digital full scale",
+    "active_frame_milliseconds": 10.0,
+    "active_absolute_threshold_dbfs": -60.0,
+    "active_relative_threshold_db": -40.0
+  },
+  "spectrum": {
+    "channel_mix": "arithmetic mean",
+    "method": "Welch power spectral density",
+    "window": "Hann",
+    "maximum_segment_samples": 4096,
+    "overlap_fraction": 0.5,
+    "analysis_range_hz": [20, 20000],
+    "descriptive_speech_band_hz": [200, 8000]
+  }
+}

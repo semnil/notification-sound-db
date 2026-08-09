@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology — Notification Sound Measurements</title>
+  <meta name="description" content="Measured levels and spectral characteristics of current OS and app event sounds">
+<link rel="canonical" href="https://semnil.github.io/notification-sound-db/methodology.html"><link rel="alternate" hreflang="en" href="https://semnil.github.io/notification-sound-db/methodology.html"><link rel="alternate" hreflang="ja" href="https://semnil.github.io/notification-sound-db/ja/methodology.html"><link rel="alternate" hreflang="x-default" href="https://semnil.github.io/notification-sound-db/methodology.html">  <meta property="og:type" content="website">
+  <meta property="og:title" content="Methodology — Notification Sound Measurements">
+  <meta property="og:description" content="Measured levels and spectral characteristics of current OS and app event sounds">
+  <meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://semnil.github.io/notification-sound-db/methodology.html">  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span><strong>Notification Sound Measurements</strong><small>Measured levels and spectral characteristics of current OS and app event sounds</small></span>
+      </a>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="methodology.html">Methodology</a>
+        <a class="language-link" href="ja/index.html" lang="ja">日本語</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main"><article class="prose">
+  <a class="back-link" href="index.html">← Back to all measurements</a>
+  <h1>Methodology</h1>
+  <p>This database measures original audio files bundled with operating systems and applications without gain changes or normalization. The source audio itself is not published.</p>
+  <h2>Loudness</h2><p>Integrated, 400 ms momentary, 3 s short-term, loudness range, and true peak measurements use FFmpeg’s <code>ebur128</code> filter following ITU-R BS.1770-5 and EBU Mode. A silent tail is appended so a meter can settle after a short event; original samples are not altered. Short-term and LRA are unavailable for sources shorter than three seconds.</p>
+  <h2>RMS and active segment</h2><p>Full-file RMS is the root mean square across every sample and channel. Activity uses non-overlapping 10 ms frames and the higher of −60 dBFS or 40 dB below the peak frame RMS. Active RMS covers the interval from the first through the last active frame.</p>
+  <h2>Spectral characteristics</h2><p>A Welch power spectral density estimate uses a Hann window of at most 4096 samples after arithmetic channel averaging. The database records broad-band and third-octave energy, spectral centroid, peak frequency, and the proportion of energy from 200 Hz to 8 kHz.</p>
+  <h2>Limitations</h2><p>These are measurements of bundled source files, not acoustic playback levels. Actual level relationships depend on OS, app, player, and output-device settings.</p><p>Values are not recommendations, safety judgments, or product rankings. Unavailable measurements remain <code>null</code> in JSON rather than being replaced by zero.</p>
+  <h2>Definitions and limitations</h2>
+  <p><a href="https://www.itu.int/rec/R-REC-BS.1770-5-202311-I">ITU-R BS.1770-5 ↗</a> · <a href="https://tech.ebu.ch/docs/tech/tech3341.pdf">EBU Tech 3341 ↗</a></p>
+</article>
+</main>
+  <footer>
+    <p>Measurement data: CC BY 4.0 · Code: MIT · Original sounds are not included.</p>
+  </footer>
+</body>
+</html>

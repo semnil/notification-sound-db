@@ -1,0 +1,51 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/guide/music/welcome/mac"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "1.6.6",
+    "bundle_id": "com.apple.Music",
+    "version": "1.6.6"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "application",
+  "measurement_failures": [],
+  "names": {
+    "en": "Music",
+    "ja": "ミュージック"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "bed20955e39d115c36f6f0b975fbf0d18ddb9094d2db7e0bcce2d7434de3e7e3",
+      "event_type": "completion",
+      "name": "axloadcomplete",
+      "relative_path": "Contents/Resources/axloadcomplete.aif"
+    },
+    {
+      "asset_sha256": "97b6876106e0a3bf4b56013272645f4c9cb5142ebe148dfebbef557330f4f297",
+      "event_type": "completion",
+      "name": "complete",
+      "relative_path": "Contents/Resources/complete.aif"
+    }
+  ],
+  "source_id": "apple-music",
+  "vendor": "Apple"
+}

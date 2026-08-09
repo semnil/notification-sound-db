@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Configured sound sources",
+  "type": "object",
+  "required": ["schema_version", "sources"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "vendor",
+          "names",
+          "kind",
+          "default_path",
+          "official_url",
+          "default_event_type"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "vendor": {"type": "string", "minLength": 1},
+          "names": {
+            "type": "object",
+            "required": ["en", "ja"],
+            "properties": {
+              "en": {"type": "string", "minLength": 1},
+              "ja": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          },
+          "kind": {"enum": ["operating_system", "application"]},
+          "default_path": {"type": "string", "pattern": "^/"},
+          "official_url": {"type": "string", "format": "uri"},
+          "default_event_type": {
+            "enum": [
+              "message",
+              "incoming_call",
+              "call_state",
+              "error",
+              "completion",
+              "ui_feedback",
+              "system_alert",
+              "unknown"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>測定方法 — 通知音測定データベース</title>
+  <meta name="description" content="現行OS・アプリのイベント音について、音量と周波数特性を同一条件で測定">
+<link rel="canonical" href="https://semnil.github.io/notification-sound-db/ja/methodology.html"><link rel="alternate" hreflang="en" href="https://semnil.github.io/notification-sound-db/methodology.html"><link rel="alternate" hreflang="ja" href="https://semnil.github.io/notification-sound-db/ja/methodology.html"><link rel="alternate" hreflang="x-default" href="https://semnil.github.io/notification-sound-db/methodology.html">  <meta property="og:type" content="website">
+  <meta property="og:title" content="測定方法 — 通知音測定データベース">
+  <meta property="og:description" content="現行OS・アプリのイベント音について、音量と周波数特性を同一条件で測定">
+  <meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://semnil.github.io/notification-sound-db/ja/methodology.html">  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span><strong>通知音測定データベース</strong><small>現行OS・アプリのイベント音について、音量と周波数特性を同一条件で測定</small></span>
+      </a>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="../methodology.html">測定方法</a>
+        <a class="language-link" href="../index.html" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main"><article class="prose">
+  <a class="back-link" href="../index.html">← 測定一覧へ戻る</a>
+  <h1>測定方法</h1>
+  <p>このデータベースは、OSおよびアプリに同梱された元の音声ファイルを、ゲイン変更や正規化を行わずに測定します。音源ファイル自体は公開しません。</p>
+  <h2>ラウドネス</h2><p>Integrated Loudness、Momentary Loudness（400 ms）、Short-term Loudness（3秒）、Loudness Range、True Peakは、FFmpegの<code>ebur128</code>フィルターを使用し、ITU-R BS.1770-5およびEBU Modeに基づいて測定します。短いイベント音でメーターの終端状態を取得するため無音の末尾を追加しますが、元音源のサンプルは変更しません。3秒未満の音源ではShort-termとLRAを測定不能として扱います。</p>
+  <h2>RMSと有音区間</h2><p>RMSは全サンプル・全チャンネルの二乗平均平方根です。有音区間は10 msフレームで検出し、閾値は−60 dBFSと最大フレームRMSから−40 dBのうち高い方です。最初と最後の有音フレーム間を有音区間として、別にRMSを計算します。</p>
+  <h2>周波数特性</h2><p>チャンネルを算術平均した信号について、最大4096サンプルのHann窓を使ったWelch法でパワースペクトル密度を推定します。広帯域および1/3オクターブ帯のエネルギー、スペクトル重心、ピーク周波数、200 Hz–8 kHzのエネルギー比を記録します。</p>
+  <h2>制約</h2><p>掲載値は同梱音源ファイルの測定値であり、実際の再生音圧ではありません。相対的な再生レベルはOS、アプリ、プレイヤー、出力機器の設定で変化します。</p><p>数値は推奨音量、安全性、アプリの優劣を示しません。測定不能値はゼロへ置換せず、JSONでは<code>null</code>として保存します。</p>
+  <h2>定義と制約</h2>
+  <p><a href="https://www.itu.int/rec/R-REC-BS.1770-5-202311-I">ITU-R BS.1770-5 ↗</a> · <a href="https://tech.ebu.ch/docs/tech/tech3341.pdf">EBU Tech 3341 ↗</a></p>
+</article>
+</main>
+  <footer>
+    <p>測定データ: CC BY 4.0 · コード: MIT · 元の通知音は収録していません。</p>
+  </footer>
+</body>
+</html>

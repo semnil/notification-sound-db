@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://semnil.github.io/notification-sound-db/schemas/source.schema.json",
+  "title": "Notification sound source snapshot",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_id",
+    "names",
+    "vendor",
+    "kind",
+    "platform",
+    "application",
+    "observed_at",
+    "analysis_profile",
+    "acquisition",
+    "collection",
+    "sounds",
+    "measurement_failures"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"type": "string"},
+    "source_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "names": {"$ref": "#/$defs/localizedNames"},
+    "vendor": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["operating_system", "application"]},
+    "platform": {
+      "type": "object",
+      "required": ["id", "version", "architecture"],
+      "properties": {
+        "id": {"type": "string"},
+        "version": {"type": "string"},
+        "build": {"type": ["string", "null"]},
+        "architecture": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "application": {
+      "type": "object",
+      "required": ["bundle_id", "version", "build"],
+      "properties": {
+        "bundle_id": {"type": ["string", "null"]},
+        "version": {"type": ["string", "null"]},
+        "build": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "observed_at": {"type": "string", "format": "date-time"},
+    "analysis_profile": {"type": "string"},
+    "acquisition": {
+      "type": "object",
+      "required": [
+        "method",
+        "official_url",
+        "distribution_url",
+        "distribution_sha256",
+        "metadata_url"
+      ],
+      "properties": {
+        "method": {
+          "enum": [
+            "local_installation",
+            "official_distribution",
+            "official_store_metadata"
+          ]
+        },
+        "official_url": {"type": "string", "format": "uri"},
+        "distribution_url": {"type": ["string", "null"], "format": "uri"},
+        "distribution_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+        "metadata_url": {"type": ["string", "null"], "format": "uri"}
+      },
+      "additionalProperties": false
+    },
+    "collection": {
+      "type": "object",
+      "required": ["status", "reason_code", "reason"],
+      "properties": {
+        "status": {"enum": ["measured", "unavailable"]},
+        "reason_code": {"type": ["string", "null"]},
+        "reason": {
+          "oneOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/localizedNames"}
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "sounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["asset_sha256", "name", "relative_path", "event_type"],
+        "properties": {
+          "asset_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "name": {"type": "string"},
+          "relative_path": {"type": "string"},
+          "event_type": {
+            "enum": [
+              "message",
+              "incoming_call",
+              "call_state",
+              "error",
+              "completion",
+              "ui_feedback",
+              "system_alert",
+              "unknown"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "measurement_failures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "relative_path", "sha256", "error_type", "reason"],
+        "properties": {
+          "name": {"type": "string"},
+          "relative_path": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "error_type": {"type": "string"},
+          "reason": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "localizedNames": {
+      "type": "object",
+      "required": ["en", "ja"],
+      "properties": {"en": {"type": "string"}, "ja": {"type": "string"}},
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

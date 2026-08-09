@@ -1,0 +1,45 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/guide/mac-help/change-notifications-settings-mh40583/mac"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "25G76",
+    "bundle_id": null,
+    "version": "26.6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "operating_system",
+  "measurement_failures": [],
+  "names": {
+    "en": "macOS user notification bundles",
+    "ja": "macOSユーザー通知バンドル"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "3c5d4661993d46b429b6d3470dae52c241bc80d7054a6ae011747ce316bb53b1",
+      "event_type": "message",
+      "name": "GKInvite",
+      "relative_path": "Bundles/com.apple.gamecenter.bundle/Contents/Resources/GKInvite.caf"
+    }
+  ],
+  "source_id": "macos-user-notifications",
+  "vendor": "Apple"
+}

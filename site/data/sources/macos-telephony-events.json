@@ -1,0 +1,171 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/guide/facetime/welcome/mac"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "25G76",
+    "bundle_id": null,
+    "version": "26.6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "operating_system",
+  "measurement_failures": [],
+  "names": {
+    "en": "macOS telephony event sounds",
+    "ja": "macOS通話イベント音"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "151d6aa6ac1735394749f87fc8b31599b332e93963bcb27e8d8427cebf940011",
+      "event_type": "call_state",
+      "name": "busy_tone_cept",
+      "relative_path": "busy_tone_cept.caf"
+    },
+    {
+      "asset_sha256": "e728424581b665e207c9c1e97aa01a2f2aa0e870b817b7ebddb90ef1d4bcda4a",
+      "event_type": "call_state",
+      "name": "call_waiting_tone_cept",
+      "relative_path": "call_waiting_tone_cept.caf"
+    },
+    {
+      "asset_sha256": "69b239e1887d55d8086f55e6441732cc964e057097436f54f06eeed99041c365",
+      "event_type": "call_state",
+      "name": "end_call_tone_cept",
+      "relative_path": "end_call_tone_cept.caf"
+    },
+    {
+      "asset_sha256": "c03782452c954b4168f99fbb5320c7e3b0be747ec6d3a9f49d0246b009719854",
+      "event_type": "call_state",
+      "name": "end_call_tone_cept",
+      "relative_path": "end_call_tone_cept.wav"
+    },
+    {
+      "asset_sha256": "17f4dc06217ad02e48e4778d8715f578bbf11bc12ee9949715cd67be310824ec",
+      "event_type": "call_state",
+      "name": "hold",
+      "relative_path": "hold.wav"
+    },
+    {
+      "asset_sha256": "bbbd8fdbc41d5ebbdd37e17645add0eaabc5e2bbd285a6fea2991b818a954cef",
+      "event_type": "call_state",
+      "name": "let-me-join",
+      "relative_path": "let-me-join.caf"
+    },
+    {
+      "asset_sha256": "54583e36956825fbf6c03b59023a8c13a5eb81916d607963d43e7429d00f5cb5",
+      "event_type": "call_state",
+      "name": "multiway-join",
+      "relative_path": "multiway-join.caf"
+    },
+    {
+      "asset_sha256": "09479555bb409b454be98a33c11e88a15862af78edba73af43143c8b1989d6e6",
+      "event_type": "call_state",
+      "name": "multiway-leave",
+      "relative_path": "multiway-leave.caf"
+    },
+    {
+      "asset_sha256": "855ec0ac42a147aa43b635f7fd30acb09d4b0c77f8f6348c125a04a9d46f4fe4",
+      "event_type": "call_state",
+      "name": "mute",
+      "relative_path": "mute.caf"
+    },
+    {
+      "asset_sha256": "21e95efddddee62e796ac013ade6f617150fac602fca6fe54db4c6e54bd80c01",
+      "event_type": "call_state",
+      "name": "mute_fail",
+      "relative_path": "mute_fail.caf"
+    },
+    {
+      "asset_sha256": "767de8c851246215a1567a92fd1aa732345f1aa531463819ec60f0e4a2c1460b",
+      "event_type": "incoming_call",
+      "name": "ringback_tone_ansi",
+      "relative_path": "ringback_tone_ansi.caf"
+    },
+    {
+      "asset_sha256": "d39bb73e0c4d1703b2584dd2a574e05f7b0962a8e3d95e88d974ab13d760061e",
+      "event_type": "incoming_call",
+      "name": "ringback_tone_aus",
+      "relative_path": "ringback_tone_aus.caf"
+    },
+    {
+      "asset_sha256": "023b806702e260e9940b9247181be258d9375977d80048b72db84a5334ad9562",
+      "event_type": "incoming_call",
+      "name": "ringback_tone_cept",
+      "relative_path": "ringback_tone_cept.caf"
+    },
+    {
+      "asset_sha256": "941fc87b65c2f2747b532b66e7c9c2af5f14e7489d7a7c106a89394401ce1596",
+      "event_type": "incoming_call",
+      "name": "ringback_tone_hk",
+      "relative_path": "ringback_tone_hk.caf"
+    },
+    {
+      "asset_sha256": "d880dc1fff5d519307f2bf03c2b786afadfdfe462f223c1d1ac3d07e69980d8a",
+      "event_type": "incoming_call",
+      "name": "ringback_tone_uk",
+      "relative_path": "ringback_tone_uk.caf"
+    },
+    {
+      "asset_sha256": "47eb07fc60e98b6834ee70a96cd37226dab0640118426caee7fec53f28789f27",
+      "event_type": "call_state",
+      "name": "shareplay_activity",
+      "relative_path": "shareplay_activity.caf"
+    },
+    {
+      "asset_sha256": "ea017aa4b02bfc23282752f73d9045cb8010ebe8746ac48e5fe888417e192f13",
+      "event_type": "call_state",
+      "name": "unmute",
+      "relative_path": "unmute.caf"
+    },
+    {
+      "asset_sha256": "2740445a24918f597b9452a4f5ac97972b98ca3cdb731850892a8dd6e6b320d1",
+      "event_type": "incoming_call",
+      "name": "vc~callwaitingring",
+      "relative_path": "vc~callwaitingring.aif"
+    },
+    {
+      "asset_sha256": "8a0f5899e96f7aa1a2511bc97c91314b6d4fa1352ac18b47d7179d2aca6c9af9",
+      "event_type": "call_state",
+      "name": "vc~ended",
+      "relative_path": "vc~ended.aif"
+    },
+    {
+      "asset_sha256": "72c7af8db847590c65a95c82ac0eea28c004fee49bccc19aa822314983d39428",
+      "event_type": "call_state",
+      "name": "vc~ended",
+      "relative_path": "vc~ended.caf"
+    },
+    {
+      "asset_sha256": "f7c27f1fb14de63c51a4930f8b88d5b7124ce7bc911904d2ce1578718cdbdec0",
+      "event_type": "call_state",
+      "name": "vc~invitation-accepted",
+      "relative_path": "vc~invitation-accepted.caf"
+    },
+    {
+      "asset_sha256": "44c307ec8c80cd8a0e44f4c23dfad4dca00214714ef9f41bff4b40f425ad2064",
+      "event_type": "incoming_call",
+      "name": "vc~ringing",
+      "relative_path": "vc~ringing.aif"
+    }
+  ],
+  "source_id": "macos-telephony-events",
+  "vendor": "Apple"
+}

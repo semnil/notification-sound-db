@@ -1,0 +1,45 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/guide/mac-help/share-the-screen-of-another-mac-mh14066/mac"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "764.2",
+    "bundle_id": "com.apple.ScreenSharing",
+    "version": "6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "application",
+  "measurement_failures": [],
+  "names": {
+    "en": "Screen Sharing",
+    "ja": "画面共有"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "8ea649d0008bdb2db56200e65bb261f162854dcd76f228317b5e1509f8b2823e",
+      "event_type": "completion",
+      "name": "SessionStarted",
+      "relative_path": "Contents/Resources/SessionStarted.aiff"
+    }
+  ],
+  "source_id": "apple-screen-sharing",
+  "vendor": "Apple"
+}

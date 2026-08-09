@@ -1,0 +1,123 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/macos"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "25G76",
+    "bundle_id": null,
+    "version": "26.6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "operating_system",
+  "measurement_failures": [],
+  "names": {
+    "en": "macOS system sounds",
+    "ja": "macOSシステムサウンド"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "c41b33729b4d7f895073578adb7192bc41571ccec855c6b12d8127a464b05445",
+      "event_type": "system_alert",
+      "name": "Basso",
+      "relative_path": "Basso.aiff"
+    },
+    {
+      "asset_sha256": "65a0c069511d5a01cf791635e0b3a9dc3f335caf67f5d3579cc0a6c6232f9818",
+      "event_type": "system_alert",
+      "name": "Blow",
+      "relative_path": "Blow.aiff"
+    },
+    {
+      "asset_sha256": "f25c241c230859db895ba46d85c83269652fb318140a6963f233d17dd65a8874",
+      "event_type": "system_alert",
+      "name": "Bottle",
+      "relative_path": "Bottle.aiff"
+    },
+    {
+      "asset_sha256": "318a9af15546772bb0ce2bdebc2cd250ae7130d680dbf49835f1cc5960267f99",
+      "event_type": "system_alert",
+      "name": "Frog",
+      "relative_path": "Frog.aiff"
+    },
+    {
+      "asset_sha256": "e80aff72e57ed223c3d8c8db45db33de99ba92604ddf66b6bd63da8d4c947fbd",
+      "event_type": "system_alert",
+      "name": "Funk",
+      "relative_path": "Funk.aiff"
+    },
+    {
+      "asset_sha256": "b337d8e01066c30de2f296763609b7e488bb3c6ea817aa875ee999d708433cf9",
+      "event_type": "system_alert",
+      "name": "Glass",
+      "relative_path": "Glass.aiff"
+    },
+    {
+      "asset_sha256": "93c4c6dab387914ee903e3dbb6932b821928ac26b2254abf8f5642d7cb886b2c",
+      "event_type": "system_alert",
+      "name": "Hero",
+      "relative_path": "Hero.aiff"
+    },
+    {
+      "asset_sha256": "a78478575060091de47287b23bd8149e5f67d233b21ce771c5b34e2e1805a47f",
+      "event_type": "system_alert",
+      "name": "Morse",
+      "relative_path": "Morse.aiff"
+    },
+    {
+      "asset_sha256": "c401532c8f53a31203ecce724dcbb6b0167158137536e8fcc1930dfcb75cccfa",
+      "event_type": "system_alert",
+      "name": "Ping",
+      "relative_path": "Ping.aiff"
+    },
+    {
+      "asset_sha256": "ab2ac3ffee11e4a6c33f89717cd7d1f961834bd80252521b1dc4adee1cbbb85d",
+      "event_type": "ui_feedback",
+      "name": "Pop",
+      "relative_path": "Pop.aiff"
+    },
+    {
+      "asset_sha256": "3770ff805cf82b7808db972a257e7c9ccca0065ab7cd8eaf148a8df33baeb903",
+      "event_type": "system_alert",
+      "name": "Purr",
+      "relative_path": "Purr.aiff"
+    },
+    {
+      "asset_sha256": "f005fdc5ac36488d41891e04e9d66269db95af652b0c6b398fcdb0009f14308d",
+      "event_type": "system_alert",
+      "name": "Sosumi",
+      "relative_path": "Sosumi.aiff"
+    },
+    {
+      "asset_sha256": "cbb01d8c8032f0be6e41e60362b51a0e14cb267069a49f4c5bfa97a28a5cb5dd",
+      "event_type": "system_alert",
+      "name": "Submarine",
+      "relative_path": "Submarine.aiff"
+    },
+    {
+      "asset_sha256": "b634e9c03bdce413533a51fc32d8a631b39a8621b1ee8f9ab1825b6ca0431702",
+      "event_type": "system_alert",
+      "name": "Tink",
+      "relative_path": "Tink.aiff"
+    }
+  ],
+  "source_id": "macos-system",
+  "vendor": "Apple"
+}

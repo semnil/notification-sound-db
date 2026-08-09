@@ -1,0 +1,201 @@
+{
+  "$schema": "../schemas/asset.schema.json",
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "analyzed_at": "2026-08-09T04:57:46Z",
+  "audio": {
+    "channel_count": 2,
+    "channel_layout": null,
+    "duration_seconds": 0.500583,
+    "sample_rate_hz": 48000
+  },
+  "file": {
+    "bits_per_sample": 24,
+    "byte_size": 144300,
+    "codec_long_name": "PCM signed 24-bit big-endian",
+    "codec_name": "pcm_s24be",
+    "container_format": "aiff",
+    "extension": ".aif",
+    "sample_format": "s32"
+  },
+  "levels": {
+    "active_segment": {
+      "duration_seconds": 0.21,
+      "end_seconds": 0.21,
+      "leading_silence_seconds": 0.0,
+      "rms_dbfs": -35.786,
+      "start_seconds": 0.0,
+      "threshold_dbfs": -60.0,
+      "trailing_silence_seconds": 0.290583
+    },
+    "channels": [
+      {
+        "index": 0,
+        "rms_dbfs": -39.249,
+        "sample_peak_dbfs": -9.974
+      },
+      {
+        "index": 1,
+        "rms_dbfs": -39.886,
+        "sample_peak_dbfs": -11.247
+      }
+    ],
+    "rms_dbfs": -39.556,
+    "sample_crest_factor_db": 29.582,
+    "sample_peak_dbfs": -9.974,
+    "true_peak_crest_factor_db": 29.556
+  },
+  "loudness": {
+    "integrated_lufs": -33.5,
+    "loudness_range_lu": null,
+    "maximum_momentary_lufs": -33.5,
+    "maximum_short_term_lufs": null,
+    "momentary_window_seconds": 0.4,
+    "notes": [
+      "silent_tail_added_for_meter_settling",
+      "source_shorter_than_short_term_window"
+    ],
+    "short_term_window_seconds": 3.0,
+    "standard": "ITU-R BS.1770-5 / EBU Mode",
+    "tail_padding_seconds": 3.1,
+    "true_peak_dbtp": -10.0
+  },
+  "schema_version": "1.0.0",
+  "sha256": "5e4b73057a07e1625f75ede3358ff8c92631625f3a4a0381f1d4a5cb4f09580c",
+  "spectrum": {
+    "broad_band_energy_dbfs": {
+      "high_5000_10000_hz": -49.663,
+      "low_80_200_hz": -56.04,
+      "low_mid_200_500_hz": -51.671,
+      "mid_500_2000_hz": -53.52,
+      "presence_2000_5000_hz": -47.737,
+      "sub_20_80_hz": -67.105
+    },
+    "method": "Welch PSD, Hann window, 4096-sample maximum segment",
+    "peak_frequency_hz": 351.562,
+    "spectral_centroid_hz": 3353.544,
+    "speech_band_200_8000_hz_energy_percent": 88.294,
+    "third_octave_band_energy_dbfs": [
+      {
+        "center_hz": 25.0,
+        "energy_dbfs": -94.079
+      },
+      {
+        "center_hz": 31.5,
+        "energy_dbfs": -90.072
+      },
+      {
+        "center_hz": 40.0,
+        "energy_dbfs": -79.019
+      },
+      {
+        "center_hz": 50.0,
+        "energy_dbfs": -74.474
+      },
+      {
+        "center_hz": 63.0,
+        "energy_dbfs": -69.823
+      },
+      {
+        "center_hz": 80.0,
+        "energy_dbfs": -70.433
+      },
+      {
+        "center_hz": 100.0,
+        "energy_dbfs": -72.165
+      },
+      {
+        "center_hz": 125.0,
+        "energy_dbfs": -66.256
+      },
+      {
+        "center_hz": 160.0,
+        "energy_dbfs": -58.558
+      },
+      {
+        "center_hz": 200.0,
+        "energy_dbfs": -62.495
+      },
+      {
+        "center_hz": 250.0,
+        "energy_dbfs": -70.187
+      },
+      {
+        "center_hz": 315.0,
+        "energy_dbfs": -54.825
+      },
+      {
+        "center_hz": 400.0,
+        "energy_dbfs": -61.218
+      },
+      {
+        "center_hz": 500.0,
+        "energy_dbfs": -63.178
+      },
+      {
+        "center_hz": 630.0,
+        "energy_dbfs": -65.354
+      },
+      {
+        "center_hz": 800.0,
+        "energy_dbfs": -64.136
+      },
+      {
+        "center_hz": 1000.0,
+        "energy_dbfs": -64.025
+      },
+      {
+        "center_hz": 1250.0,
+        "energy_dbfs": -61.823
+      },
+      {
+        "center_hz": 1600.0,
+        "energy_dbfs": -61.162
+      },
+      {
+        "center_hz": 2000.0,
+        "energy_dbfs": -56.159
+      },
+      {
+        "center_hz": 2500.0,
+        "energy_dbfs": -53.783
+      },
+      {
+        "center_hz": 3150.0,
+        "energy_dbfs": -52.572
+      },
+      {
+        "center_hz": 4000.0,
+        "energy_dbfs": -54.339
+      },
+      {
+        "center_hz": 5000.0,
+        "energy_dbfs": -53.552
+      },
+      {
+        "center_hz": 6300.0,
+        "energy_dbfs": -52.655
+      },
+      {
+        "center_hz": 8000.0,
+        "energy_dbfs": -56.439
+      },
+      {
+        "center_hz": 10000.0,
+        "energy_dbfs": -61.051
+      },
+      {
+        "center_hz": 12500.0,
+        "energy_dbfs": -66.655
+      },
+      {
+        "center_hz": 16000.0,
+        "energy_dbfs": -71.627
+      }
+    ]
+  },
+  "toolchain": {
+    "ffmpeg": "ffmpeg version 8.1.2 Copyright (c) 2000-2026 the FFmpeg developers",
+    "ffprobe": "ffprobe version 8.1.2 Copyright (c) 2007-2026 the FFmpeg developers",
+    "notification_sound_db": "0.1.0"
+  }
+}

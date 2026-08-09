@@ -1,0 +1,81 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/accessibility"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "25G76",
+    "bundle_id": null,
+    "version": "26.6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "operating_system",
+  "measurement_failures": [],
+  "names": {
+    "en": "macOS accessibility media event sounds",
+    "ja": "macOSアクセシビリティメディアイベント音"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "7b15aa9504dbcdd204c04908643d8e8fdcebd20f8a0399523f8952aac59ce8a5",
+      "event_type": "ui_feedback",
+      "name": "bubbleDown",
+      "relative_path": "bubbleDown.aiff"
+    },
+    {
+      "asset_sha256": "0c89043e44f4f14e618634dc84290ef01b5d9e587249d8857caa9fa2fd2435e1",
+      "event_type": "ui_feedback",
+      "name": "bubbleUp",
+      "relative_path": "bubbleUp.aiff"
+    },
+    {
+      "asset_sha256": "33cb700a48858ed98945f32e9231296fdb404149381bd7bad33ebf8ede7bddb4",
+      "event_type": "ui_feedback",
+      "name": "pluck1",
+      "relative_path": "pluck1.aiff"
+    },
+    {
+      "asset_sha256": "8a7d0289907dc27ee3dd1d7f0833dc999f61d531422d9b12dc63753bbed2b95b",
+      "event_type": "ui_feedback",
+      "name": "pluck2",
+      "relative_path": "pluck2.aiff"
+    },
+    {
+      "asset_sha256": "ed03619a058f5aa5cf2561c800bb6c4138650c2f98e8643ba0099e3242e01058",
+      "event_type": "ui_feedback",
+      "name": "scratch1",
+      "relative_path": "scratch1.aiff"
+    },
+    {
+      "asset_sha256": "ed03619a058f5aa5cf2561c800bb6c4138650c2f98e8643ba0099e3242e01058",
+      "event_type": "ui_feedback",
+      "name": "scratch2",
+      "relative_path": "scratch2.aiff"
+    },
+    {
+      "asset_sha256": "462056c28e31e1eb4a23924f079d3063c3be67b0279315df39d0207c6ba62643",
+      "event_type": "completion",
+      "name": "success1",
+      "relative_path": "success1.aiff"
+    }
+  ],
+  "source_id": "macos-accessibility-media-events",
+  "vendor": "Apple"
+}

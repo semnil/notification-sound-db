@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ text.methodology }} — {{ text.title }}{% endblock %}
+{% block content %}
+<article class="prose">
+  <a class="back-link" href="{{ paths.home }}">← {{ text.back }}</a>
+  <h1>{{ text.methodology }}</h1>
+  {% if lang == 'ja' %}
+  <p>このデータベースは、OSおよびアプリに同梱された元の音声ファイルを、ゲイン変更や正規化を行わずに測定します。音源ファイル自体は公開しません。</p>
+  <h2>ラウドネス</h2><p>Integrated Loudness、Momentary Loudness（400 ms）、Short-term Loudness（3秒）、Loudness Range、True Peakは、FFmpegの<code>ebur128</code>フィルターを使用し、ITU-R BS.1770-5およびEBU Modeに基づいて測定します。短いイベント音でメーターの終端状態を取得するため無音の末尾を追加しますが、元音源のサンプルは変更しません。3秒未満の音源ではShort-termとLRAを測定不能として扱います。</p>
+  <h2>RMSと有音区間</h2><p>RMSは全サンプル・全チャンネルの二乗平均平方根です。有音区間は10 msフレームで検出し、閾値は−60 dBFSと最大フレームRMSから−40 dBのうち高い方です。最初と最後の有音フレーム間を有音区間として、別にRMSを計算します。</p>
+  <h2>周波数特性</h2><p>チャンネルを算術平均した信号について、最大4096サンプルのHann窓を使ったWelch法でパワースペクトル密度を推定します。広帯域および1/3オクターブ帯のエネルギー、スペクトル重心、ピーク周波数、200 Hz–8 kHzのエネルギー比を記録します。</p>
+  <h2>制約</h2><p>{{ text.disclaimer }}</p><p>数値は推奨音量、安全性、アプリの優劣を示しません。測定不能値はゼロへ置換せず、JSONでは<code>null</code>として保存します。</p>
+  {% else %}
+  <p>This database measures original audio files bundled with operating systems and applications without gain changes or normalization. The source audio itself is not published.</p>
+  <h2>Loudness</h2><p>Integrated, 400 ms momentary, 3 s short-term, loudness range, and true peak measurements use FFmpeg’s <code>ebur128</code> filter following ITU-R BS.1770-5 and EBU Mode. A silent tail is appended so a meter can settle after a short event; original samples are not altered. Short-term and LRA are unavailable for sources shorter than three seconds.</p>
+  <h2>RMS and active segment</h2><p>Full-file RMS is the root mean square across every sample and channel. Activity uses non-overlapping 10 ms frames and the higher of −60 dBFS or 40 dB below the peak frame RMS. Active RMS covers the interval from the first through the last active frame.</p>
+  <h2>Spectral characteristics</h2><p>A Welch power spectral density estimate uses a Hann window of at most 4096 samples after arithmetic channel averaging. The database records broad-band and third-octave energy, spectral centroid, peak frequency, and the proportion of energy from 200 Hz to 8 kHz.</p>
+  <h2>Limitations</h2><p>{{ text.disclaimer }}</p><p>Values are not recommendations, safety judgments, or product rankings. Unavailable measurements remain <code>null</code> in JSON rather than being replaced by zero.</p>
+  {% endif %}
+  <h2>{{ text.definitions }}</h2>
+  <p><a href="https://www.itu.int/rec/R-REC-BS.1770-5-202311-I">ITU-R BS.1770-5 ↗</a> · <a href="https://tech.ebu.ch/docs/tech/tech3341.pdf">EBU Tech 3341 ↗</a></p>
+</article>
+{% endblock %}

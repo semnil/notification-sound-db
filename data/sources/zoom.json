@@ -1,0 +1,117 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": "49cf70af674176f3708b9d3b519f585424c442ccf744fd9659327967971c8279",
+    "distribution_url": "https://zoom.us/client/7.1.5.84650/zoomusInstallerFull.pkg?archType=arm64",
+    "metadata_url": null,
+    "method": "official_distribution",
+    "official_url": "https://zoom.us/download"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "7.1.5.84650",
+    "bundle_id": "us.zoom.xos",
+    "version": "7.1.5 (84650)"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "application",
+  "measurement_failures": [],
+  "names": {
+    "en": "Zoom Workplace",
+    "ja": "Zoom Workplace"
+  },
+  "observed_at": "2026-08-09T05:08:30Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "525c988dbd53f27e86eccac47d36a64f101bddd70bfbe041d41dff43d6c852a3",
+      "event_type": "unknown",
+      "name": "and_the_winner_is",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/and_the_winner_is.mp3"
+    },
+    {
+      "asset_sha256": "76b1a89126d7e347bcca1ec98380e7f2cfaa583d8b757f23267dddb10efb2772",
+      "event_type": "unknown",
+      "name": "beethoven_begins",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/beethoven_begins.mp3"
+    },
+    {
+      "asset_sha256": "6a4e719d4b647d0ac37fd8e68b2860646b1c6c99e6def13b6d24be7d20c7fa73",
+      "event_type": "unknown",
+      "name": "golden_ticket",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/golden_ticket.mp3"
+    },
+    {
+      "asset_sha256": "cb382a8a4398adc193f0407940e71fdc6b36ac1a0b73299337125f2e1e8be699",
+      "event_type": "unknown",
+      "name": "ohh_la_la",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/ohh_la_la.mp3"
+    },
+    {
+      "asset_sha256": "60c46270d5f3e59f55c30376b77c870de0cc9a816bb52b6ac7f3f8b93299042b",
+      "event_type": "unknown",
+      "name": "on_the_launchpad",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/on_the_launchpad.mp3"
+    },
+    {
+      "asset_sha256": "05d82db2e8a5d79150514ea9f0f483323a8014aea437e04c8e373e3a71b4951d",
+      "event_type": "unknown",
+      "name": "pencils_down",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/pencils_down.mp3"
+    },
+    {
+      "asset_sha256": "aeabbe8431af076dc2f8aa10fad3c709faa2eac419cce2f230b3b363d8efbb46",
+      "event_type": "unknown",
+      "name": "timer-alarm",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/timer-alarm.wav"
+    },
+    {
+      "asset_sha256": "6b813401abd748e45f4a3e800460d565739d1dd36a4330f4e24d821214840597",
+      "event_type": "unknown",
+      "name": "times_up",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/times_up.mp3"
+    },
+    {
+      "asset_sha256": "366161c676c17e4ee35469e7a95206f98d4e1a9e31c13925d3ce4068ba073b0b",
+      "event_type": "unknown",
+      "name": "vamos",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/vamos.mp3"
+    },
+    {
+      "asset_sha256": "2e316ec0dad6927915375b0cd67b97caefddc7f46975b30d9255d422d2959713",
+      "event_type": "unknown",
+      "name": "vegas",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/vegas.mp3"
+    },
+    {
+      "asset_sha256": "82139bed6ff9e6fb5005922c920cd51d19e33a1a9ff9a7a17040145bac33540b",
+      "event_type": "unknown",
+      "name": "we_made_it",
+      "relative_path": "Contents/Frameworks/zAppUI.bundle/Contents/Resources/we_made_it.mp3"
+    },
+    {
+      "asset_sha256": "43d0fd2beabcb056810e64a17ba6e6e25cce6979e3ebdb6dc7da4c41f47015ee",
+      "event_type": "unknown",
+      "name": "dtmf_a",
+      "relative_path": "Contents/Resources/dtmf_a.wav"
+    },
+    {
+      "asset_sha256": "8986f818f05d1e4817f8c8cce8edc1b640fd3c512a139ce4583b8166504dcea7",
+      "event_type": "call_state",
+      "name": "Hangup",
+      "relative_path": "Contents/Resources/Hangup.WAV"
+    }
+  ],
+  "source_id": "zoom",
+  "vendor": "Zoom Communications"
+}

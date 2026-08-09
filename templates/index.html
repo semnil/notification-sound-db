@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero" aria-labelledby="page-heading">
+  <div class="hero-inner">
+    <p class="eyebrow">LUFS · dBTP · RMS · Spectrum</p>
+    <h1 id="page-heading">{{ text.title }}</h1>
+    <p>{{ text.subtitle }}</p>
+  </div>
+</section>
+
+<section class="search-panel" aria-label="{{ text.search_label }}">
+  <div class="search-row">
+    <label class="search-control">
+      <span class="sr-only">{{ text.search_label }}</span>
+      <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+      <input id="search" type="search" placeholder="{{ text.search_placeholder }}" autocomplete="off">
+    </label>
+    <label>
+      <span class="sr-only">{{ text.all_sources }}</span>
+      <select id="source-filter">
+        <option value="">{{ text.all_sources }}</option>
+        {% for source_id, source in measured_sources.items() %}<option value="{{ source_id }}">{{ source.names[lang] }} ({{ source_counts[source_id] }})</option>{% endfor %}
+      </select>
+    </label>
+    <label>
+      <span class="sr-only">{{ text.all_events }}</span>
+      <select id="event-filter">
+        <option value="">{{ text.all_events }}</option>
+        {% for event, count in event_counts|dictsort %}<option value="{{ event }}">{{ event_names[event][lang] }} ({{ count }})</option>{% endfor %}
+      </select>
+    </label>
+  </div>
+  <noscript><p class="noscript">{{ text.js_hint }}</p></noscript>
+</section>
+
+<section class="summary" aria-label="Summary">
+  <div><strong>{{ rows|length }}</strong><span>{{ text.sounds }}</span></div>
+  <div><strong>{{ rows|map(attribute='sha256')|unique|list|length }}</strong><span>{{ text.unique_assets }}</span></div>
+  <div><strong>{{ measured_sources|length }}</strong><span>{{ text.measured_sources }}</span></div>
+  <div><strong>{{ unavailable_sources|length }}</strong><span>{{ text.unavailable_sources }}</span></div>
+  <p>{{ text.updated }}: <time datetime="{{ observed_at }}">{{ observed_at }}</time></p>
+</section>
+
+<aside class="disclaimer"><span aria-hidden="true">i</span><p>{{ text.disclaimer }}</p></aside>
+
+{% if unavailable_sources %}
+<section class="coverage-note" aria-labelledby="coverage-heading">
+  <h2 id="coverage-heading">{{ text.collection_notes }}</h2>
+  <p>{{ text.collection_notes_intro }}</p>
+  <ul>
+  {% for source in unavailable_sources.values() %}
+    <li><strong>{{ source.names[lang] }}</strong>: {{ source.collection.reason[lang] }}
+      {% if source.acquisition.metadata_url %}<a href="{{ source.acquisition.metadata_url }}" rel="external">{{ text.official_source }} ↗</a>{% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section class="data-section" aria-labelledby="data-heading">
+  <div class="section-heading">
+    <h2 id="data-heading"><span id="result-count">{{ rows|length }}</span> {{ text.results }}</h2>
+    <div class="download-links">
+      <a href="{{ paths.root_prefix }}data/exports/measurements.csv">{{ text.download_csv }}</a>
+      <a href="{{ paths.root_prefix }}data/catalog.json">{{ text.download_json }}</a>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table class="measurement-table">
+      <thead><tr>
+        <th>{{ text.table_sound }}</th><th>{{ text.table_source }}</th><th>{{ text.table_event }}</th>
+        <th class="number">{{ text.table_duration }}</th><th class="number">{{ text.table_lufs_i }}</th>
+        <th class="number">{{ text.table_lufs_m }}</th><th class="number">{{ text.table_true_peak }}</th>
+        <th class="number">{{ text.table_rms }}</th><th><span class="sr-only">{{ text.details }}</span></th>
+      </tr></thead>
+      <tbody id="measurement-rows">
+      {% for row in rows %}
+        <tr data-source="{{ row.source_id }}" data-event="{{ row.event_type }}" data-search="{{ (row.source_name_en ~ ' ' ~ row.source_name_ja ~ ' ' ~ row.sound_name ~ ' ' ~ row.event_type ~ ' ' ~ row.relative_path)|lower }}">
+          <th scope="row"><strong>{{ row.sound_name }}</strong><code>{{ row.sha256[:8] }}</code></th>
+          <td>{{ row['source_name_' ~ lang] }}<small>v{{ row.application_version }}</small></td>
+          <td><span class="event-tag event-{{ row.event_type }}">{{ event_names[row.event_type][lang] }}</span></td>
+          <td class="number">{{ row.duration_seconds|metric('s', 2) }}</td>
+          <td class="number">{{ row.integrated_lufs|metric('LUFS') }}</td>
+          <td class="number">{{ row.maximum_momentary_lufs|metric('LUFS') }}</td>
+          <td class="number">{{ row.true_peak_dbtp|metric('dBTP') }}</td>
+          <td class="number">{{ row.rms_dbfs|metric('dBFS') }}</td>
+          <td><a class="detail-link" href="{{ paths.asset_prefix }}{{ row.sha256 }}.html" aria-label="{{ text.details }}: {{ row.sound_name }}">→</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    <p id="no-results" class="no-results" hidden>{{ text.no_results }}</p>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script src="{{ paths.root_prefix }}assets/app.js" defer></script>{% endblock %}

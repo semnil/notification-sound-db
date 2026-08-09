@@ -1,0 +1,18 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Vendor packages and extracted source audio must never be committed.
+.work/
+downloads/
+extracted/
+*.dmg
+*.pkg

@@ -1,0 +1,41 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "schema_version": "1.0.0",
+  "source_id": "line",
+  "names": {
+    "en": "LINE",
+    "ja": "LINE"
+  },
+  "vendor": "LY Corporation",
+  "kind": "application",
+  "platform": {
+    "id": "macos",
+    "version": "26.6.1",
+    "build": "25G76",
+    "architecture": "arm64"
+  },
+  "application": {
+    "bundle_id": "jp.naver.line.mac",
+    "version": "26.3.1",
+    "build": null
+  },
+  "observed_at": "2026-08-09T05:09:43Z",
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "acquisition": {
+    "method": "official_store_metadata",
+    "official_url": "https://line.me/update",
+    "distribution_url": null,
+    "distribution_sha256": null,
+    "metadata_url": "https://apps.apple.com/jp/app/line/id539883307?mt=12"
+  },
+  "collection": {
+    "status": "unavailable",
+    "reason_code": "installation_required",
+    "reason": {
+      "en": "The official macOS distribution is available only through the Mac App Store; no package was downloaded or installed.",
+      "ja": "macOS版の公式配布はMac App Storeのみであり、パッケージの取得やインストールは行っていません。"
+    }
+  },
+  "sounds": [],
+  "measurement_failures": []
+}

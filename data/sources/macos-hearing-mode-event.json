@@ -1,0 +1,45 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/accessibility/hearing"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "25G76",
+    "bundle_id": null,
+    "version": "26.6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "operating_system",
+  "measurement_failures": [],
+  "names": {
+    "en": "macOS hearing mode notification",
+    "ja": "macOSヒアリングモード通知音"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "f3b367a0eb4bcbdaa2e69dbbfa0a9f71db1312be1dc604ab675294136f0cc303",
+      "event_type": "message",
+      "name": "NotificationAudioTone",
+      "relative_path": "NotificationAudioTone.wav"
+    }
+  ],
+  "source_id": "macos-hearing-mode-event",
+  "vendor": "Apple"
+}

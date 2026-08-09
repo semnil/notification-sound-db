@@ -1,0 +1,153 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/guide/mac-help/change-alert-sounds-mchlp2207/mac"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "25G76",
+    "bundle_id": null,
+    "version": "26.6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "operating_system",
+  "measurement_failures": [],
+  "names": {
+    "en": "macOS alert tones",
+    "ja": "macOS通知音"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "3bcd3a7ad2f7ae9c1e0f45765ce2e1f067522e8f57475caff00bfbc63f903cb9",
+      "event_type": "system_alert",
+      "name": "Antic-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Antic-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "483fb3d7a4b39cd027aa0780456ddca008f6e591d5b3017fb3bcaed7e04f88da",
+      "event_type": "system_alert",
+      "name": "Cheers-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Cheers-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "3f61db82f2483425dad52e6066a4a2fa094ed533647719feaf7d1ebefc416e76",
+      "event_type": "system_alert",
+      "name": "Droplet-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Droplet-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "1eeb5d8994547213d5cd2625cb6cca1ebee1713589c9356c20778eba47e91dda",
+      "event_type": "system_alert",
+      "name": "Handoff-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Handoff-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "1deaf0b24969994707e8193bdc88cdaa10e7a5cc8589d6185ceaac92496f5cf0",
+      "event_type": "system_alert",
+      "name": "Milestone-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Milestone-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "df6310f6ed28d74cb8fb51dea3734a38f48f373152a1c45e27826faa41abd073",
+      "event_type": "system_alert",
+      "name": "Passage-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Passage-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "a254a711aee746fe5edc84482664d73c787b97e4cf0c2e9405ad1958df1c45ab",
+      "event_type": "system_alert",
+      "name": "Portal-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Portal-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "fc79d637182920c818bbcb1e070d8a02c525460d203dcb09ea6dcff24e35b1c2",
+      "event_type": "system_alert",
+      "name": "Rattle-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Rattle-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "c802ae28a87d08f9a3d42e8eef27a7c1c052cf55fad996f74e2e8314ff1ee420",
+      "event_type": "system_alert",
+      "name": "Rebound-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Rebound-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "7dce6e9605fe2dded72372d6dc651c2a83bf8b6760b8ed9d482702c33fdb0bf0",
+      "event_type": "system_alert",
+      "name": "Slide-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Slide-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "b3f5c21c4db520a41ee1df3d7650cf95bd4514519371f2eefc11d67fd200681a",
+      "event_type": "system_alert",
+      "name": "Welcome-EncoreInfinitum",
+      "relative_path": "EncoreInfinitum/Welcome-EncoreInfinitum.caf"
+    },
+    {
+      "asset_sha256": "ccf12b67b8eed2487b30585037206cd89b890b3059bcc23c24173840cfb52007",
+      "event_type": "message",
+      "name": "PhotosMemoriesNotification",
+      "relative_path": "PhotosMemoriesNotification.caf"
+    },
+    {
+      "asset_sha256": "169b1d1818f640db411aa349eb218e9f9b7eb902ba2c28d3595e1530022d84ca",
+      "event_type": "message",
+      "name": "ReceivedMessage",
+      "relative_path": "ReceivedMessage.caf"
+    },
+    {
+      "asset_sha256": "a1224eabb75266ff9ee2837a8da828c390bd8e87fd99c85c52afd20a6d3fdbbb",
+      "event_type": "message",
+      "name": "Text-Message-Acknowledgement-Exclamation",
+      "relative_path": "Text-Message-Acknowledgement-Exclamation.caf"
+    },
+    {
+      "asset_sha256": "7eb08433bbc35b4c1925cb816f2fd28e0b212c94fc2789a00d8739cebedef1ba",
+      "event_type": "message",
+      "name": "Text-Message-Acknowledgement-HaHa",
+      "relative_path": "Text-Message-Acknowledgement-HaHa.caf"
+    },
+    {
+      "asset_sha256": "84644f45cb13ade3e608b287ea23d0e7584baa21574313513a4ee02407acccd7",
+      "event_type": "message",
+      "name": "Text-Message-Acknowledgement-Heart",
+      "relative_path": "Text-Message-Acknowledgement-Heart.caf"
+    },
+    {
+      "asset_sha256": "1c0643278184edebc692efc918998fe5f71cb86f9c773ab00f3b28160b4be9af",
+      "event_type": "message",
+      "name": "Text-Message-Acknowledgement-QuestionMark",
+      "relative_path": "Text-Message-Acknowledgement-QuestionMark.caf"
+    },
+    {
+      "asset_sha256": "f399336ad40340b981fd2f4ff66f74c8a71a9c7f34bf3c7c8ced69cfcbee0ca9",
+      "event_type": "message",
+      "name": "Text-Message-Acknowledgement-ThumbsDown",
+      "relative_path": "Text-Message-Acknowledgement-ThumbsDown.caf"
+    },
+    {
+      "asset_sha256": "d77c74ed903575a2543cc7b81ca4e3dca7fd889a83669305216b4090a8498c1d",
+      "event_type": "message",
+      "name": "Text-Message-Acknowledgement-ThumbsUp",
+      "relative_path": "Text-Message-Acknowledgement-ThumbsUp.caf"
+    }
+  ],
+  "source_id": "macos-alert-tones",
+  "vendor": "Apple"
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/guide/books/welcome/mac"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "6570",
+    "bundle_id": "com.apple.iBooksX",
+    "version": "8.5"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "application",
+  "measurement_failures": [],
+  "names": {
+    "en": "Books",
+    "ja": "ブック"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "5d7a7e8a867e96952300ab764d86854689a17d1f09740a593e6cd91fecc47356",
+      "event_type": "ui_feedback",
+      "name": "skipFX",
+      "relative_path": "Contents/Frameworks/BKAudiobooks.framework/Versions/A/Resources/skipFX.aiff"
+    }
+  ],
+  "source_id": "apple-books",
+  "vendor": "Apple"
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://discord.com/download"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "0.0.406",
+    "bundle_id": "com.hnc.Discord",
+    "version": "0.0.406"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "application",
+  "measurement_failures": [],
+  "names": {
+    "en": "Discord",
+    "ja": "Discord"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "6434271b459fce2374bfa7eaadc359fca08012d0b36b5af75c2dab234fe4589e",
+      "event_type": "message",
+      "name": "discord_asmr_message1",
+      "relative_path": "Contents/Resources/discord_asmr_message1.m4a"
+    },
+    {
+      "asset_sha256": "189c714abe2c3f56be62b8a533481ff7798735739c648453ca47c90aaa41e971",
+      "event_type": "message",
+      "name": "discord_bit_message1",
+      "relative_path": "Contents/Resources/discord_bit_message1.m4a"
+    },
+    {
+      "asset_sha256": "aa864b7689fc0bbb376ea542d5126152a79b06c6298fb92d539f60b3c76c498f",
+      "event_type": "message",
+      "name": "discord_bop_message1",
+      "relative_path": "Contents/Resources/discord_bop_message1.m4a"
+    },
+    {
+      "asset_sha256": "157d282f85a1d4fb98937c4292c0e595319c602cd0583822fd77793cd4e965ee",
+      "event_type": "message",
+      "name": "discord_discodo",
+      "relative_path": "Contents/Resources/discord_discodo.m4a"
+    },
+    {
+      "asset_sha256": "526644950a6245c14dd8ecc83f4319897d5695c5c966fd0d3a1da42a539a138a",
+      "event_type": "message",
+      "name": "discord_ducky_message1",
+      "relative_path": "Contents/Resources/discord_ducky_message1.m4a"
+    },
+    {
+      "asset_sha256": "2e8c547009d276561aa67596a6fc1f14905d33494b73e7ad346c0064ce1eb8cc",
+      "event_type": "message",
+      "name": "discord_halloween_message1",
+      "relative_path": "Contents/Resources/discord_halloween_message1.m4a"
+    },
+    {
+      "asset_sha256": "c1a19aec468d09df51f44d1a966af1dead35bcad3ad1a85441e594e1f1027f3a",
+      "event_type": "message",
+      "name": "discord_lofi_message1",
+      "relative_path": "Contents/Resources/discord_lofi_message1.m4a"
+    },
+    {
+      "asset_sha256": "2b5a546faf54b91e258843e62f854a9d019264f70231348d5eb4ec4809981868",
+      "event_type": "message",
+      "name": "discord_message1",
+      "relative_path": "Contents/Resources/discord_message1.m4a"
+    },
+    {
+      "asset_sha256": "caa0d3c47df19afb46587c62b1e4b786db054541e8e2ba1d20420708fbd7be02",
+      "event_type": "message",
+      "name": "discord_message2",
+      "relative_path": "Contents/Resources/discord_message2.m4a"
+    },
+    {
+      "asset_sha256": "c39dc42f389c537f08dceff6c82bb5ed6ba52fcfc5381fd9c86969d0d70e653e",
+      "event_type": "message",
+      "name": "discord_message3",
+      "relative_path": "Contents/Resources/discord_message3.m4a"
+    }
+  ],
+  "source_id": "discord",
+  "vendor": "Discord"
+}

@@ -1,0 +1,447 @@
+{
+  "$schema": "../schemas/source.schema.json",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://support.apple.com/macos"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "25G76",
+    "bundle_id": null,
+    "version": "26.6.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "operating_system",
+  "measurement_failures": [],
+  "names": {
+    "en": "macOS CoreAudio event sounds",
+    "ja": "macOS CoreAudioイベント音"
+  },
+  "observed_at": "2026-08-09T05:11:22Z",
+  "platform": {
+    "architecture": "arm64",
+    "build": "25G76",
+    "id": "macos",
+    "version": "26.6.1"
+  },
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "77dad037b9bcde1fa7a1b65d5d1eeb3365143ffbbc71434bbc0c47dc720d2cbf",
+      "event_type": "ui_feedback",
+      "name": "Mouse Keys OFF",
+      "relative_path": "accessibility/Mouse Keys OFF.aif"
+    },
+    {
+      "asset_sha256": "54ad86e4ed3482d85850619021817ffcc74778e6702f87a6b52e2917789f19c6",
+      "event_type": "ui_feedback",
+      "name": "Mouse Keys ON",
+      "relative_path": "accessibility/Mouse Keys ON.aif"
+    },
+    {
+      "asset_sha256": "e74db3d0cf4a84c6b6e6c5e1b3590c0e86ec1a942bcd4cd582cabaf86bd582f9",
+      "event_type": "ui_feedback",
+      "name": "Slow Keys, 1st Key Pressed",
+      "relative_path": "accessibility/Slow Keys, 1st Key Pressed.aif"
+    },
+    {
+      "asset_sha256": "5053fdb3bec76b3d9515b903ad54b6e342a8426f74583287c0c468808aec625c",
+      "event_type": "ui_feedback",
+      "name": "Slow Keys, Key Registered",
+      "relative_path": "accessibility/Slow Keys, Key Registered.aif"
+    },
+    {
+      "asset_sha256": "19d116093153c05b07a03d42e2a6bd171724a4f87a3fc838f53d280f7bd143cf",
+      "event_type": "ui_feedback",
+      "name": "Sticky Keys Locked",
+      "relative_path": "accessibility/Sticky Keys Locked.aif"
+    },
+    {
+      "asset_sha256": "3c2a071b53aa30dbcc8d2f9e318c792ecb0921a9b934a32d86bebad3dd015916",
+      "event_type": "ui_feedback",
+      "name": "Sticky Keys MODIFER",
+      "relative_path": "accessibility/Sticky Keys MODIFER.aif"
+    },
+    {
+      "asset_sha256": "b9673a5a7d392f3497852597d5945e1d8221f79db7a82f1ed3281b3dee6da6a6",
+      "event_type": "ui_feedback",
+      "name": "Sticky Keys OFF",
+      "relative_path": "accessibility/Sticky Keys OFF.aif"
+    },
+    {
+      "asset_sha256": "3c66f654f2cc9f07ab29c57c22a2d2807ddd537b63951fa55ebbce85ec6a337d",
+      "event_type": "ui_feedback",
+      "name": "Sticky Keys ON",
+      "relative_path": "accessibility/Sticky Keys ON.aif"
+    },
+    {
+      "asset_sha256": "12c202975a5b721a59f24f291efae0f67bc4535231d070199cf1a5c2201870df",
+      "event_type": "ui_feedback",
+      "name": "Sticky Keys Stuck",
+      "relative_path": "accessibility/Sticky Keys Stuck.aif"
+    },
+    {
+      "asset_sha256": "5e4b73057a07e1625f75ede3358ff8c92631625f3a4a0381f1d4a5cb4f09580c",
+      "event_type": "ui_feedback",
+      "name": "drag to trash",
+      "relative_path": "dock/drag to trash.aif"
+    },
+    {
+      "asset_sha256": "f8130b3846a0286aac823382072f7d280538c093b6751c1d5d45faa04e61a3d7",
+      "event_type": "ui_feedback",
+      "name": "poof item off dock",
+      "relative_path": "dock/poof item off dock.aif"
+    },
+    {
+      "asset_sha256": "79f54bcd904a3032f6cfc86bf4068ade5c8eefe5c70798c62a2b26ea434be2f1",
+      "event_type": "ui_feedback",
+      "name": "multiway_invitation",
+      "relative_path": "facetime/multiway_invitation.caf"
+    },
+    {
+      "asset_sha256": "54583e36956825fbf6c03b59023a8c13a5eb81916d607963d43e7429d00f5cb5",
+      "event_type": "call_state",
+      "name": "multiway_join",
+      "relative_path": "facetime/multiway_join.caf"
+    },
+    {
+      "asset_sha256": "09479555bb409b454be98a33c11e88a15862af78edba73af43143c8b1989d6e6",
+      "event_type": "call_state",
+      "name": "multiway_leave",
+      "relative_path": "facetime/multiway_leave.caf"
+    },
+    {
+      "asset_sha256": "575573a367cf40d241227fad9ada1154bcdfc13cb98fc22f4ec5d361a5c01c2d",
+      "event_type": "ui_feedback",
+      "name": "empty trash",
+      "relative_path": "finder/empty trash.aif"
+    },
+    {
+      "asset_sha256": "a5a485a447ff2659a1094a9b29762541685a5c4a55b465899a8d283d276fbc9d",
+      "event_type": "ui_feedback",
+      "name": "move to trash",
+      "relative_path": "finder/move to trash.aif"
+    },
+    {
+      "asset_sha256": "6bfa241695cde8355fdbd1270c3c732e1ba6fd0c73b1f2f61685c2482d90673c",
+      "event_type": "ui_feedback",
+      "name": "InkSoundBecomeMouse",
+      "relative_path": "ink/InkSoundBecomeMouse.aif"
+    },
+    {
+      "asset_sha256": "2084e46bba6ec70b304e8b44461a4e973a2c43d20f8700f67d0d8b731ce8e417",
+      "event_type": "ui_feedback",
+      "name": "InkSoundStroke1",
+      "relative_path": "ink/InkSoundStroke1.aif"
+    },
+    {
+      "asset_sha256": "941c06f5b05bb24dc03508d7245fbc74ae269f0974980ee16818035ae2aba1bb",
+      "event_type": "ui_feedback",
+      "name": "InkSoundStroke2",
+      "relative_path": "ink/InkSoundStroke2.aif"
+    },
+    {
+      "asset_sha256": "7bc8e6d2f0b14fee6b4a54125a786d27fc4842fc35e5f4b74f1ff953f88c1d58",
+      "event_type": "ui_feedback",
+      "name": "InkSoundStroke3",
+      "relative_path": "ink/InkSoundStroke3.aif"
+    },
+    {
+      "asset_sha256": "96a630e88ebecf7df2795323c9ea4625a48068bb6a0cb4b4a5927c5102885d68",
+      "event_type": "ui_feedback",
+      "name": "InkSoundStroke4",
+      "relative_path": "ink/InkSoundStroke4.aif"
+    },
+    {
+      "asset_sha256": "d6720298624da9b0f31a0e427fc973d3f13d4947f0d0027273a1f2cdf8038c6a",
+      "event_type": "ui_feedback",
+      "name": "jbl_begin",
+      "relative_path": "siri/jbl_begin.caf"
+    },
+    {
+      "asset_sha256": "6252ced91e47624926b40d2fd359abf0e5361e04b6feca4fef204545288533a9",
+      "event_type": "ui_feedback",
+      "name": "jbl_begin_short",
+      "relative_path": "siri/jbl_begin_short.caf"
+    },
+    {
+      "asset_sha256": "ca03c4956f3df746e1fa4549de6040497b87db3e282a31f89fcdef25f059981d",
+      "event_type": "ui_feedback",
+      "name": "jbl_cancel",
+      "relative_path": "siri/jbl_cancel.caf"
+    },
+    {
+      "asset_sha256": "f75af3c7eab6938f2f9cf18793349c4b84146373420c68e2bc7bdd5a8f12f215",
+      "event_type": "completion",
+      "name": "jbl_confirm",
+      "relative_path": "siri/jbl_confirm.caf"
+    },
+    {
+      "asset_sha256": "e29fbb3bdc6a8359f70ee8cfb13132eac00b910d00603bad938172744dbdccfe",
+      "event_type": "completion",
+      "name": "acknowledgment_sent",
+      "relative_path": "system/acknowledgment_sent.caf"
+    },
+    {
+      "asset_sha256": "9217e677615116679d08c8079c70f79bdd5ec557cadc956b13b53eaa2dc55edc",
+      "event_type": "ui_feedback",
+      "name": "begin_record",
+      "relative_path": "system/begin_record.caf"
+    },
+    {
+      "asset_sha256": "c29f806eaaddc3f9a5ceabe102fe492aa5471a68fa8ee9c4b8775cfa8d44587a",
+      "event_type": "completion",
+      "name": "burn complete",
+      "relative_path": "system/burn complete.aif"
+    },
+    {
+      "asset_sha256": "c29f806eaaddc3f9a5ceabe102fe492aa5471a68fa8ee9c4b8775cfa8d44587a",
+      "event_type": "error",
+      "name": "burn failed",
+      "relative_path": "system/burn failed.aif"
+    },
+    {
+      "asset_sha256": "6cba6b545682ecf905b1c81c6b2cd858dd8436cb31f2dde40cc823ba1743df8e",
+      "event_type": "ui_feedback",
+      "name": "end_record",
+      "relative_path": "system/end_record.caf"
+    },
+    {
+      "asset_sha256": "b81ab305c54039dbdb7ab400a5e1a542b45ac16f3e3a04e4b4dee321456f8ddd",
+      "event_type": "ui_feedback",
+      "name": "Grab",
+      "relative_path": "system/Grab.aif"
+    },
+    {
+      "asset_sha256": "49f1fa47f7b19d9d258caa134460a3a94d22ea8d84e53545d3c705871f41d846",
+      "event_type": "ui_feedback",
+      "name": "head_gestures_double_nod",
+      "relative_path": "system/head_gestures_double_nod.caf"
+    },
+    {
+      "asset_sha256": "650ae0cd514ad76e7127480442195ef3543f37262dd47c6fe92506b3f90336d6",
+      "event_type": "ui_feedback",
+      "name": "head_gestures_double_shake",
+      "relative_path": "system/head_gestures_double_shake.caf"
+    },
+    {
+      "asset_sha256": "e7c9762e32e775b9e2abb749b2cff9ebd7e17c288d2d905b7e2d4d8d093152f8",
+      "event_type": "ui_feedback",
+      "name": "head_gestures_partial_nod",
+      "relative_path": "system/head_gestures_partial_nod.caf"
+    },
+    {
+      "asset_sha256": "ec2456d589ce5eee0d3aee1c9b8654781aee79255b0c7ebd18ed089e828ccf70",
+      "event_type": "ui_feedback",
+      "name": "head_gestures_partial_shake",
+      "relative_path": "system/head_gestures_partial_shake.caf"
+    },
+    {
+      "asset_sha256": "b34fda90568997b184168d9a51f992a5a848214330b6c288745aaba1fcba89a2",
+      "event_type": "ui_feedback",
+      "name": "Media Keys",
+      "relative_path": "system/Media Keys.aif"
+    },
+    {
+      "asset_sha256": "8bd142608704c9486d1ea753c272d68181301bc27fb08e77eec9c10115462502",
+      "event_type": "ui_feedback",
+      "name": "media_handoff",
+      "relative_path": "system/media_handoff.caf"
+    },
+    {
+      "asset_sha256": "361b4cd31cb28d8449732eb288f989fbec9b911dc66c43a25b10877bd840671c",
+      "event_type": "ui_feedback",
+      "name": "media_paused",
+      "relative_path": "system/media_paused.caf"
+    },
+    {
+      "asset_sha256": "855ec0ac42a147aa43b635f7fd30acb09d4b0c77f8f6348c125a04a9d46f4fe4",
+      "event_type": "call_state",
+      "name": "mic_mute",
+      "relative_path": "system/mic_mute.caf"
+    },
+    {
+      "asset_sha256": "ea017aa4b02bfc23282752f73d9045cb8010ebe8746ac48e5fe888417e192f13",
+      "event_type": "call_state",
+      "name": "mic_unmute",
+      "relative_path": "system/mic_unmute.caf"
+    },
+    {
+      "asset_sha256": "93ffc9916fff779ff04d26d351685c11457e2a3b19d0aba5d1f8a8b11a0d10ab",
+      "event_type": "call_state",
+      "name": "mic_unmute_fail",
+      "relative_path": "system/mic_unmute_fail.caf"
+    },
+    {
+      "asset_sha256": "1e21871cc30bb9c002979b51e9c49ca6d3c0ec05b344c0ed44a20eb273b5ae5f",
+      "event_type": "error",
+      "name": "payment_failure",
+      "relative_path": "system/payment_failure.aif"
+    },
+    {
+      "asset_sha256": "2103685898efa7bab9c06ab5ccde5bcedf13b1090dcce6a1e8dbb4d56fec53f2",
+      "event_type": "completion",
+      "name": "payment_success",
+      "relative_path": "system/payment_success.aif"
+    },
+    {
+      "asset_sha256": "75ad70232a4d8c64efa427a157b9fce9f3ab2984f4897b63b18b7349e4b33d0f",
+      "event_type": "ui_feedback",
+      "name": "Screen Capture",
+      "relative_path": "system/Screen Capture.aif"
+    },
+    {
+      "asset_sha256": "47eb07fc60e98b6834ee70a96cd37226dab0640118426caee7fec53f28789f27",
+      "event_type": "ui_feedback",
+      "name": "screen_sharing_started",
+      "relative_path": "system/screen_sharing_started.caf"
+    },
+    {
+      "asset_sha256": "33a7b80016de5723277f35b0fe4cb5b33fcbe7bf4738680e97f069d6cfc7e8e0",
+      "event_type": "completion",
+      "name": "SentMessage",
+      "relative_path": "system/SentMessage.caf"
+    },
+    {
+      "asset_sha256": "b81ab305c54039dbdb7ab400a5e1a542b45ac16f3e3a04e4b4dee321456f8ddd",
+      "event_type": "ui_feedback",
+      "name": "Shutter",
+      "relative_path": "system/Shutter.aif"
+    },
+    {
+      "asset_sha256": "f07cda78c1ee25c5ef048523b1498a2dd59e44afdedc81b0f61bda050992d0c4",
+      "event_type": "ui_feedback",
+      "name": "Volume Mount",
+      "relative_path": "system/Volume Mount.aif"
+    },
+    {
+      "asset_sha256": "0988dd73abda21b62ddec8e2c7361d5ee1ca5793ba4858b69a734f1568df55f0",
+      "event_type": "ui_feedback",
+      "name": "Volume Unmount",
+      "relative_path": "system/Volume Unmount.aif"
+    },
+    {
+      "asset_sha256": "09c1b40e6985cc651d31e7ff39053f20bdf0220fe0f74e1b76a968f4339e9753",
+      "event_type": "ui_feedback",
+      "name": "busy_tone_ansi",
+      "relative_path": "telephony/busy_tone_ansi.caf"
+    },
+    {
+      "asset_sha256": "151d6aa6ac1735394749f87fc8b31599b332e93963bcb27e8d8427cebf940011",
+      "event_type": "ui_feedback",
+      "name": "busy_tone_cept",
+      "relative_path": "telephony/busy_tone_cept.caf"
+    },
+    {
+      "asset_sha256": "43f1ca7a1817dd7c75cb30cfe7bd06f5d5e37bcbbab424043abcef206724024e",
+      "event_type": "call_state",
+      "name": "call_waiting_tone_ansi",
+      "relative_path": "telephony/call_waiting_tone_ansi.caf"
+    },
+    {
+      "asset_sha256": "e728424581b665e207c9c1e97aa01a2f2aa0e870b817b7ebddb90ef1d4bcda4a",
+      "event_type": "call_state",
+      "name": "call_waiting_tone_cept",
+      "relative_path": "telephony/call_waiting_tone_cept.caf"
+    },
+    {
+      "asset_sha256": "fca5bcd1c82cbfaf97573bcf4883415b864b1acf28de6b2477a19080d131b5b0",
+      "event_type": "ui_feedback",
+      "name": "dtmf-0",
+      "relative_path": "telephony/dtmf-0.caf"
+    },
+    {
+      "asset_sha256": "1a9d0a2abce3b9d03c6e26044756cc628e8af449c9a0961796f9936e229cb8b7",
+      "event_type": "ui_feedback",
+      "name": "dtmf-1",
+      "relative_path": "telephony/dtmf-1.caf"
+    },
+    {
+      "asset_sha256": "e25fbaad18b54a976a617f82e3c269013d40cad3bbf008141cf02d275a589e53",
+      "event_type": "ui_feedback",
+      "name": "dtmf-2",
+      "relative_path": "telephony/dtmf-2.caf"
+    },
+    {
+      "asset_sha256": "e3ea75f4952cf720e5032ea4f4ee3b0e41d7b8cf7d6144f06cf00383093911bf",
+      "event_type": "ui_feedback",
+      "name": "dtmf-3",
+      "relative_path": "telephony/dtmf-3.caf"
+    },
+    {
+      "asset_sha256": "12a7069e48109436de1514050b24cf8f702b3121211d2e2897aa443a1ed0d84d",
+      "event_type": "ui_feedback",
+      "name": "dtmf-4",
+      "relative_path": "telephony/dtmf-4.caf"
+    },
+    {
+      "asset_sha256": "d0eaaf3608ca611aaa14a86677459689919f8a4e95b3948da5dd0b5f2be8550a",
+      "event_type": "ui_feedback",
+      "name": "dtmf-5",
+      "relative_path": "telephony/dtmf-5.caf"
+    },
+    {
+      "asset_sha256": "4d8bf8e4dc06d1c6f3d618150804e15f279640d3633c4f535fb0afa82d85677e",
+      "event_type": "ui_feedback",
+      "name": "dtmf-6",
+      "relative_path": "telephony/dtmf-6.caf"
+    },
+    {
+      "asset_sha256": "44ade49a1db459655002050a3f7e2e44f152d4ce0b35182034704fc3e6ac9ced",
+      "event_type": "ui_feedback",
+      "name": "dtmf-7",
+      "relative_path": "telephony/dtmf-7.caf"
+    },
+    {
+      "asset_sha256": "c2502fa678c3123428949f948463425a7c2618bea72fa2ace3976ca9f5bcf029",
+      "event_type": "ui_feedback",
+      "name": "dtmf-8",
+      "relative_path": "telephony/dtmf-8.caf"
+    },
+    {
+      "asset_sha256": "132fab202f5dd5c00ce0bd076ae94a0f8f4e2bb52bde6582248ca8e952629f92",
+      "event_type": "ui_feedback",
+      "name": "dtmf-9",
+      "relative_path": "telephony/dtmf-9.caf"
+    },
+    {
+      "asset_sha256": "ccc554434c0a45b47027e0aaa9e5b20680b8b28ca9def53ec00166de2604b26f",
+      "event_type": "ui_feedback",
+      "name": "dtmf-pound",
+      "relative_path": "telephony/dtmf-pound.caf"
+    },
+    {
+      "asset_sha256": "19676ea5a0e56fc6bcdb55a9dc7116ec719739b6f7bdf3f100f98610d47d1d95",
+      "event_type": "ui_feedback",
+      "name": "dtmf-star",
+      "relative_path": "telephony/dtmf-star.caf"
+    },
+    {
+      "asset_sha256": "69b239e1887d55d8086f55e6441732cc964e057097436f54f06eeed99041c365",
+      "event_type": "call_state",
+      "name": "end_call_tone_cept",
+      "relative_path": "telephony/end_call_tone_cept.caf"
+    },
+    {
+      "asset_sha256": "767de8c851246215a1567a92fd1aa732345f1aa531463819ec60f0e4a2c1460b",
+      "event_type": "incoming_call",
+      "name": "ringback_tone_ansi",
+      "relative_path": "telephony/ringback_tone_ansi.caf"
+    },
+    {
+      "asset_sha256": "023b806702e260e9940b9247181be258d9375977d80048b72db84a5334ad9562",
+      "event_type": "incoming_call",
+      "name": "ringback_tone_cept",
+      "relative_path": "telephony/ringback_tone_cept.caf"
+    }
+  ],
+  "source_id": "macos-coreaudio-events",
+  "vendor": "Apple"
+}

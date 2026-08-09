@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% set primary = occurrences[0] %}
+{% block title %}{{ primary.name }} — {{ text.title }}{% endblock %}
+{% block content %}
+<article class="detail-page">
+  <a class="back-link" href="{{ paths.home }}">← {{ text.back }}</a>
+  <header class="detail-header">
+    <div><p class="eyebrow">{{ primary.source_names[lang] }} · {{ event_names[primary.event_type][lang] }}</p><h1>{{ primary.name }}</h1></div>
+    <code>{{ asset.sha256[:12] }}</code>
+  </header>
+  <aside class="disclaimer"><span aria-hidden="true">i</span><p>{{ text.disclaimer }}</p></aside>
+
+  <section aria-labelledby="metric-heading">
+    <h2 id="metric-heading">{{ text.metrics }}</h2>
+    <div class="metric-grid">
+      <div><span>Integrated</span><strong>{{ asset.loudness.integrated_lufs|metric('LUFS') }}</strong></div>
+      <div><span>Maximum momentary</span><strong>{{ asset.loudness.maximum_momentary_lufs|metric('LUFS') }}</strong></div>
+      <div><span>True peak</span><strong>{{ asset.loudness.true_peak_dbtp|metric('dBTP') }}</strong></div>
+      <div><span>RMS</span><strong>{{ asset.levels.rms_dbfs|metric('dBFS') }}</strong></div>
+      <div><span>Active RMS</span><strong>{{ asset.levels.active_segment.rms_dbfs|metric('dBFS') }}</strong></div>
+      <div><span>Duration</span><strong>{{ asset.audio.duration_seconds|metric('s', 3) }}</strong></div>
+    </div>
+    <div class="definition-table"><table><tbody>
+      <tr><th>Maximum short-term</th><td>{{ asset.loudness.maximum_short_term_lufs|metric('LUFS') }}</td></tr>
+      <tr><th>Loudness range</th><td>{{ asset.loudness.loudness_range_lu|metric('LU') }}</td></tr>
+      <tr><th>Sample peak</th><td>{{ asset.levels.sample_peak_dbfs|metric('dBFS') }}</td></tr>
+      <tr><th>Sample crest factor</th><td>{{ asset.levels.sample_crest_factor_db|metric('dB') }}</td></tr>
+      <tr><th>True-peak crest factor</th><td>{{ asset.levels.true_peak_crest_factor_db|metric('dB') }}</td></tr>
+      <tr><th>Active duration</th><td>{{ asset.levels.active_segment.duration_seconds|metric('s', 3) }}</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section aria-labelledby="spectrum-heading">
+    <h2 id="spectrum-heading">{{ text.spectrum }}</h2>
+    <div class="metric-grid compact">
+      <div><span>Spectral centroid</span><strong>{{ asset.spectrum.spectral_centroid_hz|metric('Hz', 0) }}</strong></div>
+      <div><span>Peak frequency</span><strong>{{ asset.spectrum.peak_frequency_hz|metric('Hz', 0) }}</strong></div>
+      <div><span>200 Hz–8 kHz energy</span><strong>{{ asset.spectrum.speech_band_200_8000_hz_energy_percent|metric('%') }}</strong></div>
+    </div>
+    <div class="band-chart" aria-label="Third-octave band energy">
+    {% for band in asset.spectrum.third_octave_band_energy_dbfs %}
+      {% set width = 0 if band.energy_dbfs is none else ([100, [0, band.energy_dbfs + 120]|max]|min) %}
+      <div><span>{{ band.center_hz|int }}</span><i><b style="width:{{ width }}%"></b></i><em>{{ band.energy_dbfs|metric('dBFS') }}</em></div>
+    {% endfor %}
+    </div>
+  </section>
+
+  <section aria-labelledby="occurrence-heading">
+    <h2 id="occurrence-heading">{{ text.occurrences }}</h2>
+    <div class="occurrence-list">
+    {% for occurrence in occurrences %}
+      <div><h3>{{ occurrence.source_names[lang] }} <small>v{{ occurrence.source_version }}</small></h3>
+        <p><span class="event-tag event-{{ occurrence.event_type }}">{{ event_names[occurrence.event_type][lang] }}</span></p>
+        <code>{{ occurrence.relative_path }}</code>
+        <dl class="provenance-list">
+          <div><dt>{{ text.acquisition }}</dt><dd><code>{{ occurrence.acquisition.method }}</code></dd></div>
+          <div><dt>{{ text.source_observed }}</dt><dd>{{ occurrence.observed_at }}</dd></div>
+          {% if occurrence.acquisition.distribution_url %}<div><dt>{{ text.distribution }}</dt><dd><a href="{{ occurrence.acquisition.distribution_url }}" rel="external">URL ↗</a></dd></div>{% endif %}
+          {% if occurrence.acquisition.distribution_sha256 %}<div><dt>{{ text.distribution_hash }}</dt><dd><code class="wrap">{{ occurrence.acquisition.distribution_sha256 }}</code></dd></div>{% endif %}
+        </dl>
+        <a href="{{ occurrence.official_url }}" rel="external">{{ text.official_source }} ↗</a>
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+
+  <section aria-labelledby="technical-heading">
+    <h2 id="technical-heading">{{ text.technical }}</h2>
+    <div class="definition-table"><table><tbody>
+      <tr><th>{{ text.hash }}</th><td><code class="wrap">{{ asset.sha256 }}</code></td></tr>
+      <tr><th>{{ text.analyzed }}</th><td>{{ asset.analyzed_at }}</td></tr>
+      <tr><th>Codec</th><td>{{ asset.file.codec_long_name }}</td></tr>
+      <tr><th>Sample format</th><td>{{ asset.file.sample_format }}{% if asset.file.bits_per_sample %} · {{ asset.file.bits_per_sample }} bit{% endif %}</td></tr>
+      <tr><th>Sample rate</th><td>{{ asset.audio.sample_rate_hz }} Hz</td></tr>
+      <tr><th>Channels</th><td>{{ asset.audio.channel_count }}{% if asset.audio.channel_layout %} · {{ asset.audio.channel_layout }}{% endif %}</td></tr>
+      <tr><th>Analysis profile</th><td><code>{{ asset.analysis_profile }}</code></td></tr>
+      <tr><th>FFmpeg</th><td>{{ asset.toolchain.ffmpeg }}</td></tr>
+    </tbody></table></div>
+    <p><a href="{{ paths.root_prefix }}data/assets/{{ asset.sha256 }}.json">{{ text.view_data }} →</a></p>
+  </section>
+</article>
+{% endblock %}
