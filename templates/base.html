@@ -16,6 +16,7 @@
   {% if canonical %}<meta property="og:url" content="{{ canonical }}">{% endif %}
   <link rel="icon" href="{{ paths.root_prefix }}assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="{{ paths.root_prefix }}assets/styles.css">
+  <script src="{{ paths.root_prefix }}assets/language.js"></script>
   {% block head %}{% endblock %}
 </head>
 <body>
@@ -28,7 +29,8 @@
       </a>
       <nav class="header-nav" aria-label="Primary">
         <a href="{{ paths.methodology }}">{{ text.methodology }}</a>
-        <a class="language-link" href="{{ paths.language }}" lang="{{ 'en' if lang == 'ja' else 'ja' }}">{{ text.language }}</a>
+        <a class="language-link" href="{{ paths.language }}" lang="{{ 'en' if lang == 'ja' else 'ja' }}"
+           hreflang="{{ 'en' if lang == 'ja' else 'ja' }}">{{ text.language }}</a>
       </nav>
     </div>
   </header>

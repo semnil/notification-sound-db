@@ -133,3 +133,8 @@ sorting on every data column; progressive navigation from list to detail; visibl
 snapshot time; distinct values, units, provenance, and caveats; English/Japanese switching;
 responsive and keyboard-accessible operation; useful no-JS links; canonical/alternate/OG
 metadata; and JSON/CSV downloads. Do not store or play audio.
+
+On a first visit, choose English or Japanese from the browser's ordered language preferences,
+which normally reflect the OS locale. Persist an explicit language-switch selection in browser
+local storage and prefer it over automatic detection on later visits. Preserve the current page,
+query parameters, and fragment when changing languages.

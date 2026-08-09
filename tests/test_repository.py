@@ -32,6 +32,7 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert len(list((destination / "sounds").glob("*.html"))) > 0
     assert len(list((destination / "ja/sounds").glob("*.html"))) > 0
     assert (destination / ".nojekyll").exists()
+    assert (destination / "assets/language.js").exists()
     english = (destination / "index.html").read_text(encoding="utf-8")
     japanese = (destination / "ja/index.html").read_text(encoding="utf-8")
     assert "Mac App Store" in english
@@ -40,6 +41,18 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert japanese.count('class="sort-button"') == 8
     assert 'data-sort-integrated="' in english
     assert 'data-sort-true-peak="' in english
+    assert 'src="assets/language.js"' in english
+    assert 'src="../assets/language.js"' in japanese
+    assert 'hreflang="ja"' in english
+    assert 'hreflang="en"' in japanese
+
+
+def test_methodology_language_switch_keeps_current_page(tmp_path: Path) -> None:
+    destination = build_site(ROOT, tmp_path / "site")
+    english = (destination / "methodology.html").read_text(encoding="utf-8")
+    japanese = (destination / "ja/methodology.html").read_text(encoding="utf-8")
+    assert 'class="language-link" href="ja/methodology.html"' in english
+    assert 'class="language-link" href="../methodology.html"' in japanese
 
 
 def test_analysis_profile_matches_implementation() -> None:

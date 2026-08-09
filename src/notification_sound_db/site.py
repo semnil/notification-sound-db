@@ -334,7 +334,12 @@ def build_site(repository: Path, output: Path | None = None) -> Path:
             methodology_template,
             lang=language,
             text=TEXT[language],
-            paths=paths,
+            paths={
+                **paths,
+                "language": (
+                    "../methodology.html" if language == "ja" else "ja/methodology.html"
+                ),
+            },
             canonical=_site_url("ja/methodology.html" if language == "ja" else "methodology.html"),
             alternates=_alternate_urls("methodology.html", "ja/methodology.html"),
         )
