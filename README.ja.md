@@ -14,9 +14,9 @@ LUFS、dBTP、RMS、Crest Factor、時間特性、周波数特性を記録し、
 ## 現在の対象
 
 現行スナップショットは、macOS のシステム音、選定した Apple 標準アプリ、Slack、Discord、
-Microsoft Teams、Zoom Workplace を収録しています。LINE は公式 macOS 版が Mac App Store
-限定であり、初期方針ではインストールを行わないため、未収集であること自体を記録しています。
-現在の件数とバージョンは生成済みレポートで確認できます。
+Microsoft Teams、Zoom Workplace、LINE を収録しています。LINE はローカルにインストールされた
+macOS アプリ内の音声ファイルを測定しています。現在の件数とバージョンは生成済みレポートで
+確認できます。
 
 - 正本データ: 整形済み JSON の [`data/`](data)
 - 表形式エクスポート: [`data/exports/measurements.csv`](data/exports/measurements.csv)

@@ -17,9 +17,8 @@ applications.
 ## Current scope
 
 The current snapshot covers macOS system collections, selected Apple apps, Slack, Discord,
-Microsoft Teams, and Zoom Workplace. LINE is tracked as an explicit collection gap because its
-official macOS distribution is Mac App Store only and the initial collection policy does not
-permit installation. See the generated report for current counts and versions.
+Microsoft Teams, Zoom Workplace, and LINE. The LINE measurements come from the audio files in the
+locally installed macOS application. See the generated report for current counts and versions.
 
 - Canonical data: pretty-printed JSON in [`data/`](data)
 - Flat export: [`data/exports/measurements.csv`](data/exports/measurements.csv)

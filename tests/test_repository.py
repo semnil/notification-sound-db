@@ -35,8 +35,8 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert (destination / "assets/language.js").exists()
     english = (destination / "index.html").read_text(encoding="utf-8")
     japanese = (destination / "ja/index.html").read_text(encoding="utf-8")
-    assert "Mac App Store" in english
-    assert "Mac App Store" in (destination / "ja/index.html").read_text(encoding="utf-8")
+    assert 'data-source="line"' in english
+    assert 'data-source="line"' in japanese
     assert english.count('class="sort-button"') == 8
     assert japanese.count('class="sort-button"') == 8
     assert 'data-sort-integrated="' in english

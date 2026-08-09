@@ -1,41 +1,93 @@
 {
   "$schema": "../schemas/source.schema.json",
-  "schema_version": "1.0.0",
-  "source_id": "line",
+  "acquisition": {
+    "distribution_sha256": null,
+    "distribution_url": null,
+    "metadata_url": null,
+    "method": "local_installation",
+    "official_url": "https://line.me/update"
+  },
+  "analysis_profile": "notification-sound-db-bs1770-v1",
+  "application": {
+    "build": "3937",
+    "bundle_id": "jp.naver.line.mac",
+    "version": "26.3.1"
+  },
+  "collection": {
+    "reason": null,
+    "reason_code": null,
+    "status": "measured"
+  },
+  "kind": "application",
+  "measurement_failures": [],
   "names": {
     "en": "LINE",
     "ja": "LINE"
   },
-  "vendor": "LY Corporation",
-  "kind": "application",
+  "observed_at": "2026-08-09T05:56:25Z",
   "platform": {
-    "id": "macos",
-    "version": "26.6.1",
+    "architecture": "arm64",
     "build": "25G76",
-    "architecture": "arm64"
+    "id": "macos",
+    "version": "26.6.1"
   },
-  "application": {
-    "bundle_id": "jp.naver.line.mac",
-    "version": "26.3.1",
-    "build": null
-  },
-  "observed_at": "2026-08-09T05:09:43Z",
-  "analysis_profile": "notification-sound-db-bs1770-v1",
-  "acquisition": {
-    "method": "official_store_metadata",
-    "official_url": "https://line.me/update",
-    "distribution_url": null,
-    "distribution_sha256": null,
-    "metadata_url": "https://apps.apple.com/jp/app/line/id539883307?mt=12"
-  },
-  "collection": {
-    "status": "unavailable",
-    "reason_code": "installation_required",
-    "reason": {
-      "en": "The official macOS distribution is available only through the Mac App Store; no package was downloaded or installed.",
-      "ja": "macOS版の公式配布はMac App Storeのみであり、パッケージの取得やインストールは行っていません。"
+  "schema_version": "1.0.0",
+  "sounds": [
+    {
+      "asset_sha256": "1ab8efa4c9bdb71b099aec3d58ebbedd08da667c85bcce57bdf997e37a3b1dba",
+      "event_type": "unknown",
+      "name": "alarm1",
+      "relative_path": "Contents/Resources/alarm1.wav"
+    },
+    {
+      "asset_sha256": "d663c191ff38cb518194a4cce3e0db4d4ad7dd80e4f8734d7494f6c179e81da2",
+      "event_type": "unknown",
+      "name": "alarm2",
+      "relative_path": "Contents/Resources/alarm2.wav"
+    },
+    {
+      "asset_sha256": "91745f598126cd185b93983da85f27bea962dfdd87da21d48342719e17e5d682",
+      "event_type": "unknown",
+      "name": "alarm3",
+      "relative_path": "Contents/Resources/alarm3.wav"
+    },
+    {
+      "asset_sha256": "0848dced8ab4cd768e6bbb82c991a8b494ab434401f05108aa486fefdb40233f",
+      "event_type": "unknown",
+      "name": "alarm4",
+      "relative_path": "Contents/Resources/alarm4.wav"
+    },
+    {
+      "asset_sha256": "c792001254df1db72c768be61c21eb471c83506edfc173faebb25aa580921d43",
+      "event_type": "unknown",
+      "name": "alarm5",
+      "relative_path": "Contents/Resources/alarm5.wav"
+    },
+    {
+      "asset_sha256": "14b628763c5976a03670838ed38b0502eee546b93b8b1dac322e27988ad9b9b0",
+      "event_type": "unknown",
+      "name": "alarm6",
+      "relative_path": "Contents/Resources/alarm6.wav"
+    },
+    {
+      "asset_sha256": "38d8710e714564b64b4f8f5e5686af27c8eb1935c41f6373ad784f9651462786",
+      "event_type": "unknown",
+      "name": "alarm7",
+      "relative_path": "Contents/Resources/alarm7.wav"
+    },
+    {
+      "asset_sha256": "66ad3e52d90ea452075442da3b67e2b5feb30067df263f338066f6cdf492d3c9",
+      "event_type": "unknown",
+      "name": "alarm8",
+      "relative_path": "Contents/Resources/alarm8.wav"
+    },
+    {
+      "asset_sha256": "2c90935d597cb242d873e2a1c96585cd73d2b3014cde0a06c8797aaf61939697",
+      "event_type": "unknown",
+      "name": "alarm9",
+      "relative_path": "Contents/Resources/alarm9.wav"
     }
-  },
-  "sounds": [],
-  "measurement_failures": []
+  ],
+  "source_id": "line",
+  "vendor": "LY Corporation"
 }
