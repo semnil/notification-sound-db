@@ -139,6 +139,10 @@ Generate a root XML sitemap containing every English and Japanese canonical page
 `hreflang` and `x-default` alternates. Reference it from `robots.txt`. Publish the square SVG
 favicon at the stable root URL `/favicon.svg` and link every page to it.
 
+Provide a “Report an issue” footer link on every page. Point it to the pinned, locked permanent
+feedback issue in this repository, which directs users without a GitHub account to the shared
+no-sign-in feedback form.
+
 Each detail page includes a responsive level-over-time SVG generated from the canonical RMS
 envelope. Use a fixed 0 to −80 dBFS display range, identify the active-segment threshold, and state
 that values below the visual floor are retained in JSON. Do not imply that the plot is LUFS or a

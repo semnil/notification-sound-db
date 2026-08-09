@@ -97,6 +97,7 @@ TEXT = {
         "source_observed": "Source observed",
         "view_data": "View canonical JSON",
         "footer": "Measurement data: CC BY 4.0 · Code: MIT · Original sounds are not included.",
+        "report_issue": "Report an issue",
     },
     "ja": {
         "title": "通知音測定データベース",
@@ -177,6 +178,7 @@ TEXT = {
         "source_observed": "取得元確認日時",
         "view_data": "正本JSONを見る",
         "footer": "測定データ: CC BY 4.0 · コード: MIT · 元の通知音は収録していません。",
+        "report_issue": "問題を報告",
     },
 }
 

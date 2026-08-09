@@ -71,6 +71,11 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     )
     assert verification in english
     assert verification in japanese
+    feedback_url = "https://github.com/semnil/notification-sound-db/issues/1"
+    assert f'href="{feedback_url}"' in english
+    assert f'href="{feedback_url}"' in japanese
+    assert ">Report an issue</a>" in english
+    assert ">問題を報告</a>" in japanese
     detail_path = next((destination / "sounds").glob("*.html"))
     detail = detail_path.read_text(encoding="utf-8")
     assert 'class="level-chart"' in detail
