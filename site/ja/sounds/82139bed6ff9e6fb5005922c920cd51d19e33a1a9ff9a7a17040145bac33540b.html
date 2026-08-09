@@ -99,33 +99,74 @@
       <div><span>Peak frequency</span><strong>55 Hz</strong></div>
       <div><span>200 Hz–8 kHz energy</span><strong>42.1 %</strong></div>
     </div>
-    <div class="band-chart" aria-label="Third-octave band energy">
-      <div><span>25</span><i><b style="width:59.459%"></b></i><em>-60.5 dBFS</em></div>
-      <div><span>31</span><i><b style="width:62.432%"></b></i><em>-57.6 dBFS</em></div>
-      <div><span>40</span><i><b style="width:67.086%"></b></i><em>-52.9 dBFS</em></div>
-      <div><span>50</span><i><b style="width:76.632%"></b></i><em>-43.4 dBFS</em></div>
-      <div><span>63</span><i><b style="width:75.078%"></b></i><em>-44.9 dBFS</em></div>
-      <div><span>80</span><i><b style="width:71.083%"></b></i><em>-48.9 dBFS</em></div>
-      <div><span>100</span><i><b style="width:71.919%"></b></i><em>-48.1 dBFS</em></div>
-      <div><span>125</span><i><b style="width:70.422%"></b></i><em>-49.6 dBFS</em></div>
-      <div><span>160</span><i><b style="width:73.52600000000001%"></b></i><em>-46.5 dBFS</em></div>
-      <div><span>200</span><i><b style="width:78.55199999999999%"></b></i><em>-41.4 dBFS</em></div>
-      <div><span>250</span><i><b style="width:72.57900000000001%"></b></i><em>-47.4 dBFS</em></div>
-      <div><span>315</span><i><b style="width:70.257%"></b></i><em>-49.7 dBFS</em></div>
-      <div><span>400</span><i><b style="width:69.912%"></b></i><em>-50.1 dBFS</em></div>
-      <div><span>500</span><i><b style="width:69.42%"></b></i><em>-50.6 dBFS</em></div>
-      <div><span>630</span><i><b style="width:71.125%"></b></i><em>-48.9 dBFS</em></div>
-      <div><span>800</span><i><b style="width:69.28999999999999%"></b></i><em>-50.7 dBFS</em></div>
-      <div><span>1000</span><i><b style="width:68.30799999999999%"></b></i><em>-51.7 dBFS</em></div>
-      <div><span>1250</span><i><b style="width:67.799%"></b></i><em>-52.2 dBFS</em></div>
-      <div><span>1600</span><i><b style="width:70.438%"></b></i><em>-49.6 dBFS</em></div>
-      <div><span>2000</span><i><b style="width:72.393%"></b></i><em>-47.6 dBFS</em></div>
-      <div><span>2500</span><i><b style="width:71.654%"></b></i><em>-48.3 dBFS</em></div>
-      <div><span>3150</span><i><b style="width:69.923%"></b></i><em>-50.1 dBFS</em></div>
-      <div><span>4000</span><i><b style="width:69.938%"></b></i><em>-50.1 dBFS</em></div>
-      <div><span>5000</span><i><b style="width:70.77799999999999%"></b></i><em>-49.2 dBFS</em></div>
-      <div><span>6300</span><i><b style="width:71.411%"></b></i><em>-48.6 dBFS</em></div>
-      <div><span>8000</span><i><b style="width:59.383%"></b></i><em>-60.6 dBFS</em></div>
+    <div class="spectrum-chart-card">
+      <div class="spectrum-chart-frame">
+        <svg class="spectrum-chart" viewBox="0 0 900 330" role="img" aria-labelledby="spectrum-chart-title spectrum-chart-desc">
+          <title id="spectrum-chart-title">1/3オクターブ帯域エネルギー</title>
+          <desc id="spectrum-chart-desc">横軸は周波数、縦軸は帯域エネルギーです。−120 dBFS 未満は表示上のみグラフ下端に固定しています。</desc>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="18.0" y2="18.0"></line>
+          <text class="chart-y-label" x="52.0" y="18.0">0</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="60.33" y2="60.33"></line>
+          <text class="chart-y-label" x="52.0" y="60.33">-20</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="102.67" y2="102.67"></line>
+          <text class="chart-y-label" x="52.0" y="102.67">-40</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="145.0" y2="145.0"></line>
+          <text class="chart-y-label" x="52.0" y="145.0">-60</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="187.33" y2="187.33"></line>
+          <text class="chart-y-label" x="52.0" y="187.33">-80</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="229.67" y2="229.67"></line>
+          <text class="chart-y-label" x="52.0" y="229.67">-100</text>
+          <line class="chart-grid" x1="62.0" x2="882.0" y1="272.0" y2="272.0"></line>
+          <text class="chart-y-label" x="52.0" y="272.0">-120</text>
+          <line class="chart-tick" x1="109.31" x2="109.31" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="109.31" y="292.0">31.5</text>
+          <line class="chart-tick" x1="203.92" x2="203.92" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="203.92" y="292.0">63</text>
+          <line class="chart-tick" x1="298.54" x2="298.54" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="298.54" y="292.0">125</text>
+          <line class="chart-tick" x1="393.15" x2="393.15" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="393.15" y="292.0">250</text>
+          <line class="chart-tick" x1="487.77" x2="487.77" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="487.77" y="292.0">500</text>
+          <line class="chart-tick" x1="582.38" x2="582.38" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="582.38" y="292.0">1k</text>
+          <line class="chart-tick" x1="677.0" x2="677.0" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="677.0" y="292.0">2k</text>
+          <line class="chart-tick" x1="771.62" x2="771.62" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="771.62" y="292.0">4k</text>
+          <line class="chart-tick" x1="866.23" x2="866.23" y1="272.0" y2="277.0"></line>
+          <text class="chart-x-label" x="866.23" y="292.0">8k</text>
+          <rect class="spectrum-bar" x="67.05" y="146.15" width="21.45" height="125.85" data-frequency-hz="25.0" data-energy-dbfs="-60.541"><title>25.0 Hz: -60.5 dBFS</title></rect>
+          <rect class="spectrum-bar" x="98.58" y="139.85" width="21.45" height="132.15" data-frequency-hz="31.5" data-energy-dbfs="-57.568"><title>31.5 Hz: -57.6 dBFS</title></rect>
+          <rect class="spectrum-bar" x="130.12" y="130.0" width="21.45" height="142.0" data-frequency-hz="40.0" data-energy-dbfs="-52.914"><title>40.0 Hz: -52.9 dBFS</title></rect>
+          <rect class="spectrum-bar" x="161.66" y="109.8" width="21.45" height="162.2" data-frequency-hz="50.0" data-energy-dbfs="-43.368"><title>50.0 Hz: -43.4 dBFS</title></rect>
+          <rect class="spectrum-bar" x="193.2" y="113.08" width="21.45" height="158.92" data-frequency-hz="63.0" data-energy-dbfs="-44.922"><title>63.0 Hz: -44.9 dBFS</title></rect>
+          <rect class="spectrum-bar" x="224.74" y="121.54" width="21.45" height="150.46" data-frequency-hz="80.0" data-energy-dbfs="-48.917"><title>80.0 Hz: -48.9 dBFS</title></rect>
+          <rect class="spectrum-bar" x="256.28" y="119.77" width="21.45" height="152.23" data-frequency-hz="100.0" data-energy-dbfs="-48.081"><title>100.0 Hz: -48.1 dBFS</title></rect>
+          <rect class="spectrum-bar" x="287.82" y="122.94" width="21.45" height="149.06" data-frequency-hz="125.0" data-energy-dbfs="-49.578"><title>125.0 Hz: -49.6 dBFS</title></rect>
+          <rect class="spectrum-bar" x="319.35" y="116.37" width="21.45" height="155.63" data-frequency-hz="160.0" data-energy-dbfs="-46.474"><title>160.0 Hz: -46.5 dBFS</title></rect>
+          <rect class="spectrum-bar" x="350.89" y="105.73" width="21.45" height="166.27" data-frequency-hz="200.0" data-energy-dbfs="-41.448"><title>200.0 Hz: -41.4 dBFS</title></rect>
+          <rect class="spectrum-bar" x="382.43" y="118.37" width="21.45" height="153.63" data-frequency-hz="250.0" data-energy-dbfs="-47.421"><title>250.0 Hz: -47.4 dBFS</title></rect>
+          <rect class="spectrum-bar" x="413.97" y="123.29" width="21.45" height="148.71" data-frequency-hz="315.0" data-energy-dbfs="-49.743"><title>315.0 Hz: -49.7 dBFS</title></rect>
+          <rect class="spectrum-bar" x="445.51" y="124.02" width="21.45" height="147.98" data-frequency-hz="400.0" data-energy-dbfs="-50.088"><title>400.0 Hz: -50.1 dBFS</title></rect>
+          <rect class="spectrum-bar" x="477.05" y="125.06" width="21.45" height="146.94" data-frequency-hz="500.0" data-energy-dbfs="-50.58"><title>500.0 Hz: -50.6 dBFS</title></rect>
+          <rect class="spectrum-bar" x="508.58" y="121.45" width="21.45" height="150.55" data-frequency-hz="630.0" data-energy-dbfs="-48.875"><title>630.0 Hz: -48.9 dBFS</title></rect>
+          <rect class="spectrum-bar" x="540.12" y="125.34" width="21.45" height="146.66" data-frequency-hz="800.0" data-energy-dbfs="-50.71"><title>800.0 Hz: -50.7 dBFS</title></rect>
+          <rect class="spectrum-bar" x="571.66" y="127.41" width="21.45" height="144.59" data-frequency-hz="1000.0" data-energy-dbfs="-51.692"><title>1000.0 Hz: -51.7 dBFS</title></rect>
+          <rect class="spectrum-bar" x="603.2" y="128.49" width="21.45" height="143.51" data-frequency-hz="1250.0" data-energy-dbfs="-52.201"><title>1250.0 Hz: -52.2 dBFS</title></rect>
+          <rect class="spectrum-bar" x="634.74" y="122.91" width="21.45" height="149.09" data-frequency-hz="1600.0" data-energy-dbfs="-49.562"><title>1600.0 Hz: -49.6 dBFS</title></rect>
+          <rect class="spectrum-bar" x="666.28" y="118.77" width="21.45" height="153.23" data-frequency-hz="2000.0" data-energy-dbfs="-47.607"><title>2000.0 Hz: -47.6 dBFS</title></rect>
+          <rect class="spectrum-bar" x="697.82" y="120.33" width="21.45" height="151.67" data-frequency-hz="2500.0" data-energy-dbfs="-48.346"><title>2500.0 Hz: -48.3 dBFS</title></rect>
+          <rect class="spectrum-bar" x="729.35" y="124.0" width="21.45" height="148.0" data-frequency-hz="3150.0" data-energy-dbfs="-50.077"><title>3150.0 Hz: -50.1 dBFS</title></rect>
+          <rect class="spectrum-bar" x="760.89" y="123.96" width="21.45" height="148.04" data-frequency-hz="4000.0" data-energy-dbfs="-50.062"><title>4000.0 Hz: -50.1 dBFS</title></rect>
+          <rect class="spectrum-bar" x="792.43" y="122.19" width="21.45" height="149.81" data-frequency-hz="5000.0" data-energy-dbfs="-49.222"><title>5000.0 Hz: -49.2 dBFS</title></rect>
+          <rect class="spectrum-bar" x="823.97" y="120.85" width="21.45" height="151.15" data-frequency-hz="6300.0" data-energy-dbfs="-48.589"><title>6300.0 Hz: -48.6 dBFS</title></rect>
+          <rect class="spectrum-bar" x="855.51" y="146.31" width="21.45" height="125.69" data-frequency-hz="8000.0" data-energy-dbfs="-60.617"><title>8000.0 Hz: -60.6 dBFS</title></rect>
+          <text class="chart-y-axis-title" transform="translate(14 145.0) rotate(-90)">帯域エネルギー（dBFS）</text>
+          <text class="chart-x-axis-title" x="472.0" y="314.0">周波数（Hz）</text>
+        </svg>
+      </div>
+      <p class="spectrum-chart-note">横軸は周波数、縦軸は帯域エネルギーです。−120 dBFS 未満は表示上のみグラフ下端に固定しています。</p>
     </div>
   </section>
 

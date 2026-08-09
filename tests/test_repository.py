@@ -16,7 +16,7 @@ from notification_sound_db.loudness import (
     SHORT_TERM_WINDOW_SECONDS,
     TAIL_PADDING_SECONDS,
 )
-from notification_sound_db.site import build_site
+from notification_sound_db.site import _spectrum_chart, build_site
 from notification_sound_db.validation import validate_repository
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -81,6 +81,16 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     assert 'class="level-chart"' in detail
     assert 'class="chart-level-line"' in detail
     assert "Short-window RMS level over time" in detail
+    assert 'class="spectrum-chart"' in detail
+    assert 'class="spectrum-bar"' in detail
+    assert "Frequency (Hz)" in detail
+    assert "Band energy (dBFS)" in detail
+
+    japanese_detail_path = next((destination / "ja/sounds").glob("*.html"))
+    japanese_detail = japanese_detail_path.read_text(encoding="utf-8")
+    assert "周波数（Hz）" in japanese_detail
+    assert "帯域エネルギー（dBFS）" in japanese_detail
+    assert "横軸は周波数、縦軸は帯域エネルギーです。" in japanese_detail
 
     sitemap = ElementTree.parse(destination / "sitemap.xml")
     sitemap_namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
@@ -108,6 +118,23 @@ def test_methodology_language_switch_keeps_current_page(tmp_path: Path) -> None:
     japanese = (destination / "ja/methodology.html").read_text(encoding="utf-8")
     assert 'class="language-link" href="ja/methodology.html"' in english
     assert 'class="language-link" href="../methodology.html"' in japanese
+
+
+def test_spectrum_chart_places_frequency_horizontally_and_energy_vertically() -> None:
+    asset = {
+        "spectrum": {
+            "third_octave_band_energy_dbfs": [
+                {"center_hz": 25.0, "energy_dbfs": -80.0},
+                {"center_hz": 31.5, "energy_dbfs": -20.0},
+            ]
+        }
+    }
+    chart = _spectrum_chart(asset)
+    low_frequency, high_frequency = chart["bands"]
+
+    assert low_frequency["x"] < high_frequency["x"]
+    assert low_frequency["y"] > high_frequency["y"]
+    assert low_frequency["height"] < high_frequency["height"]
 
 
 def test_analysis_profile_matches_implementation() -> None:

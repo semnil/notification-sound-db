@@ -148,6 +148,10 @@ envelope. Use a fixed 0 to −80 dBFS display range, identify the active-segment
 that values below the visual floor are retained in JSON. Do not imply that the plot is LUFS or a
 waveform.
 
+Display third-octave measurements in the conventional spectrum-analyzer orientation: frequency
+increases from left to right on the horizontal axis, and band energy uses the vertical dBFS axis.
+This presentation does not alter the canonical measurements.
+
 On desktop, constrain long result tables to a viewport-height scroll region. When columns overflow
 horizontally, expose persistent, keyboard-accessible left/right controls in addition to the native
 scrollbar. Use the labeled card layout only on narrow mobile screens.

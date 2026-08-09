@@ -81,6 +81,13 @@ TEXT = {
         "active_threshold": "Active threshold",
         "time_axis": "Time (seconds)",
         "spectrum": "Frequency characteristics",
+        "spectrum_chart_title": "Third-octave band energy",
+        "spectrum_chart_description": (
+            "Frequency is shown on the horizontal axis and band energy on the vertical axis. "
+            "Values below −120 dBFS are pinned to the chart floor for display."
+        ),
+        "frequency_axis": "Frequency (Hz)",
+        "energy_axis": "Band energy (dBFS)",
         "occurrences": "Current source occurrences",
         "technical": "Technical metadata",
         "definitions": "Definitions and limitations",
@@ -162,6 +169,13 @@ TEXT = {
         "active_threshold": "有音判定閾値",
         "time_axis": "時間（秒）",
         "spectrum": "周波数特性",
+        "spectrum_chart_title": "1/3オクターブ帯域エネルギー",
+        "spectrum_chart_description": (
+            "横軸は周波数、縦軸は帯域エネルギーです。"
+            "−120 dBFS 未満は表示上のみグラフ下端に固定しています。"
+        ),
+        "frequency_axis": "周波数（Hz）",
+        "energy_axis": "帯域エネルギー（dBFS）",
         "occurrences": "現行取得元での参照",
         "technical": "技術メタデータ",
         "definitions": "定義と制約",
@@ -285,6 +299,69 @@ def _level_chart(asset: dict) -> dict:
                 "x": x_position(duration * fraction),
             }
             for fraction in (0.0, 0.25, 0.5, 0.75, 1.0)
+        ],
+    }
+
+
+def _spectrum_chart(asset: dict) -> dict:
+    """Map third-octave measurements to a conventional spectrum display."""
+    width = 900.0
+    height = 330.0
+    left = 62.0
+    right = 18.0
+    top = 18.0
+    bottom = 58.0
+    plot_width = width - left - right
+    plot_height = height - top - bottom
+    chart_floor = -120.0
+    source_bands = asset["spectrum"]["third_octave_band_energy_dbfs"]
+    band_step = plot_width / max(len(source_bands), 1)
+    bar_width = band_step * 0.68
+
+    def y_position(dbfs: float) -> float:
+        displayed = min(0.0, max(chart_floor, dbfs))
+        return top + (0.0 - displayed) / (0.0 - chart_floor) * plot_height
+
+    def frequency_label(frequency: float) -> str:
+        if frequency >= 1000:
+            return f"{frequency / 1000:g}k"
+        return f"{frequency:g}"
+
+    bands = []
+    for index, source_band in enumerate(source_bands):
+        center_x = left + (index + 0.5) * band_step
+        value = source_band["energy_dbfs"]
+        value_y = y_position(value) if value is not None else y_position(chart_floor)
+        bands.append(
+            {
+                "center_hz": source_band["center_hz"],
+                "energy_dbfs": value,
+                "x": round(center_x - bar_width / 2.0, 2),
+                "y": round(value_y, 2),
+                "width": round(bar_width, 2),
+                "height": round(y_position(chart_floor) - value_y, 2),
+            }
+        )
+
+    return {
+        "view_box": f"0 0 {width:.0f} {height:.0f}",
+        "left": left,
+        "right": width - right,
+        "top": top,
+        "bottom": height - bottom,
+        "bands": bands,
+        "has_values": any(band["energy_dbfs"] is not None for band in bands),
+        "y_ticks": [
+            {"label": f"{value}", "y": round(y_position(float(value)), 2)}
+            for value in (0, -20, -40, -60, -80, -100, -120)
+        ],
+        "x_ticks": [
+            {
+                "label": frequency_label(source_band["center_hz"]),
+                "x": round(left + (index + 0.5) * band_step, 2),
+            }
+            for index, source_band in enumerate(source_bands)
+            if index % 3 == 1
         ],
     }
 
@@ -492,6 +569,7 @@ def build_site(repository: Path, output: Path | None = None) -> Path:
                 event_names=EVENT_NAMES,
                 asset=asset,
                 level_chart=_level_chart(asset),
+                spectrum_chart=_spectrum_chart(asset),
                 occurrences=occurrences[digest],
                 paths=detail_paths,
                 canonical=_site_url(canonical_path),

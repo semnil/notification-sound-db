@@ -66,11 +66,29 @@
       <div><span>Peak frequency</span><strong>{{ asset.spectrum.peak_frequency_hz|metric('Hz', 0) }}</strong></div>
       <div><span>200 Hz–8 kHz energy</span><strong>{{ asset.spectrum.speech_band_200_8000_hz_energy_percent|metric('%') }}</strong></div>
     </div>
-    <div class="band-chart" aria-label="Third-octave band energy">
-    {% for band in asset.spectrum.third_octave_band_energy_dbfs %}
-      {% set width = 0 if band.energy_dbfs is none else ([100, [0, band.energy_dbfs + 120]|max]|min) %}
-      <div><span>{{ band.center_hz|int }}</span><i><b style="width:{{ width }}%"></b></i><em>{{ band.energy_dbfs|metric('dBFS') }}</em></div>
-    {% endfor %}
+    <div class="spectrum-chart-card">
+      <div class="spectrum-chart-frame">
+        <svg class="spectrum-chart" viewBox="{{ spectrum_chart.view_box }}" role="img" aria-labelledby="spectrum-chart-title spectrum-chart-desc">
+          <title id="spectrum-chart-title">{{ text.spectrum_chart_title }}</title>
+          <desc id="spectrum-chart-desc">{{ text.spectrum_chart_description }}</desc>
+          {% for tick in spectrum_chart.y_ticks %}
+          <line class="chart-grid" x1="{{ spectrum_chart.left }}" x2="{{ spectrum_chart.right }}" y1="{{ tick.y }}" y2="{{ tick.y }}"></line>
+          <text class="chart-y-label" x="{{ spectrum_chart.left - 10 }}" y="{{ tick.y }}">{{ tick.label }}</text>
+          {% endfor %}
+          {% for tick in spectrum_chart.x_ticks %}
+          <line class="chart-tick" x1="{{ tick.x }}" x2="{{ tick.x }}" y1="{{ spectrum_chart.bottom }}" y2="{{ spectrum_chart.bottom + 5 }}"></line>
+          <text class="chart-x-label" x="{{ tick.x }}" y="{{ spectrum_chart.bottom + 20 }}">{{ tick.label }}</text>
+          {% endfor %}
+          {% for band in spectrum_chart.bands %}
+          {% if band.energy_dbfs is not none %}
+          <rect class="spectrum-bar" x="{{ band.x }}" y="{{ band.y }}" width="{{ band.width }}" height="{{ band.height }}" data-frequency-hz="{{ band.center_hz }}" data-energy-dbfs="{{ band.energy_dbfs }}"><title>{{ band.center_hz|metric('Hz') }}: {{ band.energy_dbfs|metric('dBFS') }}</title></rect>
+          {% endif %}
+          {% endfor %}
+          <text class="chart-y-axis-title" transform="translate(14 {{ (spectrum_chart.top + spectrum_chart.bottom) / 2 }}) rotate(-90)">{{ text.energy_axis }}</text>
+          <text class="chart-x-axis-title" x="{{ (spectrum_chart.left + spectrum_chart.right) / 2 }}" y="{{ spectrum_chart.bottom + 42 }}">{{ text.frequency_axis }}</text>
+        </svg>
+      </div>
+      <p class="spectrum-chart-note">{{ text.spectrum_chart_description }}</p>
     </div>
   </section>
 
