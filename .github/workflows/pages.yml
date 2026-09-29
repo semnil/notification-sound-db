@@ -17,6 +17,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: $/x\..\vendor/probe-sub
       - name: Check out repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       - name: Set up Python
