@@ -13,7 +13,7 @@ Crest Factor、時間特性、周波数特性などの記述的なデータを�
 
 ## 現在の対象
 
-現行スナップショットは、macOS のシステム音、選定した Apple 標準アプリ、Slack、Discord、
+現行スナップショットは、macOS のシステム音、選定した Apple アプリ、Slack、Discord、
 Microsoft Teams、Zoom Workplace、LINE を収録しています。LINE はローカルにインストールされた
 macOS アプリ内の音声ファイルを測定しています。現在の件数とバージョンは生成済みレポートで
 確認できます。
