@@ -65,10 +65,10 @@
             "official_store_metadata"
           ]
         },
-        "official_url": {"type": "string", "format": "uri"},
-        "distribution_url": {"type": ["string", "null"], "format": "uri"},
+        "official_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "distribution_url": {"type": ["string", "null"], "format": "uri", "pattern": "^https://"},
         "distribution_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
-        "metadata_url": {"type": ["string", "null"], "format": "uri"}
+        "metadata_url": {"type": ["string", "null"], "format": "uri", "pattern": "^https://"}
       },
       "additionalProperties": false
     },
@@ -120,7 +120,7 @@
         "properties": {
           "name": {"type": "string"},
           "relative_path": {"type": "string"},
-          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
           "error_type": {"type": "string"},
           "reason": {"type": "string"}
         },

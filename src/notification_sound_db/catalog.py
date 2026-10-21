@@ -86,7 +86,7 @@ def classify(filename: str, default: str) -> str:
 
 def _plist_metadata(path: Path) -> dict:
     plist_path = path / "Contents/Info.plist"
-    if not plist_path.exists():
+    if not plist_path.exists() or not plist_path.resolve().is_relative_to(path.resolve()):
         return {}
     try:
         with plist_path.open("rb") as handle:
@@ -180,10 +180,22 @@ def update_source(
     if not paths:
         raise FileNotFoundError(f"No supported audio files found under {bundle_path}")
     asset_dir = repository / "data/assets"
+    source_root = bundle_path.resolve()
     analyzed = 0
     references: list[tuple[Path, str]] = []
     failures: list[dict] = []
     for path in paths:
+        if not path.resolve().is_relative_to(source_root):
+            failures.append(
+                {
+                    "name": path.stem,
+                    "relative_path": path.relative_to(bundle_path).as_posix(),
+                    "sha256": None,
+                    "error_type": "OutsideSourcePath",
+                    "reason": "A symbolic link resolves outside the source path; not read.",
+                }
+            )
+            continue
         digest = sha256_file(path)
         target = asset_dir / f"{digest}.json"
         references.append((path, digest))

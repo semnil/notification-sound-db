@@ -12,5 +12,10 @@ contain no original audio, downloaded vendor package, or extracted application. 
 source and document an explicit gap when a package cannot be obtained without installation or
 access-control circumvention.
 
+The Pages build installs only the hash-locked [`requirements.txt`](requirements.txt). When the
+dependencies in `pyproject.toml` change, regenerate it with pip-tools:
+`pip-compile --generate-hashes --strip-extras --output-file=requirements.txt pyproject.toml`.
+The tests fail while a runtime dependency is missing from it or pinned outside its declared range.
+
 Code is contributed under MIT; data and documentation under CC BY 4.0. By contributing, you
 confirm that you have the right to provide the contribution under those terms.

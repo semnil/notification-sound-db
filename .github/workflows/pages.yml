@@ -25,17 +25,20 @@ jobs:
         with:
           python-version: "3.13"
           cache: pip
-      - name: Install project
+      - name: Install hash-locked dependencies
         timeout-minutes: 10
-        run: python -m pip install .
+        run: python -m pip install --require-hashes --no-deps -r requirements.txt
       - name: Validate canonical data
-        run: notification-sound-db validate
+        env:
+          PYTHONPATH: src
+        run: python -m notification_sound_db validate
       - name: Configure Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
       - name: Build static report
         env:
+          PYTHONPATH: src
           SITE_URL: https://notification-sound-db.semnil.com
-        run: notification-sound-db build-site
+        run: python -m notification_sound_db build-site
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
         with:

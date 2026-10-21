@@ -10,5 +10,10 @@
 ダウンロードしたベンダー配布物、展開済みアプリを含めないでください。公式の取得元を使用し、インストール
 やアクセス制御の回避なしに配布物を取得できない場合は、欠落を明示的に記録してください。
 
+Pages のビルドは、ハッシュで固定した [`requirements.txt`](requirements.txt) だけをインストールします。
+`pyproject.toml` の依存を変えたときは、pip-tools で作り直してください:
+`pip-compile --generate-hashes --strip-extras --output-file=requirements.txt pyproject.toml`。
+実行時の依存がこのファイルに無いとき、または宣言した範囲の外に固定されているときは、テストが失敗します。
+
 コードは MIT、データと文書は CC BY 4.0 で提供されます。投稿者はこの条件で提供する権利があることを
 確認するものとします。

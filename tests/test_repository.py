@@ -1,8 +1,17 @@
 from __future__ import annotations
 
 import json
+import re
+import shutil
+import tomllib
+from html.parser import HTMLParser
 from pathlib import Path
 from xml.etree import ElementTree
+
+import pytest
+from packaging.requirements import Requirement
+from packaging.utils import canonicalize_name
+from packaging.version import Version
 
 from notification_sound_db.audio import (
     ACTIVE_ABSOLUTE_THRESHOLD_DBFS,
@@ -22,8 +31,71 @@ from notification_sound_db.validation import validate_repository
 ROOT = Path(__file__).resolve().parents[1]
 
 
+class _InlineCodeFinder(HTMLParser):
+    """Collect the inline scripts, styles and event handlers that default-src 'self' blocks."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.found: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        names = sorted({name for name, _ in attrs})
+        if tag == "script" and "src" not in names:
+            self.found.append("<script> without src")
+        if tag == "style":
+            self.found.append("<style> element")
+        self.found.extend(
+            f"{name} attribute on <{tag}>"
+            for name in names
+            if name == "style" or name.startswith("on")
+        )
+
+
 def test_current_data_is_valid() -> None:
     assert validate_repository(ROOT) == []
+
+
+@pytest.mark.parametrize(
+    ("relative_path", "keys"),
+    [
+        ("config/sources.json", ("sources", 0, "official_url")),
+        ("data/sources/slack.json", ("acquisition", "official_url")),
+        ("data/sources/slack.json", ("acquisition", "distribution_url")),
+        ("data/sources/slack.json", ("acquisition", "metadata_url")),
+    ],
+)
+def test_validation_rejects_urls_other_than_https(
+    tmp_path: Path, relative_path: str, keys: tuple
+) -> None:
+    for directory in ("config", "data"):
+        shutil.copytree(ROOT / directory, tmp_path / directory)
+    path = tmp_path / relative_path
+    record = json.loads(path.read_text(encoding="utf-8"))
+    target = record
+    for key in keys[:-1]:
+        target = target[key]
+    target[keys[-1]] = "javascript:alert(document.domain)"
+    path.write_text(json.dumps(record), encoding="utf-8")
+
+    errors = validate_repository(tmp_path)
+    assert any(
+        error.startswith(f"{relative_path}: ") and "'^https://'" in error for error in errors
+    )
+
+
+def test_requirements_lock_pins_every_runtime_dependency() -> None:
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+    lock = (ROOT / "requirements.txt").read_text(encoding="utf-8")
+    pins = {
+        canonicalize_name(name): Version(version)
+        for name, version in re.findall(r"^([A-Za-z0-9._-]+)==([^\s\\]+)", lock, re.MULTILINE)
+    }
+    for dependency in map(Requirement, project["dependencies"]):
+        name = canonicalize_name(dependency.name)
+        assert name in pins, f"{dependency.name} is not pinned in requirements.txt"
+        assert dependency.specifier.contains(pins[name]), (
+            f"requirements.txt pins {name}=={pins[name]} outside {dependency.specifier}"
+        )
 
 
 def test_bilingual_static_site_builds(tmp_path: Path) -> None:
@@ -71,6 +143,16 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     )
     assert verification in english
     assert verification in japanese
+    content_security_policy = (
+        '<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; '
+        "object-src 'none'; base-uri 'none'; form-action 'none'\">"
+    )
+    for page in destination.rglob("*.html"):
+        html = page.read_text(encoding="utf-8")
+        assert content_security_policy in html, page
+        finder = _InlineCodeFinder()
+        finder.feed(html)
+        assert finder.found == [], page
     feedback_url = "https://github.com/semnil/notification-sound-db/issues/1"
     assert f'href="{feedback_url}"' in english
     assert f'href="{feedback_url}"' in japanese
@@ -101,8 +183,10 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
         node.find("s:loc", sitemap_namespace).text
         for node in sitemap_urls
     }
-    assert "https://notification-sound-db.semnil.com/" in locations
-    assert "https://notification-sound-db.semnil.com/ja/" in locations
+    assert {
+        "https://notification-sound-db.semnil.com/",
+        "https://notification-sound-db.semnil.com/ja/",
+    } <= locations
     for node in sitemap_urls:
         alternates = node.findall("{http://www.w3.org/1999/xhtml}link")
         assert {alternate.attrib["hreflang"] for alternate in alternates} == {
