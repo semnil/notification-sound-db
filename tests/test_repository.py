@@ -4,6 +4,7 @@ import json
 import re
 import shutil
 import tomllib
+from html.parser import HTMLParser
 from pathlib import Path
 from xml.etree import ElementTree
 
@@ -28,6 +29,26 @@ from notification_sound_db.site import _spectrum_chart, build_site
 from notification_sound_db.validation import validate_repository
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+class _InlineCodeFinder(HTMLParser):
+    """Collect the inline scripts, styles and event handlers that default-src 'self' blocks."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.found: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        names = sorted({name for name, _ in attrs})
+        if tag == "script" and "src" not in names:
+            self.found.append("<script> without src")
+        if tag == "style":
+            self.found.append("<style> element")
+        self.found.extend(
+            f"{name} attribute on <{tag}>"
+            for name in names
+            if name == "style" or name.startswith("on")
+        )
 
 
 def test_current_data_is_valid() -> None:
@@ -129,8 +150,9 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     for page in destination.rglob("*.html"):
         html = page.read_text(encoding="utf-8")
         assert content_security_policy in html, page
-        assert re.search(r"<script(?![^>]*\ssrc=)[^>]*>", html) is None, page
-        assert re.search(r"\s(?:on[a-z]+|style)=", html) is None, page
+        finder = _InlineCodeFinder()
+        finder.feed(html)
+        assert finder.found == [], page
     feedback_url = "https://github.com/semnil/notification-sound-db/issues/1"
     assert f'href="{feedback_url}"' in english
     assert f'href="{feedback_url}"' in japanese
