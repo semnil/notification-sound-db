@@ -122,6 +122,15 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
     )
     assert verification in english
     assert verification in japanese
+    content_security_policy = (
+        '<meta http-equiv="Content-Security-Policy" content="default-src \'self\'; '
+        "object-src 'none'; base-uri 'none'; form-action 'none'\">"
+    )
+    for page in destination.rglob("*.html"):
+        html = page.read_text(encoding="utf-8")
+        assert content_security_policy in html, page
+        assert re.search(r"<script(?![^>]*\ssrc=)[^>]*>", html) is None, page
+        assert re.search(r"\s(?:on[a-z]+|style)=", html) is None, page
     feedback_url = "https://github.com/semnil/notification-sound-db/issues/1"
     assert f'href="{feedback_url}"' in english
     assert f'href="{feedback_url}"' in japanese
