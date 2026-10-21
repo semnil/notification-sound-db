@@ -33,7 +33,7 @@
           },
           "kind": {"enum": ["operating_system", "application"]},
           "default_path": {"type": "string", "pattern": "^/"},
-          "official_url": {"type": "string", "format": "uri"},
+          "official_url": {"type": "string", "format": "uri", "pattern": "^https://"},
           "default_event_type": {
             "enum": [
               "message",

@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 from xml.etree import ElementTree
+
+import pytest
 
 from notification_sound_db.audio import (
     ACTIVE_ABSOLUTE_THRESHOLD_DBFS,
@@ -24,6 +27,34 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_current_data_is_valid() -> None:
     assert validate_repository(ROOT) == []
+
+
+@pytest.mark.parametrize(
+    ("relative_path", "keys"),
+    [
+        ("config/sources.json", ("sources", 0, "official_url")),
+        ("data/sources/slack.json", ("acquisition", "official_url")),
+        ("data/sources/slack.json", ("acquisition", "distribution_url")),
+        ("data/sources/slack.json", ("acquisition", "metadata_url")),
+    ],
+)
+def test_validation_rejects_urls_other_than_https(
+    tmp_path: Path, relative_path: str, keys: tuple
+) -> None:
+    for directory in ("config", "data"):
+        shutil.copytree(ROOT / directory, tmp_path / directory)
+    path = tmp_path / relative_path
+    record = json.loads(path.read_text(encoding="utf-8"))
+    target = record
+    for key in keys[:-1]:
+        target = target[key]
+    target[keys[-1]] = "javascript:alert(document.domain)"
+    path.write_text(json.dumps(record), encoding="utf-8")
+
+    errors = validate_repository(tmp_path)
+    assert any(
+        error.startswith(f"{relative_path}: ") and "'^https://'" in error for error in errors
+    )
 
 
 def test_bilingual_static_site_builds(tmp_path: Path) -> None:
