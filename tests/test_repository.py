@@ -1,11 +1,16 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
+import tomllib
 from pathlib import Path
 from xml.etree import ElementTree
 
 import pytest
+from packaging.requirements import Requirement
+from packaging.utils import canonicalize_name
+from packaging.version import Version
 
 from notification_sound_db.audio import (
     ACTIVE_ABSOLUTE_THRESHOLD_DBFS,
@@ -55,6 +60,21 @@ def test_validation_rejects_urls_other_than_https(
     assert any(
         error.startswith(f"{relative_path}: ") and "'^https://'" in error for error in errors
     )
+
+
+def test_requirements_lock_pins_every_runtime_dependency() -> None:
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+    lock = (ROOT / "requirements.txt").read_text(encoding="utf-8")
+    pins = {
+        canonicalize_name(name): Version(version)
+        for name, version in re.findall(r"^([A-Za-z0-9._-]+)==([^\s\\]+)", lock, re.MULTILINE)
+    }
+    for dependency in map(Requirement, project["dependencies"]):
+        name = canonicalize_name(dependency.name)
+        assert name in pins, f"{dependency.name} is not pinned in requirements.txt"
+        assert dependency.specifier.contains(pins[name]), (
+            f"requirements.txt pins {name}=={pins[name]} outside {dependency.specifier}"
+        )
 
 
 def test_bilingual_static_site_builds(tmp_path: Path) -> None:
