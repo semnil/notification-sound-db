@@ -120,7 +120,7 @@
         "properties": {
           "name": {"type": "string"},
           "relative_path": {"type": "string"},
-          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
           "error_type": {"type": "string"},
           "reason": {"type": "string"}
         },

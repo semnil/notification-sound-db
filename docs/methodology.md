@@ -92,7 +92,8 @@ SHA-256 identifies the exact source file. One `data/assets/<sha256>.json` record
 same bytes occur at multiple current paths. Source records retain relative paths, classifications,
 versions, observation time, official URL, acquisition method, and distribution hash where a
 package was temporarily downloaded. Analysis failures are retained in the source record without a
-fabricated measurement.
+fabricated measurement. A file whose symbolic link resolves outside the measured source path is not
+read; it is retained as a failure with a `null` SHA-256.
 
 JSON `null` always means unavailable or undefined; it never means zero. Source files, packages, and
 extracted applications are not published.
