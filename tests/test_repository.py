@@ -183,8 +183,10 @@ def test_bilingual_static_site_builds(tmp_path: Path) -> None:
         node.find("s:loc", sitemap_namespace).text
         for node in sitemap_urls
     }
-    assert "https://notification-sound-db.semnil.com/" in locations
-    assert "https://notification-sound-db.semnil.com/ja/" in locations
+    assert {
+        "https://notification-sound-db.semnil.com/",
+        "https://notification-sound-db.semnil.com/ja/",
+    } <= locations
     for node in sitemap_urls:
         alternates = node.findall("{http://www.w3.org/1999/xhtml}link")
         assert {alternate.attrib["hreflang"] for alternate in alternates} == {
