@@ -86,7 +86,7 @@ def classify(filename: str, default: str) -> str:
 
 def _plist_metadata(path: Path) -> dict:
     plist_path = path / "Contents/Info.plist"
-    if not plist_path.exists():
+    if not plist_path.exists() or not plist_path.resolve().is_relative_to(path.resolve()):
         return {}
     try:
         with plist_path.open("rb") as handle:
