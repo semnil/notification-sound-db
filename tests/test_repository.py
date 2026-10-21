@@ -3,9 +3,10 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import subprocess
 import tomllib
 from html.parser import HTMLParser
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from xml.etree import ElementTree
 
 import pytest
@@ -247,9 +248,15 @@ def test_repository_contains_no_source_audio_or_vendor_packages() -> None:
         ".pkg",
         ".wav",
     }
+    listing = subprocess.run(
+        ["git", "ls-files", "-z", "--cached", "--others", "--exclude-standard"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+    ).stdout.decode("utf-8")
     found = [
-        path
-        for path in ROOT.rglob("*")
-        if path.is_file() and path.suffix.lower() in prohibited
+        name
+        for name in listing.split("\0")
+        if PurePosixPath(name).suffix.lower() in prohibited
     ]
     assert found == []
