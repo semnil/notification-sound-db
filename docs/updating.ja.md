@@ -6,7 +6,7 @@
 
 ## 1. 準備
 
-Python 3.11 以降と現行 FFmpeg／FFprobe を用意し、独立した環境にプロジェクトをインストールします。
+Python 3.11 以降、Node.js（`node --test` による言語テスト用）、現行 FFmpeg／FFprobe を用意し、独立した環境にプロジェクトをインストールします。
 
 ```sh
 python3 -m venv .venv
@@ -62,6 +62,7 @@ URL と配布物のハッシュを指定します。
 ```sh
 .venv/bin/ruff check .
 .venv/bin/pytest
+node --test tests/test_language.mjs
 .venv/bin/notification-sound-db validate
 .venv/bin/notification-sound-db export
 .venv/bin/notification-sound-db build-site

@@ -6,8 +6,8 @@ Updates are intentionally manual. There is no scheduled package download or meas
 
 ## 1. Prepare
 
-Install Python 3.11 or later and current FFmpeg/FFprobe, then install the project in an isolated
-environment:
+Install Python 3.11 or later, Node.js (for the `node --test` language test), and current
+FFmpeg/FFprobe, then install the project in an isolated environment:
 
 ```sh
 python3 -m venv .venv
@@ -63,6 +63,7 @@ asset measurements to express classification.
 ```sh
 .venv/bin/ruff check .
 .venv/bin/pytest
+node --test tests/test_language.mjs
 .venv/bin/notification-sound-db validate
 .venv/bin/notification-sound-db export
 .venv/bin/notification-sound-db build-site
