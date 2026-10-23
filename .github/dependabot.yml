@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # Python dependencies (pyproject.toml and requirements.txt).
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: daily
+  # The actions the workflows use.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
