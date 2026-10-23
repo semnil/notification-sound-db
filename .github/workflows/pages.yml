@@ -1,20 +1,41 @@
 name: Deploy Pages
 
+# Builds the report on every pull request and on a manual run of this workflow, without publishing it. Publishes it
+# after Validate (test.yml) passes on main, for a push or a manual run of Validate, when the commit Validate tested is
+# the last commit on main as the workflow_run event names it (GITHUB_SHA): that commit is the one checked out, and a
+# Validate run that finishes after main moved on builds nothing. Only the runs that publish share the concurrency group
+# pages (one running, the newest waiting); every other run has a group of its own, so it cancels no pending publish.
+# The publish condition is written twice, in the group and in the build job, and .github/tests/pages-test.sh holds the
+# two to the same text.
 on:
-  push:
-    branches: [main]
   pull_request:
+  workflow_run:
+    workflows: [Validate]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.ref) || 'pages' }}
+  group: >-
+    ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.ref) || (
+      github.event_name == 'workflow_run'
+      && github.event.workflow_run.conclusion == 'success'
+      && (github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch')
+      && github.event.workflow_run.head_repository.full_name == github.repository
+      && github.sha == github.event.workflow_run.head_sha) && 'pages' || format('pages-run-{0}', github.run_id) }}
   cancel-in-progress: false
 
 jobs:
   build:
+    if: >-
+      github.event_name != 'workflow_run' || (
+        github.event.workflow_run.conclusion == 'success'
+        && (github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch')
+        && github.event.workflow_run.head_repository.full_name == github.repository
+        && github.sha == github.event.workflow_run.head_sha)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -45,7 +66,7 @@ jobs:
           path: site
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'workflow_run'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
