@@ -1,9 +1,15 @@
 name: Deploy Pages
 
+# Builds the report on every pull request and on a manual run of this workflow, without publishing it. Publishes it
+# after Validate (test.yml) passes on main, for a push or a manual run of Validate: from the commit Validate tested,
+# and only while that commit is still the tip of main, so a Validate run that finishes late does not publish an older
+# report over a newer one.
 on:
-  push:
-    branches: [main]
   pull_request:
+  workflow_run:
+    workflows: [Validate]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -15,11 +21,34 @@ concurrency:
 
 jobs:
   build:
+    if: >-
+      github.event_name != 'workflow_run' || (
+        github.event.workflow_run.conclusion == 'success'
+        && (github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch')
+        && github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      publish: ${{ steps.tip.outputs.publish }}
     steps:
+      - name: Check the tested commit is the tip of main
+        id: tip
+        if: github.event_name == 'workflow_run'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TESTED: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          tip=$(gh api "repos/${GITHUB_REPOSITORY}/commits/main" --jq .sha)
+          if [ "${tip}" = "${TESTED}" ]; then
+            echo "publish=true" >> "${GITHUB_OUTPUT}"
+          else
+            echo "::notice::main is at ${tip}, past ${TESTED} that Validate tested; the run for ${tip} publishes"
+            echo "publish=false" >> "${GITHUB_OUTPUT}"
+          fi
       - name: Check out repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
@@ -45,7 +74,7 @@ jobs:
           path: site
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: needs.build.outputs.publish == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

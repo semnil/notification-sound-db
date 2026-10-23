@@ -107,7 +107,7 @@ Exact parameters are versioned in `config/analysis-profile.json` and explained i
 - Use English for canonical repository text, field names, unit identifiers, and classification
   IDs; co-locate Japanese versions of user-facing documentation and the report.
 - Update data manually with the local CLI. GitHub Actions validates, checks generation, builds, and
-  deploys the report. Scheduled update detection or measurement is not an initial requirement.
+  deploys the report, publishing only a commit on `main` that validation passed. Scheduled update detection or measurement is not an initial requirement.
 
 ## 8. Evidence and reproducibility
 
