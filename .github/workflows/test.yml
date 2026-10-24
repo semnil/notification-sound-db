@@ -1,5 +1,9 @@
 name: Validate
 
+# Caches the apt package files of FFmpeg. Runs that are not pull requests (a push to main, workflow_dispatch) save
+# them; a pull request restores the cache of main and saves none.
+# The key of the cache is the hash of the names of the package files the run installed. A run restores the newest
+# cache of the runner's ImageOS and saves only when it installed a different set of files.
 on:
   push:
     branches: [main]
@@ -21,9 +25,49 @@ jobs:
         with:
           python-version: "3.13"
           cache: pip
+      - name: Name the apt cache
+        id: cache-names
+        run: echo "image=${ImageOS}" >> "$GITHUB_OUTPUT"
+      - name: Restore apt packages
+        id: apt-restore
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/apt-archives
+          key: apt-${{ steps.cache-names.outputs.image }}-${{ github.run_id }}
+          restore-keys: apt-${{ steps.cache-names.outputs.image }}-
       - name: Install FFmpeg
         timeout-minutes: 40
-        run: sudo apt-get update && sudo apt-get install --yes ffmpeg
+        run: |
+          if compgen -G "$HOME/apt-archives/*.deb" > /dev/null; then
+            sudo cp "$HOME"/apt-archives/*.deb /var/cache/apt/archives/
+          fi
+          sudo apt-get update && sudo apt-get install --yes ffmpeg
+      - name: Collect apt packages
+        id: apt-collect
+        if: github.event_name != 'pull_request'
+        shell: bash
+        env:
+          IMAGE: ${{ steps.cache-names.outputs.image }}
+        run: |
+          find /var/cache/apt/archives -maxdepth 1 -name '*.deb' -printf '%f\n' | LC_ALL=C sort > "$RUNNER_TEMP/cached-debs.txt"
+          dpkg-query -W -f='${Package}_${Version}_${Architecture}.deb\n' | sed 's/:/%3a/g' | LC_ALL=C sort > "$RUNNER_TEMP/installed-debs.txt"
+          LC_ALL=C comm -12 "$RUNNER_TEMP/cached-debs.txt" "$RUNNER_TEMP/installed-debs.txt" > "$RUNNER_TEMP/debs.txt"
+          if [ ! -s "$RUNNER_TEMP/debs.txt" ]; then
+            echo "::warning::no installed package file is in /var/cache/apt/archives; the apt cache is not saved"
+            exit 0
+          fi
+          rm -rf "$HOME/apt-archives"
+          mkdir "$HOME/apt-archives"
+          while read -r deb; do
+            cp "/var/cache/apt/archives/$deb" "$HOME/apt-archives/"
+          done < "$RUNNER_TEMP/debs.txt"
+          echo "key=apt-${IMAGE}-$(sha256sum < "$RUNNER_TEMP/debs.txt" | cut -c1-16)" >> "$GITHUB_OUTPUT"
+      - name: Save apt packages
+        if: steps.apt-collect.outputs.key != '' && steps.apt-collect.outputs.key != steps.apt-restore.outputs.cache-matched-key
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ~/apt-archives
+          key: ${{ steps.apt-collect.outputs.key }}
       - name: Install project
         timeout-minutes: 10
         run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
