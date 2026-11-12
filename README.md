@@ -26,6 +26,7 @@ locally installed macOS application. See the generated report for current counts
 - Requirements: [`docs/requirements.md`](docs/requirements.md)
 - Methodology: [`docs/methodology.md`](docs/methodology.md)
 - Update procedure: [`docs/updating.md`](docs/updating.md)
+- Documentation decisions: [`docs/decisions/documentation.md`](docs/decisions/documentation.md)
 
 ## Quick start
 

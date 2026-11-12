@@ -24,6 +24,7 @@ macOS アプリ内の音声ファイルを測定しています。現在の件�
 - 要件: [`docs/requirements.ja.md`](docs/requirements.ja.md)
 - 測定方法: [`docs/methodology.ja.md`](docs/methodology.ja.md)
 - 更新手順: [`docs/updating.ja.md`](docs/updating.ja.md)
+- 文書の決定: [`docs/decisions/documentation.ja.md`](docs/decisions/documentation.ja.md)
 
 ## クイックスタート
 
