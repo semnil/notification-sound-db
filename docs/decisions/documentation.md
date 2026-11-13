@@ -3,7 +3,7 @@
 [日本語](documentation.ja.md)
 
 Closed decisions about the documents of this repository. The layout of the English and Japanese
-pairs is in [`CLAUDE.md`](../../CLAUDE.md).
+pairs is in [`AGENTS.md`](../../AGENTS.md).
 
 ## Cross-link line under each H1
 
