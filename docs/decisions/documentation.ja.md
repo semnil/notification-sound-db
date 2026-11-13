@@ -3,7 +3,7 @@
 [English](documentation.md)
 
 このリポジトリの文書について閉じた判断を持つ。英語と日本語の対の置き方は
-[`CLAUDE.md`](../../CLAUDE.md) にある。
+[`AGENTS.md`](../../AGENTS.md) にある。
 
 ## 各 H1 の下の相互リンクの行
 
